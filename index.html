@@ -7410,6 +7410,13 @@ allFlipCards.forEach(function(card) {
   var current = -1;
 
   function update() {
+    // On mobile the section is unstacked — no pinned scroll needed
+    if (window.innerWidth <= 768) {
+      track.style.transform = '';
+      track.querySelectorAll('.phase-right-panel').forEach(function(p){ p.style.height = ''; });
+      return;
+    }
+
     var rect = outer.getBoundingClientRect();
     var scrolled  = -rect.top;                          // px scrolled into section
     var scrollable = rect.height - window.innerHeight;  // total scrollable distance
