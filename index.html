@@ -2429,13 +2429,41 @@ a { text-decoration: none; color: inherit; }
 
 .prog-block-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
   padding: 15px 18px;
   cursor: pointer;
   user-select: none;
   transition: background 0.2s;
 }
+.prog-plenary-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: .18em;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 3px;
+}
+.prog-speaker-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: #F0C832;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.prog-talk-title {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.45;
+}
+/* Keep time vertically centred with the speaker name line */
+.prog-time { padding-top: 3px; }
 .prog-block-header:hover { background: rgba(0,0,0,0.06); }
 
 .prog-time {
@@ -2974,6 +3002,7 @@ a { text-decoration: none; color: inherit; }
   .phases-left-col { display:none; }
   .phase-right-panel { height:auto; padding:40px 24px; }
   .phases-right-track { transform:none !important; }
+  .comp-phases-section { padding-bottom:50px; }
 }
 
 /* Competition Format & Marking Rubric — left-align header, inverted yellow pill */
@@ -2986,43 +3015,63 @@ a { text-decoration: none; color: inherit; }
   background:#F0C832; color:#1a1200; border:none;
 }
 
-/* Asymmetric scatter rubric cards — RenderATL style */
-.comp-rubric-section { background:#0B0F0E; padding-bottom:100px; }
+/* Rubric — 2-col grid, inline description reveal */
+.comp-rubric-section { background:#0B0F0E; padding-bottom:80px; }
 .comp-rubric-section .comp-sub-header { background:#0B0F0E; }
-.rubric-curtain-wrap { position:relative; height:105vh; }
-.rubric-curtain-sticky { position:sticky; top:0; height:100dvh; overflow:hidden; display:flex; align-items:center; justify-content:center; background:#0B0F0E; }
-.rubric-curtain-left, .rubric-curtain-right { position:absolute; top:0; bottom:0; width:50%; background:#0B0F0E; z-index:2; display:flex; align-items:center; }
-.rubric-curtain-left { left:0; justify-content:flex-end; padding-right:24px; border-right:1px solid rgba(29,158,117,0.15); }
-.rubric-curtain-right { right:0; justify-content:flex-start; padding-left:24px; border-left:1px solid rgba(29,158,117,0.15); }
-.rubric-curtain-left h2, .rubric-curtain-right h2 { font-family:var(--font-display); font-size:clamp(36px,7vw,80px); font-weight:700; letter-spacing:-0.04em; line-height:0.95; color:#F0C832; }
-.rubric-curtain-content { position:absolute; inset:0; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; text-align:center; padding:40px 40px 5vh; }
-.rubric-scatter {
-  display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start;
-  gap:22px 16px; max-width:1060px; margin:-40px auto 0; padding:0 40px 60px;
+.rubric-list-wrap { padding:0 clamp(24px,6vw,80px); }
+.rubric-list {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:repeat(4, auto);
+  grid-auto-flow:column;
+  border-top:1px solid rgba(255,255,255,0.12);
 }
-.rubric-card {
-  background:#F0C832; border-radius:6px;
-  padding:36px 32px; cursor:default; position:relative;
-  box-shadow:0 10px 32px rgba(0,0,0,0.45), 0 3px 10px rgba(0,0,0,0.3);
-  transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s;
-  will-change:transform;
+.rubric-row {
+  display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;
+  padding:26px clamp(16px,2.5vw,40px);
+  border-bottom:1px solid rgba(255,255,255,0.12);
+  cursor:pointer; transition:background 0.15s;
 }
-.rubric-card:hover { transform:rotate(0deg) translateY(-10px) !important; box-shadow:0 24px 56px rgba(0,0,0,0.6); z-index:10; }
-.rubric-num { font-family:var(--font-display); font-size:11px; letter-spacing:.22em; color:rgba(26,18,0,.45); margin-bottom:12px; }
-.rubric-name { font-family:var(--font-display); font-size:clamp(18px,2vw,24px); color:#1a1200; line-height:1.1; font-weight:900; text-transform:uppercase; letter-spacing:-.01em; margin-bottom:10px; }
-.rubric-desc { font-size:12px; color:rgba(26,18,0,.65); line-height:1.55; display:block; }
-.rubric-card-inner { }
-/* Row 1 — 3 cards */
-.rubric-card:nth-child(1) { width:290px; transform:rotate(-2.5deg) translateY(12px); }
-.rubric-card:nth-child(2) { width:265px; transform:rotate(1.8deg)  translateY(-8px); }
-.rubric-card:nth-child(3) { width:300px; transform:rotate(-1.2deg) translateY(16px); }
-/* Row 2 — 3 cards */
-.rubric-card:nth-child(4) { width:260px; transform:rotate(3deg)    translateY(-12px); }
-.rubric-card:nth-child(5) { width:310px; transform:rotate(-2deg)   translateY(8px); }
-.rubric-card:nth-child(6) { width:270px; transform:rotate(1.5deg)  translateY(-6px); }
-/* Row 3 — 2 cards */
-.rubric-card:nth-child(7) { width:340px; transform:rotate(-1.8deg) translateY(14px); }
-.rubric-card:nth-child(8) { width:295px; transform:rotate(2.5deg)  translateY(-6px); }
+.rubric-row:nth-child(-n+4) { border-right:1px solid rgba(255,255,255,0.12); }
+.rubric-row-num {
+  font-family:var(--font-display); font-size:11px; letter-spacing:.2em;
+  color:rgba(255,255,255,0.28); width:30px; flex-shrink:0; transition:color 0.15s;
+}
+.rubric-row-dash { display:none; font-size:18px; flex-shrink:0; line-height:1; }
+.rubric-row-name {
+  flex:1; font-family:var(--font-display); font-size:clamp(16px,1.8vw,26px);
+  color:#fff; letter-spacing:-0.01em; line-height:1.1; transition:color 0.15s;
+}
+.rubric-row-arrow { font-size:18px; color:rgba(255,255,255,0.28); flex-shrink:0; transition:color 0.15s; }
+.rubric-row-arrow::after { content:'↖'; }
+.rubric-row-body {
+  display:none; flex-basis:100%; order:10;
+  font-size:13px; line-height:1.65; padding:8px 0 2px;
+}
+/* Desktop hover — description reveals inline in the cell */
+@media(hover:hover){
+  .rubric-row:hover { background:#F0C832; }
+  .rubric-row:hover .rubric-row-num  { color:rgba(26,18,0,0.4); }
+  .rubric-row:hover .rubric-row-dash { display:inline; color:#1a1200; }
+  .rubric-row:hover .rubric-row-name { color:#1a1200; font-weight:900; }
+  .rubric-row:hover .rubric-row-arrow { color:#c0392b; }
+  .rubric-row:hover .rubric-row-arrow::after { content:'←'; }
+  .rubric-row:hover .rubric-row-body { display:block; color:rgba(26,18,0,0.72); }
+}
+/* Mobile — single column (width breakpoint covers preview + touch devices) */
+@media(max-width:768px){
+  .rubric-list { grid-template-columns:1fr; grid-auto-flow:row; }
+  .rubric-row:nth-child(-n+4) { border-right:none; }
+}
+/* Touch devices — accordion interaction */
+@media(hover:none){
+  .rubric-row.r-active { background:#F0C832; }
+  .rubric-row.r-active .rubric-row-num  { color:rgba(26,18,0,0.4); }
+  .rubric-row.r-active .rubric-row-name { color:#1a1200; }
+  .rubric-row.r-active .rubric-row-arrow { color:#c0392b; }
+  .rubric-row.r-active .rubric-row-arrow::after { content:'←'; }
+  .rubric-row.r-active .rubric-row-body { display:block; color:rgba(26,18,0,0.72); }
+}
 
 /* Prize section — photo background with dark overlay */
 .comp-prizes-section {
@@ -3088,14 +3137,10 @@ a { text-decoration: none; color: inherit; }
 /* Responsive */
 @media(max-width:900px){
   .flip-cards-grid { grid-template-columns:1fr; max-width:400px; }
-  .rubric-scatter { gap:14px; padding:0 32px 60px; }
-  .rubric-card { width:calc(50% - 7px) !important; transform:none !important; }
   .prize-grid { grid-template-columns:1fr; max-width:380px; }
 }
 @media(max-width:600px){
   .flip-cards-grid,.prize-grid { padding:0 20px; }
-  .rubric-scatter { padding:0 16px 60px; }
-  .rubric-card { width:100% !important; transform:none !important; }
   .flip-cards-grid,.prize-grid { max-width:100%; }
   .phases-scroll-inner { height:auto; position:relative; }
   .phases-cols { grid-template-columns:1fr; }
@@ -3903,62 +3948,65 @@ a { text-decoration: none; color: inherit; }
     </div>
   </div>
 
-  <!-- 6.3 Marking Rubric — Curtain Reveal + Scatter cards -->
+  <!-- 6.3 Marking Rubric — Interactive List -->
   <div class="comp-rubric-section">
-    <div class="rubric-curtain-wrap">
-      <div class="rubric-curtain-sticky">
-        <div class="rubric-curtain-content">
-          <div class="comp-sub-header" style="background:transparent;">
-            <div class="pillars-eyebrow-label">MARKING RUBRIC</div>
-            <p class="comp-blurb">Every project is evaluated against eight standardised criteria.</p>
-          </div>
+    <div class="comp-sub-header" style="background:transparent">
+      <div class="pillars-eyebrow-label">MARKING RUBRIC</div>
+      <p class="comp-blurb">Every project is evaluated against eight standardised criteria.</p>
+    </div>
+    <div class="rubric-list-wrap">
+      <div class="rubric-list" id="rubricList">
+        <div class="rubric-row" data-num="01" data-title="Clear Problem Statement" data-desc="Addresses a real clinical or operational gap with a well-defined, justified solution.">
+          <span class="rubric-row-num">01</span><span class="rubric-row-dash">—&nbsp;</span>
+          <span class="rubric-row-name">Clear Problem Statement</span>
+          <span class="rubric-row-body">Addresses a real clinical or operational gap with a well-defined, justified solution.</span>
+          <span class="rubric-row-arrow"></span>
         </div>
-        <div class="rubric-curtain-left" id="rubricCurtainL"><h2>MARKING</h2></div>
-        <div class="rubric-curtain-right" id="rubricCurtainR"><h2>RUBRIC</h2></div>
+        <div class="rubric-row" data-num="02" data-title="Creativity" data-desc="Original idea that stands apart from existing solutions in the field.">
+          <span class="rubric-row-num">02</span><span class="rubric-row-dash">—&nbsp;</span>
+          <span class="rubric-row-name">Creativity</span>
+          <span class="rubric-row-body">Original idea that stands apart from existing solutions in the field.</span>
+          <span class="rubric-row-arrow"></span>
+        </div>
+        <div class="rubric-row" data-num="03" data-title="User Friendly" data-desc="Intuitive interface adoptable by end-users without complex training.">
+          <span class="rubric-row-num">03</span><span class="rubric-row-dash">—&nbsp;</span>
+          <span class="rubric-row-name">User Friendly</span>
+          <span class="rubric-row-body">Intuitive interface adoptable by end-users without complex training.</span>
+          <span class="rubric-row-arrow"></span>
+        </div>
+        <div class="rubric-row" data-num="04" data-title="Deployment" data-desc="Technically stable and integrates with existing hospital systems.">
+          <span class="rubric-row-num">04</span><span class="rubric-row-dash">—&nbsp;</span>
+          <span class="rubric-row-name">Deployment</span>
+          <span class="rubric-row-body">Technically stable and integrates with existing hospital systems.</span>
+          <span class="rubric-row-arrow"></span>
+        </div>
+        <div class="rubric-row" data-num="05" data-title="Data Validation" data-desc="AI model is accurate, data-secure, and privacy-compliant.">
+          <span class="rubric-row-num">05</span><span class="rubric-row-dash">—&nbsp;</span>
+          <span class="rubric-row-name">Data Validation</span>
+          <span class="rubric-row-body">AI model is accurate, data-secure, and privacy-compliant.</span>
+          <span class="rubric-row-arrow"></span>
+        </div>
+        <div class="rubric-row" data-num="06" data-title="Clear Output &amp; Outcome" data-desc="Delivers measurable results — time saved, accuracy gained, costs reduced.">
+          <span class="rubric-row-num">06</span><span class="rubric-row-dash">—&nbsp;</span>
+          <span class="rubric-row-name">Clear Output &amp; Outcome</span>
+          <span class="rubric-row-body">Delivers measurable results — time saved, accuracy gained, costs reduced.</span>
+          <span class="rubric-row-arrow"></span>
+        </div>
+        <div class="rubric-row" data-num="07" data-title="Scalability" data-desc="Can be adopted beyond the originating hospital or team.">
+          <span class="rubric-row-num">07</span><span class="rubric-row-dash">—&nbsp;</span>
+          <span class="rubric-row-name">Scalability</span>
+          <span class="rubric-row-body">Can be adopted beyond the originating hospital or team.</span>
+          <span class="rubric-row-arrow"></span>
+        </div>
+        <div class="rubric-row" data-num="08" data-title="Sustainability" data-desc="Cost-effective and operable without reliance on external vendors.">
+          <span class="rubric-row-num">08</span><span class="rubric-row-dash">—&nbsp;</span>
+          <span class="rubric-row-name">Sustainability</span>
+          <span class="rubric-row-body">Cost-effective and operable without reliance on external vendors.</span>
+          <span class="rubric-row-arrow"></span>
+        </div>
       </div>
     </div>
-    <div class="rubric-scatter">
-      <div class="rubric-card">
-        <div class="rubric-num">01</div>
-        <div class="rubric-name">Clear Problem Statement</div>
-        <p class="rubric-desc">Addresses a real clinical or operational gap with a well-defined, justified solution.</p>
-      </div>
-      <div class="rubric-card">
-        <div class="rubric-num">02</div>
-        <div class="rubric-name">Creativity</div>
-        <p class="rubric-desc">Original idea that stands apart from existing solutions in the field.</p>
-      </div>
-      <div class="rubric-card">
-        <div class="rubric-num">03</div>
-        <div class="rubric-name">User Friendly</div>
-        <p class="rubric-desc">Intuitive interface adoptable by end-users without complex training.</p>
-      </div>
-      <div class="rubric-card">
-        <div class="rubric-num">04</div>
-        <div class="rubric-name">Deployment</div>
-        <p class="rubric-desc">Technically stable and integrates with existing hospital systems.</p>
-      </div>
-      <div class="rubric-card">
-        <div class="rubric-num">05</div>
-        <div class="rubric-name">Data Validation</div>
-        <p class="rubric-desc">AI model is accurate, data-secure, and privacy-compliant.</p>
-      </div>
-      <div class="rubric-card">
-        <div class="rubric-num">06</div>
-        <div class="rubric-name">Clear Output &amp; Outcome</div>
-        <p class="rubric-desc">Delivers measurable results — time saved, accuracy gained, costs reduced.</p>
-      </div>
-      <div class="rubric-card">
-        <div class="rubric-num">07</div>
-        <div class="rubric-name">Scalability</div>
-        <p class="rubric-desc">Can be adopted beyond the originating hospital or team.</p>
-      </div>
-      <div class="rubric-card">
-        <div class="rubric-num">08</div>
-        <div class="rubric-name">Sustainability</div>
-        <p class="rubric-desc">Cost-effective and operable without reliance on external vendors.</p>
-      </div>
-    </div>
+
   </div>
 
   <!-- 6.4 Competition Prizes — Odometer + Spotlight Cards -->
@@ -4041,11 +4089,11 @@ a { text-decoration: none; color: inherit; }
     <div class="prog-block prog-block-morning">
       <div class="prog-block-header" onclick="toggleProg(this)">
         <span class="prog-time">09:00 AM</span>
-        <span class="prog-title">Plenary 1 — Prof. Madya Dr Mohd Rafee · Navigating the AI Revolution in Malaysia's Healthcare System</span>
+        <span class="prog-title"><span class="prog-plenary-label">PLENARY 1</span><span class="prog-speaker-name">Prof. Madya Dr Mohd Rafee bin Baharudin</span><span class="prog-talk-title">AI Transformation in Healthcare: Roadmap, Strategy &amp; Vision – 2030 Prediction</span></span>
         <span class="prog-arrow">▼</span>
       </div>
       <div class="prog-block-body">
-        <span class="prog-topic-title">Navigating the AI Revolution: Transforming Malaysia's Healthcare System Through Intelligent Technologies</span>
+        <span class="prog-topic-title">AI Transformation in Healthcare: Roadmap, Strategy &amp; Vision – 2030 Prediction</span>
         <p>An authoritative overview of the current AI landscape across Malaysia's public health ecosystem — from clinical decision support to population health analytics. Prof Rafee draws on his WHO-funded research to map where AI is already reshaping patient outcomes, where the critical gaps remain, and what ethical and data governance frameworks must underpin every deployment. A roadmap for what Malaysia's healthcare future can and must look like.</p>
         <div class="prog-speaker-tag">Faculty of Medicine &amp; Health Sciences · Universiti Putra Malaysia</div>
       </div>
@@ -4054,11 +4102,11 @@ a { text-decoration: none; color: inherit; }
     <div class="prog-block prog-block-morning">
       <div class="prog-block-header" onclick="toggleProg(this)">
         <span class="prog-time">09:30 AM</span>
-        <span class="prog-title">Plenary 2 — Prof. Madya Dr Shukor Sanim · Funding the Future — AI Research Grants &amp; University–Hospital Partnerships</span>
+        <span class="prog-title"><span class="prog-plenary-label">PLENARY 2</span><span class="prog-speaker-name">Prof. Madya Dr Shukor Sanim</span><span class="prog-talk-title">Grant Opportunities, Networking &amp; Potential University Collaboration in AI Healthcare</span></span>
         <span class="prog-arrow">▼</span>
       </div>
       <div class="prog-block-body">
-        <span class="prog-topic-title">Funding the Future: How to Secure Research Grants, Build University–Hospital Partnerships, and Scale AI in Clinical Environments</span>
+        <span class="prog-topic-title">Grant Opportunities, Networking &amp; Potential University Collaboration in AI Healthcare</span>
         <p>A practical masterclass in navigating Malaysia's research funding landscape for AI-driven healthcare projects. Prof Shukor demystifies the grant application process — from Ministry of Higher Education funding to international research collaborations — and reveals what review panels are really looking for. He also covers hardware investment realities (GPU infrastructure, cloud vs on-premise), AI tool selection frameworks, and how clinical teams can position their work for academic co-authorship and sustained institutional support.</p>
         <div class="prog-speaker-tag">Faculty of Computer &amp; Mathematical Sciences · UiTM Perlis</div>
       </div>
@@ -4067,11 +4115,11 @@ a { text-decoration: none; color: inherit; }
     <div class="prog-block prog-block-morning">
       <div class="prog-block-header" onclick="toggleProg(this)">
         <span class="prog-time">10:00 AM</span>
-        <span class="prog-title">Plenary 3 — Dr Ahmad Hakiim Jamaluddin · Engineering a Culture of Innovation Through Reward Systems</span>
+        <span class="prog-title"><span class="prog-plenary-label">PLENARY 3</span><span class="prog-speaker-name">Dr Ahmad Hakiim Jamaluddin</span><span class="prog-talk-title">AI Transformation of Reward Culture &amp; Quick-Win Projects</span></span>
         <span class="prog-arrow">▼</span>
       </div>
       <div class="prog-block-body">
-        <span class="prog-topic-title">Engineering a Culture of Innovation: How Reward Systems, AI Competitions and Recognition Frameworks Unlock Institutional Creativity</span>
+        <span class="prog-topic-title">AI Transformation of Reward Culture &amp; Quick-Win Projects – Experience in Participating and Organising International AI Competitions</span>
         <p>Why do some hospital teams build extraordinary AI solutions while others stall? Dr Hakiim presents a compelling evidence-based framework for engineering an innovation culture from the ground up — using structured reward systems, well-designed AI competitions, and recognition pathways that make clinicians feel their contributions matter at a national level. Drawing from his experience running large-scale AI challenges, he covers competition design, rubric construction, AI model evaluation methodology, and how to sustain innovation momentum long after the competition ends.</p>
         <div class="prog-speaker-tag">Department of Mathematics &amp; Statistics · Universiti Putra Malaysia</div>
       </div>
@@ -4084,11 +4132,13 @@ a { text-decoration: none; color: inherit; }
         <span class="prog-arrow">▼</span>
       </div>
       <div class="prog-block-body">
-        <p><strong>3 parallel breakout rooms running simultaneously · 8 min presentation + 4 min Q&amp;A per project</strong></p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;">
-          <div class="prog-room-card prog-room-a"><div class="prog-room-label">ROOM A</div><div class="prog-room-name">Patient Journey<br>/ Customer Experience</div></div>
-          <div class="prog-room-card prog-room-b"><div class="prog-room-label">ROOM B</div><div class="prog-room-name">Clinician Journey<br>/ Predictive Modelling</div></div>
-          <div class="prog-room-card prog-room-c"><div class="prog-room-label">ROOM C</div><div class="prog-room-name">Management Productivity<br>/ Dashboard</div></div>
+        <p><strong>5 parallel breakout rooms running simultaneously · 8 min presentation + 4 min Q&amp;A per project</strong></p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:12px;">
+          <div class="prog-room-card prog-room-a"><div class="prog-room-label">ROOM 1</div><div class="prog-room-name">Patient Journey<br>/ Customer Experience</div></div>
+          <div class="prog-room-card prog-room-b"><div class="prog-room-label">ROOM 2</div><div class="prog-room-name">Clinician Journey</div></div>
+          <div class="prog-room-card prog-room-c"><div class="prog-room-label">ROOM 3</div><div class="prog-room-name">Clinical Interactive Dashboard</div></div>
+          <div class="prog-room-card prog-room-a"><div class="prog-room-label">ROOM 4</div><div class="prog-room-name">Predictive Modelling<br>(Disease-Based)</div></div>
+          <div class="prog-room-card prog-room-b"><div class="prog-room-label">ROOM 5</div><div class="prog-room-name">Management Productivity</div></div>
         </div>
       </div>
     </div>
@@ -4111,44 +4161,48 @@ a { text-decoration: none; color: inherit; }
         <span class="prog-arrow">▼</span>
       </div>
       <div class="prog-block-body">
-        <p>Breakout sessions resume across all 3 rooms. Live demonstrations of HIO HTPN flagship applications including EBL Estimator AI, TherapyAI, Clinical Document Checker, and Dashboard ED.</p>
+        <p>Breakout sessions resume across all 5 rooms. Live demonstrations of HIO HTPN flagship applications including EBL Estimator AI, TherapyAI, Clinical Document Checker, and Dashboard ED.</p>
       </div>
     </div>
 
     <div class="prog-block prog-block-vip">
       <div class="prog-block-header" onclick="toggleProg(this)">
-        <span class="prog-time">03:45 PM</span>
-        <span class="prog-title">VIP Arrival &amp; Keynote Addresses</span>
+        <span class="prog-time">02:30 PM</span>
+        <span class="prog-title">Arrival of VIPs &amp; Special Guests</span>
         <span class="prog-arrow">▼</span>
       </div>
       <div class="prog-block-body">
-        <div style="margin-bottom:8px;"><strong>3:45pm</strong> — Ucapan Pengarah HTPN, Dr Siv Azhar Merican: <em>"Change Management Leadership Transformation"</em></div>
-        <div style="margin-bottom:8px;"><strong>4:00pm</strong> — Ucapan Wakil MPC: <em>"Peranan MPC dalam Reformasi Kerenah Birokrasi"</em></div>
-        <div><strong>4:15pm</strong> — Ucap Utama DG MPC / DG KKM / Pengarah Bahagian Perkembangan Perubatan KKM</div>
+        <p>Arrival and reception of VIPs and special guests. Ushering to reserved seats.</p>
       </div>
     </div>
 
-    <div class="prog-block prog-block-awards">
+    <div class="prog-block prog-block-vip">
       <div class="prog-block-header" onclick="toggleProg(this)">
-        <span class="prog-time">04:30 PM</span>
-        <span class="prog-title">Awards Ceremony &amp; Closing</span>
+        <span class="prog-time">03:00 PM</span>
+        <span class="prog-title"><span class="prog-plenary-label">PLENARY 4</span><span class="prog-speaker-name">Dr Siv Azhar Merican Bin Abdullah</span><span class="prog-talk-title">AI-Driven Organisational Change Management at HTPN</span></span>
         <span class="prog-arrow">▼</span>
       </div>
       <div class="prog-block-body">
-        <p>Announcement of Innova-thon winners. Presentation of Gold (RM500), Silver (RM300), Bronze (RM200) and 5 consolation awards (RM100 each). Certificate presentation for all participants (co-signed by Pengarah HTPN &amp; MPC). Cenderahati for VIPs, judges and speakers. Gimik perasmian penutup &amp; montaj video.</p>
-        <div class="prog-prize-row">
+        <span class="prog-topic-title">AI-Driven Organisational Change Management and Leadership Transformation at HTPN – Building a Digital Mindset</span>
+        <div class="prog-speaker-tag">Director, Hospital Tengku Permaisuri Norashikin (HTPN), Kajang</div>
+        <div style="margin-top:16px;margin-bottom:8px;"><strong>Speech by Director General, MPC</strong></div>
+        <div style="margin-bottom:8px;"><strong>Speech by Director General, Ministry of Health Malaysia (MOH)</strong></div>
+        <div style="margin-bottom:16px;"><strong>Closing Ceremony, Official Launch Gimmick &amp; Video Montage</strong></div>
+        <p><strong>Prize-Giving Ceremony for Competition Winners</strong></p>
+        <div class="prog-prize-row" style="margin-top:12px;">
           <div class="prog-prize"><span class="prog-prize-medal" style="color:#F0C832">●</span> Gold — RM 500</div>
           <div class="prog-prize"><span class="prog-prize-medal" style="color:#C0C0C0">●</span> Silver — RM 300</div>
           <div class="prog-prize"><span class="prog-prize-medal" style="color:#CD7F32">●</span> Bronze — RM 200</div>
-          <div class="prog-prize"><span class="prog-prize-medal" style="color:rgba(0,0,0,0.3)">●</span> 5× Consolation — RM 100</div>
+          <div class="prog-prize"><span class="prog-prize-medal" style="color:rgba(255,255,255,0.3)">●</span> 5× Consolation — RM 100</div>
         </div>
+        <p style="margin-top:12px;font-size:13px;opacity:0.65;">Certificate presentation for all participants (co-signed by Pengarah HTPN &amp; MPC). Cenderahati for VIPs, judges and speakers.</p>
       </div>
     </div>
 
     <div class="prog-block prog-block-networking">
       <div class="prog-block-header" onclick="toggleProg(this)">
         <span class="prog-time">05:00 PM</span>
-        <span class="prog-title">Bersurai &amp; Networking</span>
+        <span class="prog-title">End of Programme / Adjournment</span>
         <span class="prog-arrow">▼</span>
       </div>
       <div class="prog-block-body">
@@ -4450,16 +4504,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 
-// --- Rubric curtain reveal (GSAP ScrollTrigger) ---
-window.addEventListener('load', function(){
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-  gsap.registerPlugin(ScrollTrigger);
-  var wrap = document.querySelector('.rubric-curtain-wrap');
-  if (!wrap) return;
-  gsap.to('#rubricCurtainL', { xPercent:-100, ease:'power2.inOut', scrollTrigger:{ trigger:wrap, start:'top top', end:'80% top', scrub:0.5, invalidateOnRefresh:true }});
-  gsap.to('#rubricCurtainR', { xPercent:100, ease:'power2.inOut', scrollTrigger:{ trigger:wrap, start:'top top', end:'80% top', scrub:0.5, invalidateOnRefresh:true }});
-  setTimeout(function(){ ScrollTrigger.refresh(true); }, 1000);
-});
+
 
 // --- Count-up animation ---
 function countUp(el, target, duration, suffix) {
@@ -5079,6 +5124,18 @@ allFlipCards.forEach(function(card) {
 
   window.addEventListener('scroll', update, { passive: true });
   update();
+})();
+/* ── Rubric list — mobile accordion ── */
+(function(){
+  if (window.matchMedia('(hover:hover)').matches) return;
+  var rows = document.querySelectorAll('.rubric-row');
+  rows.forEach(function(row) {
+    row.addEventListener('click', function() {
+      var wasActive = row.classList.contains('r-active');
+      rows.forEach(function(r){ r.classList.remove('r-active'); });
+      if (!wasActive) row.classList.add('r-active');
+    });
+  });
 })();
 </script>
 
