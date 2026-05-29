@@ -1136,6 +1136,18 @@ a { text-decoration: none; color: inherit; }
   z-index: 12;
 }
 
+/* 4th speaker — tucked bottom-right */
+.spk-photo-frame-4 {
+  width: 40%;
+  bottom: 0; right: 0;
+  transform: rotate(-2deg);
+  z-index: 5;
+}
+.spk-photo-frame-4:hover {
+  transform: rotate(0deg) scale(1.04);
+  z-index: 12;
+}
+
 /* ============================================
    EXPERIENCE SECTION — RenderATL: cream bg, photo bleeds left,
    torn top edge, yellow bullet box with shadow
@@ -3617,6 +3629,17 @@ a { text-decoration: none; color: inherit; }
         </div>
       </div>
 
+      <div class="spk-photo-frame spk-photo-frame-4">
+        <div class="spk-time-badge">3:00 PM · PLENARY 4</div>
+        <img src="images/dr-azhar.png"
+             alt="Dr Siv Azhar Merican Bin Abdullah — Director HTPN Kajang"
+             class="spk-photo-inner">
+        <div class="spk-name-badge">
+          <div class="spk-name">DR SIV AZHAR MERICAN BIN ABDULLAH</div>
+          <div class="spk-role">Director, HTPN Kajang</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -3729,7 +3752,7 @@ a { text-decoration: none; color: inherit; }
 <!-- ============ JURY ============ -->
 <section class="jury-section" id="jury">
   <div class="pillars-eyebrow-label">MEET THE PANEL</div>
-  <h2 class="jury-heading">OUR JURY</h2>
+  <h2 class="jury-heading">OUR JURIES / SPEAKERS</h2>
   <p class="jury-intro">Innovathon 2026 is evaluated by an esteemed panel of clinical leaders, technologists, and healthcare innovators — each bringing deep expertise in the sectors that matter most. Their collective insight ensures every solution is assessed against real-world impact, clinical relevance, and transformative potential.</p>
   <p class="jury-tap-hint">Tap any photo to view full profile</p>
   <div class="jury-grid" id="juryGrid">
@@ -4900,16 +4923,34 @@ statNums.forEach(el => statObserver.observe(el));
       bio:  'Assoc. Prof. Ts. Dr. Shukor served as Rector of UiTM Perlis Branch from 2021 to 2024. He holds a PhD in Software Engineering from the University of New South Wales (UNSW), Australia. His expertise includes empirical software engineering, mining software repositories, and socio-technical congruence. He is currently a member of the Advisory Working Group for the National Artificial Intelligence Office (NAIO).'
     },
     {
+      name: 'Assoc. Prof. Raja Mohd Tariqi',
+      org:  'Universiti Selangor (UNISEL)',
+      photo:'images/jury/prof-tariqi.png',
+      bio:  'Associate Professor in the Computing Department, Faculty of Communication, Visual Arts and Computing at Universiti Selangor. With over 20 years of experience as a computer professional and academician, he specialises in Smart Cities / States Strategic Planning, Big Data Analytics, M2M Controller and Application, ERP and SCM environments. He has served as Dean of the Faculty of Computer Science and Information Technology, Director of the ICT Centre, and currently serves as Director for Research and Industrial Linkages at UNISEL.'
+    },
+    {
+      name: 'Dr. Siv Azhar Merican Bin Abdullah',
+      org:  'Hospital Tengku Permaisuri Norashikin (HTPN), Kajang',
+      photo:'images/dr-azhar.png',
+      bio:  'Dr. Azhar is a healthcare leader with over 15 years of experience managing public hospitals under Malaysia\'s Ministry of Health. He has led six hospitals, successfully commissioned two IT hospitals, and oversaw the development of a Women\'s & Children\'s clinical block. Renowned for his data-driven leadership, he bridges clinical and administrative perspectives to advance healthcare quality and patient safety. Dr. Azhar serves as an Accreditation Surveyor for the Malaysian Society for Quality in Health (MSQH) and is an active health management researcher with publications and international presentations. His achievements have earned numerous national and international awards and recognitions.'
+    },
+    {
       name: 'Dr. Ahmad Hakiim Jamaluddin',
       org:  'Universiti Putra Malaysia (UPM)',
       photo:'images/jury/Dr Ahmad Hakiim.jpeg',
       bio:  'Dr. Ahmad Hakiim is a Senior Lecturer in Statistics and Data Science at UPM. He earned his PhD in Mathematics and Statistics from UNSW Sydney, where he was nominated for the Outstanding PhD Theses Award. He leads the Education Sector for the AI Talents Working Group at the National AI Office (NAIO) and acts as an Artificial Intelligence Research Fellow for several hospitals.'
     },
     {
-      name: 'Dr. Izzun Nasheef M Hamsuri',
-      org:  'Hospital Daerah Dalat',
-      photo:'images/jury/dr izzun nasheef.jpeg',
-      bio:  'Dr. Izzun Nasheef is the Hospital Director of Hospital Dalat in Sarawak. Transitioning from clinical surgery to healthcare leadership, he has over 14 years of experience with the Ministry of Health Malaysia and holds a Master\'s degree in Health Leadership and Management from UNSW, Australia. He specialises in clinical governance, public policy, and hospital bed management systems, and recently won a Silver Medal for his PRISM-D innovation.'
+      name: 'Dr. Ishak Ibrahim',
+      org:  'RayaTech',
+      photo:'images/jury/dr-ishak.jpeg',
+      bio:  null
+    },
+    {
+      name: 'Wan Ahmad Jafri Wan Abdul Aziz',
+      org:  'MIMOS',
+      photo:'images/jury/wan ahmad jafri photo.png',
+      bio:  'Wan Ahmad Jafri is the Acting Chief Executive Officer and Chief Business Development Officer at MIMOS. With a Bachelor of Engineering in Electrical & Electronics and an MBA, he brings over two decades of technical and business development experience from organisations including Sony, Telekom Malaysia, and Alcatel Lucent. His current focus involves public sector solutions and aligning technology with strategic government service goals.'
     },
     {
       name: 'Amran Mansoor',
@@ -4924,10 +4965,10 @@ statNums.forEach(el => statObserver.observe(el));
       bio:  'Dr. Ezam Mat Ali is the Founder and CEO of MedPlanner, a health-tech company building responsible Health AI solutions in Southeast Asia. A paediatrician turned digital health entrepreneur, he holds an MD from the University of Nottingham and a Master\'s in Technology in Clinical Practice from UCL. He leverages his background as a Consultant Neonatal Paediatrician to lead a team developing AI-powered ecosystems to improve care coordination.'
     },
     {
-      name: 'Wan Ahmad Jafri Wan Abdul Aziz',
-      org:  'MIMOS',
-      photo:'images/jury/wan ahmad jafri photo.png',
-      bio:  'Wan Ahmad Jafri is the Acting Chief Executive Officer and Chief Business Development Officer at MIMOS. With a Bachelor of Engineering in Electrical & Electronics and an MBA, he brings over two decades of technical and business development experience from organisations including Sony, Telekom Malaysia, and Alcatel Lucent. His current focus involves public sector solutions and aligning technology with strategic government service goals.'
+      name: 'Dr. Izzun Nasheef M Hamsuri',
+      org:  'Hospital Daerah Dalat',
+      photo:'images/jury/dr izzun nasheef.jpeg',
+      bio:  'Dr. Izzun Nasheef is the Hospital Director of Hospital Dalat in Sarawak. Transitioning from clinical surgery to healthcare leadership, he has over 14 years of experience with the Ministry of Health Malaysia and holds a Master\'s degree in Health Leadership and Management from UNSW, Australia. He specialises in clinical governance, public policy, and hospital bed management systems, and recently won a Silver Medal for his PRISM-D innovation.'
     },
     {
       name: 'Dr. Wan Zuraini binti Mahrawi',
@@ -4935,8 +4976,6 @@ statNums.forEach(el => statObserver.observe(el));
       photo:'images/jury/Dr Wan Zuraini.jpeg',
       bio:  'Dr. Wan Zuraini is the Head of the Patient Risk Management and Clinical Surveillance Unit at IKN under the Ministry of Health. She is a PhD candidate in AI-CPD & Transfer of Learning in Healthcare at UPM and a Lead Auditor candidate for ISO/IEC 42001 Artificial Intelligence Management Systems. Her specialisations cover AI governance, generative AI in healthcare, clinical quality management, and wound care medicine.'
     },
-    { name: 'Dr. Ishak',          org: 'RayaTech',  photo: null, bio: null },
-    { name: 'Prof. Tariqi',        org: 'UNISEL',    photo: null, bio: null },
     { name: 'TBA',                 org: 'MPC / RKB', photo: null, bio: null }
   ];
 
