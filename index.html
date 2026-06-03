@@ -891,6 +891,44 @@ a { text-decoration: none; color: inherit; }
   padding: 72px 7%;
   position: relative;
 }
+/* Aceternity-style dot grid */
+.why-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Hero highlight effect on heading */
+.why-hl {
+  position: relative;
+  display: inline;
+}
+.why-hl::after {
+  content: '';
+  position: absolute;
+  left: -3px; right: -3px;
+  bottom: 1px;
+  height: 10px;
+  background: linear-gradient(90deg, #FCD34D 0%, #F59E0B 50%, #FDE68A 100%);
+  border-radius: 3px;
+  z-index: -1;
+  opacity: 0.82;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.why-hl.hl-active::after {
+  animation: hl-sweep 1.1s cubic-bezier(0.25,0.46,0.45,0.94) var(--hl-delay, 0s) forwards;
+}
+@keyframes hl-sweep {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.why-section .section-heading { position: relative; z-index: 1; }
+.why-section .why-grid,
+.why-section .pillars-eyebrow-label { position: relative; z-index: 1; }
 .why-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -3545,7 +3583,7 @@ a { text-decoration: none; color: inherit; }
   <div class="pillars-eyebrow-label">WHY THIS CONVENTION</div>
   <h2 class="section-heading section-heading-light reveal" style="font-size:clamp(32px,4vw,52px);max-width:600px">
     MORE THAN A CONVENTION.<br>
-    MALAYSIA'S LIGHTHOUSE<br>HOSPITAL IN ACTION.
+    <span class="why-hl">MALAYSIA'S LIGHTHOUSE</span><br><span class="why-hl" style="--hl-delay:0.35s">HOSPITAL IN ACTION.</span>
   </h2>
   <div class="why-grid">
     <div class="why-copy reveal">
@@ -4555,6 +4593,22 @@ const statObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 statNums.forEach(el => statObserver.observe(el));
+
+// --- Hero highlight (why section heading) ---
+(function() {
+  var hlSpans = document.querySelectorAll('.why-hl');
+  if (!hlSpans.length) return;
+  var whySec = document.querySelector('.why-section');
+  if (!whySec) return;
+  var fired = false;
+  new IntersectionObserver(function(entries) {
+    if (fired || !entries[0].isIntersecting) return;
+    fired = true;
+    hlSpans.forEach(function(span, i) {
+      setTimeout(function() { span.classList.add('hl-active'); }, i * 350);
+    });
+  }, { threshold: 0.4 }).observe(whySec);
+})();
 
 // ============================================
 // REGISTRATION FORM — Google Sheets submission
