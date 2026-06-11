@@ -50,6 +50,66 @@ a { text-decoration: none; color: inherit; }
 h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
 /* ============================================
+   LOADING SCREEN
+   ============================================ */
+.load-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal-deep);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.load-screen.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.load-screen-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 0 24px;
+}
+.load-logo {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4vw, 32px);
+  letter-spacing: 0.18em;
+  color: var(--white);
+}
+.load-bar-track {
+  width: min(280px, 60vw);
+  height: 3px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.load-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #1D9E75, #5DCAA5, #F0C832);
+  background-size: 200% auto;
+  animation: load-bar-shimmer 1.6s linear infinite;
+  transition: width 0.25s ease-out;
+}
+@keyframes load-bar-shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.load-pct {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.55);
+}
+@media (prefers-reduced-motion: reduce) {
+  .load-bar-fill { animation: none; }
+}
+
+/* ============================================
    PAPER TEXTURE UTILITY
    ============================================ */
 .paper-texture {
@@ -3402,11 +3462,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   .cmt-tier { padding: 22px 0; }
   .cmt-stack-panel {
     top: 52px;
-    height: calc(100svh - 52px);
     min-height: calc(100svh - 52px);
     padding: 30px 0;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
   .cmt-stack-index { font-size: 10px; top: 12px; right: 16px; }
 }
@@ -3546,6 +3603,17 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 </style>
 </head>
 <body>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div class="load-screen" id="loadScreen">
+  <div class="load-screen-inner">
+    <div class="load-logo">INNOVATHON 2026</div>
+    <div class="load-bar-track">
+      <div class="load-bar-fill" id="loadBarFill"></div>
+    </div>
+    <div class="load-pct" id="loadPct">0%</div>
+  </div>
+</div>
 
 <!-- ============ STICKY NAV ============ -->
 <nav class="nav" id="mainNav">
@@ -4985,6 +5053,57 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
 <!-- ============ JAVASCRIPT ============ -->
 <script>
+// --- Loading screen ---
+(function() {
+  const screen = document.getElementById('loadScreen');
+  const fill   = document.getElementById('loadBarFill');
+  const pct    = document.getElementById('loadPct');
+  if (!screen || !fill || !pct) return;
+
+  function hide() {
+    fill.style.width = '100%';
+    pct.textContent = '100%';
+    screen.classList.add('loaded');
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Track only eagerly-loaded assets — lazy-loaded images shouldn't block the indicator
+    const assets = Array.from(document.querySelectorAll('img, video source, video'))
+      .filter(function(el) { return el.loading !== 'lazy'; });
+    const total = assets.length || 1;
+    let loaded = 0;
+
+    function update() {
+      loaded = Math.min(loaded + 1, total);
+      const percent = Math.round((loaded / total) * 100);
+      fill.style.width = percent + '%';
+      pct.textContent = percent + '%';
+    }
+
+    if (assets.length === 0) {
+      hide();
+      return;
+    }
+
+    assets.forEach(function(el) {
+      const isLoaded = el.tagName === 'IMG' ? el.complete
+                     : el.tagName === 'VIDEO' ? el.readyState >= 1
+                     : false;
+      if (isLoaded) {
+        update();
+      } else {
+        el.addEventListener('load', update, { once: true });
+        el.addEventListener('loadeddata', update, { once: true });
+        el.addEventListener('error', update, { once: true });
+      }
+    });
+  });
+
+  window.addEventListener('load', hide);
+  // Safety net in case some assets never fire load/error
+  setTimeout(hide, 10000);
+})();
+
 // --- Mobile menu ---
 function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
