@@ -3398,7 +3398,6 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   background: var(--teal-deep);
   padding: 80px 7% 110px;
-  overflow: hidden;
   background-image:
     radial-gradient(ellipse 800px 500px at 80% 0%, rgba(29,158,117,.14), transparent),
     radial-gradient(ellipse 600px 500px at 10% 30%, rgba(240,200,50,.06), transparent),
@@ -3447,25 +3446,37 @@ a { text-decoration: none; color: inherit; }
   max-width: 560px; margin: 22px auto 0; line-height: 1.6;
 }
 
-/* spine */
 .cmt-chart { position: relative; margin-top: 70px; }
-.cmt-spine {
-  position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
-  transform: translateX(-50%);
-  background: linear-gradient(180deg, #5DCAA5, #1D9E75 40%, #F0C832 90%);
-  opacity: .45;
+
+/* stacking sticky tiers — each tier pins to the viewport, then the next slides over it */
+.cmt-stack-panel {
+  position: sticky;
+  top: 60px;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--teal-deep);
+  background-image:
+    radial-gradient(ellipse 800px 500px at 80% 0%, rgba(29,158,117,.14), transparent),
+    radial-gradient(ellipse 600px 500px at 10% 30%, rgba(240,200,50,.06), transparent),
+    radial-gradient(ellipse 800px 600px at 50% 100%, rgba(93,202,165,.07), transparent),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='121' viewBox='0 0 140 121'%3E%3Cpath d='M35 1 L70 21 L70 60 L35 80 L0 60 L0 21 Z M105 61 L140 81 L140 120 L105 140 L70 120 L70 81 Z' fill='none' stroke='%231D9E75' stroke-opacity='.22' stroke-width='1'/%3E%3C/svg%3E");
+  border-top: 1px solid rgba(93,202,165,.25);
+  box-shadow: 0 -30px 60px -20px rgba(0,0,0,.6);
+  padding: 50px 0;
 }
-.cmt-spine::before, .cmt-spine::after {
-  content: ''; position: absolute; left: 50%; width: 10px; height: 10px; border-radius: 50%;
-  transform: translateX(-50%); background: #5DCAA5;
-  box-shadow: 0 0 12px #5DCAA5, 0 0 26px #5DCAA5;
-  animation: cmt-pulsedown 4.5s linear infinite;
+.cmt-stack-panel:nth-child(1) { z-index: 1; }
+.cmt-stack-panel:nth-child(2) { z-index: 2; }
+.cmt-stack-panel:nth-child(3) { z-index: 3; }
+.cmt-stack-panel:nth-child(4) { z-index: 4; }
+.cmt-stack-panel:nth-child(5) { z-index: 5; }
+.cmt-stack-panel:nth-child(6) { z-index: 6; }
+.cmt-stack-index {
+  position: absolute; top: 18px; right: 24px;
+  font-family: var(--font-display);
+  font-size: 12px; letter-spacing: .35em; color: rgba(255,255,255,.3);
 }
-.cmt-spine::after {
-  animation-delay: 2.25s; background: #F0C832;
-  box-shadow: 0 0 12px #F0C832, 0 0 26px #F0C832;
-}
-@keyframes cmt-pulsedown { 0%{top:-1%;opacity:0;} 6%{opacity:1;} 94%{opacity:1;} 100%{top:101%;opacity:0;} }
 
 /* tiers */
 .cmt-tier { position: relative; display: flex; justify-content: center; gap: 26px; flex-wrap: wrap; padding: 34px 0; }
@@ -3560,14 +3571,6 @@ a { text-decoration: none; color: inherit; }
 .fifth .cmt-members li { font-size: 13px; }
 .fifth .cmt-chipicon { width: 38px; height: 38px; }
 
-/* connector stubs from spine to side cards */
-.cmt-tier.duo .cmt-card::before {
-  content: ''; position: absolute; top: 50%; width: 30px; height: 2px;
-  background: linear-gradient(90deg, #1D9E75, transparent); opacity: .6;
-}
-.cmt-tier.duo .cmt-card:first-of-type::before { right: -30px; transform: scaleX(-1); }
-.cmt-tier.duo .cmt-card:last-of-type::before { left: -30px; }
-
 .cmt-footer {
   margin-top: 80px; text-align: center;
   font-family: var(--font-display);
@@ -3577,14 +3580,23 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 760px) {
   .committee-section { padding: 56px 20px 80px; }
-  .cmt-spine { display: none; }
   .cmt-card, .cmt-card.wide, .cmt-card.half, .cmt-card.quarter, .cmt-card.fifth { width: 100%; max-width: 430px; }
   .cmt-tier { padding: 22px 0; }
+  .cmt-stack-panel {
+    top: 52px;
+    height: calc(100svh - 52px);
+    min-height: calc(100svh - 52px);
+    padding: 30px 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cmt-stack-index { font-size: 10px; top: 12px; right: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cmt-card, .cmt-card.on { animation: none; opacity: 1; transform: none; }
   .cmt-card.on .cmt-members li { animation: none; opacity: 1; transform: none; }
-  .cmt-spine::before, .cmt-spine::after, .cmt-ekg path, .cmt-led, .cmt-card.on::after { animation: none; }
+  .cmt-ekg path, .cmt-led, .cmt-card.on::after { animation: none; }
+  .cmt-stack-panel { position: static; min-height: auto; box-shadow: none; }
 }
 
 </style>
@@ -4700,9 +4712,10 @@ a { text-decoration: none; color: inherit; }
     <p class="cmt-lede">The minds powering the machine. Scroll to boot up each unit of the committee circuit.</p>
 
     <div class="cmt-chart">
-      <div class="cmt-spine"></div>
 
       <!-- TIER 1: ADVISORS -->
+      <div class="cmt-stack-panel">
+      <span class="cmt-stack-index">01 / 06</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">ADVISORY</span>
         <div class="cmt-card wide">
@@ -4718,8 +4731,11 @@ a { text-decoration: none; color: inherit; }
           </ul>
         </div>
       </div>
+      </div>
 
       <!-- TIER 2: COORDINATION -->
+      <div class="cmt-stack-panel">
+      <span class="cmt-stack-index">02 / 06</span>
       <div class="cmt-tier duo">
         <span class="cmt-tier-label">COORDINATION</span>
         <div class="cmt-card half gd">
@@ -4744,8 +4760,11 @@ a { text-decoration: none; color: inherit; }
           </ul>
         </div>
       </div>
+      </div>
 
       <!-- TIER 3: SECRETARY -->
+      <div class="cmt-stack-panel">
+      <span class="cmt-stack-index">03 / 06</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAL</span>
         <div class="cmt-card">
@@ -4759,8 +4778,11 @@ a { text-decoration: none; color: inherit; }
           </ul>
         </div>
       </div>
+      </div>
 
       <!-- TIER 4: FLOOR MANAGERS -->
+      <div class="cmt-stack-panel">
+      <span class="cmt-stack-index">04 / 06</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">FLOOR OPERATIONS</span>
         <div class="cmt-card quarter gd">
@@ -4796,8 +4818,11 @@ a { text-decoration: none; color: inherit; }
           <ul class="cmt-members"><li>En Anwar Aizuddin bin Abdul Wahab</li></ul>
         </div>
       </div>
+      </div>
 
       <!-- TIER 5: SECRETARIATS ROW 1 -->
+      <div class="cmt-stack-panel">
+      <span class="cmt-stack-index">05 / 06</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAT UNITS · 01–05</span>
         <div class="cmt-card fifth">
@@ -4865,8 +4890,11 @@ a { text-decoration: none; color: inherit; }
           </ul>
         </div>
       </div>
+      </div>
 
       <!-- TIER 6: SECRETARIATS ROW 2 -->
+      <div class="cmt-stack-panel">
+      <span class="cmt-stack-index">06 / 06</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAT UNITS · 06–09</span>
         <div class="cmt-card quarter">
@@ -4915,6 +4943,7 @@ a { text-decoration: none; color: inherit; }
             <li>En Mohd Hafizi bin Zakaria</li>
           </ul>
         </div>
+      </div>
       </div>
     </div>
 
