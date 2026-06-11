@@ -1998,21 +1998,6 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   justify-content: space-between;
   align-items: center;
 }
-/* NARRATIVE SCROLL */
-.narrative-section{position:relative;background:#06100e;height:100dvh;overflow:hidden}
-.narrative-sticky{height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.narrative-bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 50% 50%,rgba(29,158,117,.18),transparent);pointer-events:none;transition:background 1s ease}
-.n-step{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 32px;opacity:0;transition:opacity .5s ease;pointer-events:none}.n-step.n-active{opacity:1;pointer-events:auto}.tw-cursor{display:inline-block;width:2px;height:.85em;background:#fff;margin-left:1px;vertical-align:text-bottom;animation:tw-blink .65s step-end infinite}@keyframes tw-blink{50%{opacity:0}}.narr-tap-btn{position:absolute;left:50%;transform:translateX(-50%) translateY(20px);z-index:300;font-family:var(--font-display);font-size:13px;letter-spacing:.22em;color:#fff;background:rgba(29,158,117,.12);border:1.5px solid rgba(29,158,117,.7);border-radius:100px;padding:16px 44px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .4s ease,transform .4s ease,background .25s;animation:tap-pulse 2.4s ease-in-out infinite}.narr-tap-btn.visible{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}.narr-tap-btn:hover{background:rgba(29,158,117,.3);border-color:rgba(29,158,117,1)}@keyframes tap-pulse{0%,100%{box-shadow:0 0 0 0 rgba(29,158,117,.45)}60%{box-shadow:0 0 0 16px rgba(29,158,117,0)}}
-.n-label{font-family:var(--font-display);font-size:16px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--teal-accent);margin-bottom:36px;display:block;opacity:1}
-.n-text{font-family:var(--font-display);font-size:clamp(36px,5.8vw,90px);color:var(--white);line-height:1.15;letter-spacing:-.01em;max-width:900px;text-shadow:0 0 80px rgba(29,158,117,.2);overflow-wrap:break-word;word-break:break-word}
-.n-question{font-size:clamp(40px,6.5vw,100px);letter-spacing:-.02em;line-height:1}
-.n-hi{color:var(--teal-light);font-style:italic}
-.n-gold{color:var(--gold);display:block;margin-top:16px;font-size:1.15em;letter-spacing:.04em}.n-pi{color:var(--gold);font-style:italic;font-weight:700;margin-right:0.18em}
-.n-progress-bar{position:absolute;bottom:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--teal-accent),var(--gold));z-index:10;box-shadow:0 0 8px rgba(29,158,117,.6)}
-.n-scroll-hint{display:none}
-.n-scroll-hint::after{content:''  ;display:block;width:1px;height:44px;background:linear-gradient(to bottom,rgba(29,158,117,.5),transparent);animation:n-line 2s ease-in-out infinite}
-@keyframes n-line{0%{transform:scaleY(0);transform-origin:top;opacity:0}40%{opacity:1}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom;opacity:0}}
-@media(max-width:768px){.n-text{font-size:clamp(28px,7vw,48px)}.n-question{font-size:clamp(32px,8vw,54px)}}
 .footer-copy {
   font-size: 10px;
   color: rgba(255,255,255,0.15);
@@ -3665,36 +3650,6 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   <a href="#committee"      class="mobile-menu-link" onclick="toggleMenu()">COMMITTEE</a>
   <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfmrIhEUt8nqr9rGYCbgmlF203G-t2iSvTjPzkuJXO0WrVr0w/viewform?usp=dialog"       class="mobile-menu-link mobile-menu-cta" onclick="toggleMenu()">REGISTER FREE</a>
 </div>
-
-<!-- ============ NARRATIVE SCROLL ============ -->
-<section id="narrative" class="narrative-section">
-  <div class="narrative-sticky">
-    <div class="narrative-bg-glow" id="narr-glow"></div>
-    <div class="n-progress-bar" id="narr-progress"></div>
-    <div class="n-step" id="ns-1">
-      <span class="n-label">THE REALITY</span>
-      <p class="n-text">Inefficient workflows are slowing down clinical care.</p>
-      <div class="n-scroll-hint">SCROLL</div>
-    </div>
-    <div class="n-step" id="ns-2">
-      <span class="n-label">THE QUESTION</span>
-      <h2 class="n-text n-question">WHAT IS PRODUCTIVITY INTELLIGENCE <span class="n-pi">(PI)</span>?</h2>
-    </div>
-    <div class="n-step" id="ns-3a">
-      <span class="n-label">DEFINITION 01</span>
-      <p class="n-text"><span class="n-pi">PI</span> is the intersection of <span class="n-hi">smart technology</span> and peak productivity.</p>
-    </div>
-    <div class="n-step" id="ns-3b">
-      <span class="n-label">DEFINITION 02</span>
-      <p class="n-text"><span class="n-pi">PI</span> identifies bottlenecks, eliminates waste, and allows hospitals to <span class="n-hi">build, compete, and share solutions.</span></p>
-    </div>
-    <div class="n-step" id="ns-4">
-      <span class="n-label">THE ANSWER</span>
-      <p class="n-text">The best place to find these solutions?</p>
-    </div>
-    <button class="narr-tap-btn" id="narrativeTapBtn" aria-label="Continue to next slide">TAP TO CONTINUE →</button>
-  </div><!-- /.narrative-sticky -->
-</section>
 
 <!-- ============ HERO ============ -->
 <section class="hero">
@@ -5452,123 +5407,6 @@ statNums.forEach(el => statObserver.observe(el));
   });
 })();
 
-  /* ── NARRATIVE TAP-TYPEWRITER (replaced GSAP scroll) ── */
-  window.addEventListener('load', function () {
-    var stepIds = ['ns-1','ns-2','ns-3a','ns-3b','ns-4'];
-    var tapBtn  = document.getElementById('narrativeTapBtn');
-    var prog    = document.getElementById('narr-progress');
-    var glow    = document.getElementById('narr-glow');
-    var current = 0;
-    var typing  = false;
-
-    var glowBgs = [
-      'radial-gradient(ellipse 60% 55% at 50% 50%,rgba(29,158,117,.18),transparent)',
-      'radial-gradient(ellipse 70% 65% at 50% 50%,rgba(80,100,240,.18),transparent)',
-      'radial-gradient(ellipse 60% 55% at 50% 50%,rgba(29,158,117,.24),transparent)',
-      'radial-gradient(ellipse 60% 55% at 50% 50%,rgba(29,158,117,.24),transparent)',
-      'radial-gradient(ellipse 90% 80% at 50% 50%,rgba(200,169,126,.26),transparent)'
-    ];
-
-    /* store original HTML for each step */
-    var steps = stepIds.map(function (id) {
-      var el  = document.getElementById(id);
-      if (!el) return null;
-      var lEl = el.querySelector('.n-label');
-      var tEl = el.querySelector('.n-text') || el.querySelector('h2');
-      return { el:el, lEl:lEl, tEl:tEl,
-               lHTML: lEl ? lEl.innerHTML : '',
-               tHTML: tEl ? tEl.innerHTML : '' };
-    });
-
-    function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-    function plain(html) { var d=document.createElement('div'); d.innerHTML=html; return d.textContent||''; }
-
-    var CURSOR = '<span class="tw-cursor"></span>';
-
-    function typeInto(el, html, onDone) {
-      if (!el) { if (onDone) onDone(); return; }
-      var txt = plain(html);
-      var i   = 0;
-      el.innerHTML = CURSOR;
-      typing = true;
-      (function tick() {
-        if (i <= txt.length) {
-          el.innerHTML = esc(txt.substring(0,i)) + CURSOR;
-          i++;
-          setTimeout(tick, Math.random()*30 + 20);
-        } else {
-          el.innerHTML = html;   /* restore styled HTML */
-          typing = false;
-          if (onDone) onDone();
-        }
-      })();
-    }
-
-    function showStep(idx) {
-      var s = steps[idx];
-      if (!s) return;
-      s.el.classList.add('n-active');
-      if (glow) glow.style.background = glowBgs[idx] || glowBgs[0];
-      if (prog) prog.style.width = ((idx+1)/steps.length*100)+'%';
-      if (s.lEl) s.lEl.innerHTML = '';
-      if (s.tEl) s.tEl.innerHTML = '';
-      typeInto(s.lEl, s.lHTML, function () {
-        typeInto(s.tEl, s.tHTML, function () {
-          var isLast = idx === steps.length - 1;
-          if (tapBtn) {
-            tapBtn.textContent = isLast ? 'ENTER →' : 'TAP TO CONTINUE →';
-            var lastEl = s.tEl || s.lEl;
-            if (lastEl) {
-              var rect = lastEl.getBoundingClientRect();
-              var stickyRect = lastEl.closest('.narrative-sticky').getBoundingClientRect();
-              tapBtn.style.top = (rect.bottom - stickyRect.top + 32) + 'px';
-            }
-            tapBtn.classList.add('visible');
-          }
-        });
-      });
-    }
-
-    function advance() {
-      if (typing) return;
-      if (tapBtn) tapBtn.classList.remove('visible');
-      var s = steps[current];
-      if (s) s.el.classList.remove('n-active');
-      current++;
-      if (current >= steps.length) {
-        /* collapse narrative and jump to hero */
-        var narSec = document.querySelector('.narrative-section');
-        var heroEl = document.querySelector('section.hero');
-        tapBtn.classList.remove('visible');
-        tapBtn.style.display = 'none';
-        if (narSec) { narSec.style.height='0'; narSec.style.minHeight='0'; narSec.style.overflow='hidden'; }
-        requestAnimationFrame(function () {
-          if (heroEl) window.scrollTo({ top: heroEl.getBoundingClientRect().top + window.pageYOffset, behavior:'instant' });
-          if (typeof ScrollTrigger !== 'undefined') setTimeout(function(){ ScrollTrigger.refresh(true); }, 300);
-        });
-      } else {
-        setTimeout(function () { showStep(current); }, 380);
-      }
-    }
-
-    if (tapBtn) tapBtn.addEventListener('click', advance);
-    document.addEventListener('keydown', function (e) {
-      if ((e.key===' '||e.key==='Enter'||e.key==='ArrowRight') && current < steps.length && document.querySelector('.n-step.n-active')) {
-        e.preventDefault(); advance();
-      }
-    });
-
-    /* Hide button whenever narrative section is not in viewport */
-    var narrSec = document.querySelector('.narrative-section');
-    if (narrSec && tapBtn) {
-      new IntersectionObserver(function (entries) {
-        if (!entries[0].isIntersecting) tapBtn.classList.remove('visible');
-      }, { threshold: 0.05 }).observe(narrSec);
-    }
-
-    showStep(0);
-
-  });
 </script>
 
 <script>
