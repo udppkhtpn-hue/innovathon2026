@@ -3460,11 +3460,22 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   .committee-section { padding: 56px 20px 80px; }
   .cmt-card, .cmt-card.wide, .cmt-card.half, .cmt-card.quarter, .cmt-card.fifth { width: 100%; max-width: 430px; }
   .cmt-tier { padding: 22px 0; }
+  /* Peeking-deck pattern: each panel sized to its content, staggered
+     top offsets so the panel underneath peeks out before being covered */
   .cmt-stack-panel {
-    top: 52px;
-    min-height: calc(100svh - 52px);
-    padding: 30px 0;
+    display: block;
+    min-height: 0;
+    padding: 26px 0 30px;
+    border: 1px solid rgba(93,202,165,.25);
+    border-radius: 18px;
+    box-shadow: 0 14px 40px -10px rgba(0,0,0,.55);
   }
+  .cmt-stack-panel:nth-child(1) { top: 52px; }
+  .cmt-stack-panel:nth-child(2) { top: 68px; }
+  .cmt-stack-panel:nth-child(3) { top: 84px; }
+  .cmt-stack-panel:nth-child(4) { top: 100px; }
+  .cmt-stack-panel:nth-child(5) { top: 116px; }
+  .cmt-stack-panel:nth-child(6) { top: 132px; }
   .cmt-stack-index { font-size: 10px; top: 12px; right: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
