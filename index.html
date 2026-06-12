@@ -225,30 +225,6 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   align-items: center;
   gap: 10px;
 }
-.lang-toggle {
-  display: flex;
-  border: 0.5px solid rgba(255,255,255,0.2);
-  border-radius: 3px;
-  overflow: hidden;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-}
-.lang-toggle button {
-  padding: 4px 9px;
-  background: transparent;
-  border: none;
-  color: rgba(255,255,255,0.4);
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: var(--font-body);
-  font-size: 9px;
-  font-weight: 600;
-}
-.lang-toggle button.active {
-  background: rgba(29,158,117,0.3);
-  color: var(--teal-light);
-}
 .btn-nav {
   font-family: var(--font-display);
   font-size: 13px;
@@ -2034,7 +2010,6 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   .nav-logo-main { font-size: 15px; }
   .nav-logo-sub { display: none; }
   .btn-nav { font-size: 10px; padding: 5px 10px; }
-  .lang-toggle button { padding: 3px 6px; }
 
   /* --- HERO --- */
   .hero {
@@ -3299,7 +3274,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .cmt-chart { position: relative; margin-top: 70px; }
 
 /* stacking sticky tiers — each tier pins to the viewport, then the next slides over it */
-.cmt-stack-panel {
+.cmt-stack-panel,
+.cmt-mods-sticky {
   position: sticky;
   top: 60px;
   min-height: calc(100vh - 60px);
@@ -3322,10 +3298,70 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .cmt-stack-panel:nth-child(4) { z-index: 4; }
 .cmt-stack-panel:nth-child(5) { z-index: 5; }
 .cmt-stack-panel:nth-child(6) { z-index: 6; }
+.cmt-stack-panel:nth-child(7) { z-index: 7; }
 .cmt-stack-index {
   position: absolute; top: 18px; right: 24px;
   font-family: var(--font-display);
   font-size: 12px; letter-spacing: .35em; color: rgba(255,255,255,.3);
+}
+
+/* moderators — horizontal sticky pan: tall panel provides scroll distance,
+   inner pins while the card track translates sideways */
+.cmt-stack-panel.cmt-mods-panel {
+  position: relative;
+  top: auto;
+  height: 240vh; /* recalculated in JS to match track width */
+  min-height: 0;
+  display: block;
+  padding: 0;
+}
+.cmt-mods-sticky {
+  height: calc(100vh - 60px);
+  min-height: 0;
+  overflow: hidden;
+  padding: 50px 0;
+}
+.cmt-mods-head { text-align: center; margin-bottom: 26px; }
+.cmt-mods-head .cmt-tier-label { position: static; transform: none; display: inline-block; }
+.cmt-mods-viewport { overflow: hidden; width: 100%; }
+.cmt-mods-track {
+  display: flex; gap: 24px; width: max-content;
+  padding: 10px 8vw;
+  will-change: transform;
+}
+.cmt-mod-card {
+  position: relative; width: 250px; flex-shrink: 0;
+  background: rgba(8,30,28,.88);
+  border: 1px solid rgba(29,158,117,.45); border-radius: 16px;
+  padding: 16px 16px 20px;
+  clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.cmt-mod-card:hover {
+  transform: translateY(-6px); border-color: #5DCAA5;
+  box-shadow: 0 0 0 1px rgba(93,202,165,.5), 0 0 34px rgba(93,202,165,.28), 0 18px 40px rgba(0,0,0,.5);
+}
+.cmt-mod-photo {
+  position: relative; width: 100%; aspect-ratio: 4/5;
+  border-radius: 10px; overflow: hidden;
+  background: rgba(93,202,165,.08); border: 1px solid rgba(93,202,165,.3);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.cmt-mod-photo img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  filter: grayscale(30%); transition: filter .3s;
+}
+.cmt-mod-card:hover .cmt-mod-photo img { filter: grayscale(0%); }
+.cmt-mod-ph { font-family: var(--font-display); font-size: 46px; color: rgba(93,202,165,.4); letter-spacing: .05em; }
+.cmt-mod-name { font-family: var(--font-display); font-size: 17px; letter-spacing: .05em; color: #fff; line-height: 1.2; margin-bottom: 6px; }
+.cmt-mod-desig { font-size: 12.5px; color: #5DCAA5; line-height: 1.35; margin-bottom: 4px; }
+.cmt-mod-fac { font-size: 11px; color: rgba(255,255,255,.5); letter-spacing: .05em; text-transform: uppercase; }
+.cmt-mods-hint {
+  text-align: center; margin-top: 24px;
+  font-family: var(--font-display);
+  font-size: 11px; letter-spacing: .3em; color: rgba(255,255,255,.35);
 }
 
 /* tiers */
@@ -3448,13 +3484,39 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   .cmt-stack-panel:nth-child(4) { top: 100px; }
   .cmt-stack-panel:nth-child(5) { top: 116px; }
   .cmt-stack-panel:nth-child(6) { top: 132px; }
+  .cmt-stack-panel:nth-child(7) { top: 148px; }
   .cmt-stack-index { font-size: 10px; top: 12px; right: 16px; }
+  /* moderators: native horizontal swipe instead of scroll-jacked pan */
+  .cmt-stack-panel.cmt-mods-panel {
+    position: sticky;
+    height: auto; min-height: 0;
+    padding: 26px 0 30px;
+  }
+  .cmt-mods-sticky {
+    position: static; top: auto;
+    height: auto; min-height: 0;
+    padding: 0; overflow: visible;
+    background: none; border-top: none; box-shadow: none;
+  }
+  .cmt-mods-viewport {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .cmt-mods-viewport::-webkit-scrollbar { display: none; }
+  .cmt-mods-track { transform: none !important; padding: 8px 20px; gap: 16px; }
+  .cmt-mod-card { width: 220px; scroll-snap-align: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cmt-card, .cmt-card.on { animation: none; opacity: 1; transform: none; }
   .cmt-card.on .cmt-members li { animation: none; opacity: 1; transform: none; }
   .cmt-ekg path, .cmt-led, .cmt-card.on::after { animation: none; }
   .cmt-stack-panel { position: static; min-height: auto; box-shadow: none; }
+  .cmt-stack-panel.cmt-mods-panel { height: auto !important; }
+  .cmt-mods-sticky { position: static; height: auto; }
+  .cmt-mods-viewport { overflow-x: auto; }
+  .cmt-mods-track { transform: none !important; }
 }
 
 /* ============================================
@@ -3614,10 +3676,6 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
     <a href="#committee"     class="nav-link">COMMITTEE</a>
   </div>
   <div class="nav-right">
-    <div class="lang-toggle">
-      <button class="active" onclick="setLang('en')">EN</button>
-      <button onclick="setLang('bm')">BM</button>
-    </div>
     <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfmrIhEUt8nqr9rGYCbgmlF203G-t2iSvTjPzkuJXO0WrVr0w/viewform?usp=dialog" class="btn-nav">REGISTER FREE</a>
     <!-- Mobile hamburger -->
     <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -4663,7 +4721,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 1: ADVISORS -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">01 / 06</span>
+      <span class="cmt-stack-index">01 / 07</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">ADVISORY</span>
         <div class="cmt-card wide">
@@ -4683,7 +4741,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 2: COORDINATION -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">02 / 06</span>
+      <span class="cmt-stack-index">02 / 07</span>
       <div class="cmt-tier duo">
         <span class="cmt-tier-label">COORDINATION</span>
         <div class="cmt-card half gd">
@@ -4704,7 +4762,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
             <div class="cmt-role">DEPUTY COORDINATOR (GOVERNANCE)</div>
           </div>
           <ul class="cmt-members">
-            <li>Pn Uma Annamallai <small>MPC</small></li>
+            <li>Pn Uma Annamallai <small>HTPN</small></li>
           </ul>
         </div>
       </div>
@@ -4712,7 +4770,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 3: SECRETARY -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">03 / 06</span>
+      <span class="cmt-stack-index">03 / 07</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAL</span>
         <div class="cmt-card">
@@ -4728,16 +4786,101 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
       </div>
       </div>
 
-      <!-- TIER 4: FLOOR MANAGERS -->
+      <!-- TIER 4: BREAKOUT SESSION MODERATORS — horizontal sticky pan -->
+      <div class="cmt-stack-panel cmt-mods-panel" id="modsPanel">
+      <div class="cmt-mods-sticky">
+        <span class="cmt-stack-index">04 / 07</span>
+        <div class="cmt-mods-head">
+          <span class="cmt-tier-label">BREAKOUT SESSION MODERATORS</span>
+        </div>
+        <div class="cmt-mods-viewport">
+          <div class="cmt-mods-track" id="modsTrack">
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">IN</span>
+                <img src="images/jury/dr izzun nasheef.jpeg" alt="Dr Izzun Nasheef M Hamsuri" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Izzun Nasheef M Hamsuri</div>
+              <div class="cmt-mod-desig">Hospital Director</div>
+              <div class="cmt-mod-fac">Hospital Daerah Dalat</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">WZ</span>
+                <img src="images/jury/Dr Wan Zuraini.jpeg" alt="Dr Wan Zuraini binti Mahrawi" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Wan Zuraini binti Mahrawi</div>
+              <div class="cmt-mod-desig">Head, Patient Risk Management &amp; Clinical Surveillance Unit</div>
+              <div class="cmt-mod-fac">Institut Kanser Negara (IKN)</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">MR</span>
+                <img src="images/moderators/dr-marzilawati.jpeg" alt="Dr Marzilawati bt Abd Rahman" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Marzilawati bt Abd Rahman</div>
+              <div class="cmt-mod-desig">Consultant Internal Physician</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">SZ</span>
+                <img src="images/moderators/dr-siti-zaleha.jpeg" alt="Dr Siti Zaleha bt Hamzah" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Siti Zaleha bt Hamzah</div>
+              <div class="cmt-mod-desig">Consultant Special Needs Dental</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">DM</span>
+                <img src="images/moderators/dr-darlina.jpeg" alt="Dr Darlina binti Mohd Dhari" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Darlina binti Mohd Dhari</div>
+              <div class="cmt-mod-desig">Consultant Anesthesiologist</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">AA</span>
+                <img src="images/moderators/dr-anita.jpeg" alt="Dr Anita bt Ali" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Anita bt Ali</div>
+              <div class="cmt-mod-desig">Consultant Obstetric &amp; Gynaecologist</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">KA</span>
+                <img src="images/moderators/dr-khairul-azhar.jpeg" alt="Dr Mohd Khairul Azhar" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Mohd Khairul Azhar</div>
+              <div class="cmt-mod-desig">Oral Maxillo-Facial Surgeon</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+          </div>
+        </div>
+        <div class="cmt-mods-hint">KEEP SCROLLING TO PAN →</div>
+      </div>
+      </div>
+
+      <!-- TIER 5: FLOOR MANAGERS -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">04 / 06</span>
+      <span class="cmt-stack-index">05 / 07</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">FLOOR OPERATIONS</span>
         <div class="cmt-card quarter gd">
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
             <div class="cmt-chipicon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 8 L12 3 L22 8 M4 8 V20 M20 8 V20 M2 20 H22 M8 12 V20 M12 12 V20 M16 12 V20"/></svg></div>
-            <div class="cmt-role">FLOOR MANAGER 1 (PENTAS)</div>
+            <div class="cmt-role">FLOOR MANAGER 1 (STAGE)</div>
           </div>
           <ul class="cmt-members"><li>Dr Ashween Kaur a/p Sukhdev Singh</li></ul>
         </div>
@@ -4753,7 +4896,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
             <div class="cmt-chipicon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 3 H6 L9 16 H19 L22 7 H7"/><circle cx="10" cy="20" r="1.8"/><circle cx="18" cy="20" r="1.8"/></svg></div>
-            <div class="cmt-role">FLOOR MANAGER 3 (VENDOR)</div>
+            <div class="cmt-role">FLOOR MANAGER 3 (EXHIBITION)</div>
           </div>
           <ul class="cmt-members"><li>Dr Nur Ita Jusnita binti Rusli</li></ul>
         </div>
@@ -4768,9 +4911,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
       </div>
       </div>
 
-      <!-- TIER 5: SECRETARIATS ROW 1 -->
+      <!-- TIER 6: SECRETARIATS ROW 1 -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">05 / 06</span>
+      <span class="cmt-stack-index">06 / 07</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAT UNITS · 01–05</span>
         <div class="cmt-card fifth">
@@ -4804,7 +4947,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
             <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 8 H19 L18 21 H6 Z M8 8 C8 4 10 2 12 2 C14 2 16 4 16 8"/><path d="M12 11 V18 M10 12.5 C10 11.5 14 11.5 14 13.5 C14 15.5 10 15 10 17 C10 18.5 14 18.5 14 17" stroke-width="1.3"/></svg></div>
-            <div class="cmt-role">SECRETARIAT VENDOR &amp; FINANCE</div>
+            <div class="cmt-role">SECRETARIAT TREASURY &amp; EXHIBITION</div>
           </div>
           <ul class="cmt-members">
             <li>Dr Nur Ita Jusnita binti Rusli</li>
@@ -4840,9 +4983,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
       </div>
       </div>
 
-      <!-- TIER 6: SECRETARIATS ROW 2 -->
+      <!-- TIER 7: SECRETARIATS ROW 2 -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">06 / 06</span>
+      <span class="cmt-stack-index">07 / 07</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAT UNITS · 06–09</span>
         <div class="cmt-card quarter">
@@ -4946,6 +5089,41 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   }, { threshold: 0.18 });
 
   document.querySelectorAll('.cmt-tier').forEach(function(t){ io.observe(t); });
+})();
+
+/* ── Breakout moderators — scroll-driven horizontal pan (desktop only) ── */
+(function(){
+  var panel = document.getElementById('modsPanel');
+  var track = document.getElementById('modsTrack');
+  if(!panel || !track) return;
+  var STICKY_TOP = 60;
+  var mq = window.matchMedia('(max-width: 760px)');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function maxPan(){
+    return Math.max(track.scrollWidth - track.parentElement.clientWidth, 0);
+  }
+
+  /* Panel height = pinned viewport + pan distance, so scroll maps ~1:1 to the track */
+  function size(){
+    if(mq.matches || reduce){ panel.style.height = ''; track.style.transform = ''; return; }
+    panel.style.height = ((window.innerHeight - STICKY_TOP) + maxPan() * 1.4) + 'px';
+  }
+
+  function onScroll(){
+    if(mq.matches || reduce) return;
+    var rect = panel.getBoundingClientRect();
+    var range = panel.offsetHeight - (window.innerHeight - STICKY_TOP);
+    if(range <= 0) return;
+    var progress = Math.min(Math.max((STICKY_TOP - rect.top) / range, 0), 1);
+    track.style.transform = 'translateX(' + (-progress * maxPan()) + 'px)';
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function(){ size(); onScroll(); });
+  window.addEventListener('load', function(){ size(); onScroll(); });
+  size();
+  onScroll();
 })();
 </script>
 
@@ -5074,34 +5252,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const first = document.querySelector('.prog-block');
   if (first) first.classList.add('open');
 });
-
-// --- Bilingual toggle ---
-const translations = {
-  en: {
-    'nav-compete': 'HOME',
-    'nav-speakers': 'SPEAKERS',
-    'nav-programme': 'PROGRAMME',
-    'nav-showcase': 'SHOWCASE',
-    'nav-preconv': 'PRE-CONV.',
-    'nav-partners': 'PARTNERS',
-  },
-  bm: {
-    'nav-compete': 'UTAMA',
-    'nav-speakers': 'PENCERAMAH',
-    'nav-programme': 'PROGRAMME',
-    'nav-showcase': 'PAMERAN',
-    'nav-preconv': 'PRA-KONVENSYEN',
-    'nav-partners': 'RAKAN',
-  }
-};
-function setLang(lang) {
-  document.querySelectorAll('.lang-toggle button').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
-  });
-  document.querySelectorAll('[data-en]').forEach(el => {
-    el.textContent = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
-  });
-}
 
 // --- Sticky nav bg on scroll ---
 const nav = document.getElementById('mainNav');
