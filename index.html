@@ -1222,10 +1222,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   z-index: 20;
   white-space: nowrap;
 }
-/* 3rd speaker below, smaller */
+/* bottom row — three smaller frames */
 .spk-photo-frame-3 {
-  width: 42%;
-  bottom: 0; left: 35%;
+  width: 34%;
+  bottom: 0; left: 0;
   transform: rotate(1deg);
   z-index: 4;
 }
@@ -1234,14 +1234,26 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   z-index: 12;
 }
 
-/* 4th speaker — tucked bottom-right */
+/* 4th speaker — bottom-centre */
 .spk-photo-frame-4 {
-  width: 40%;
-  bottom: 0; right: 0;
-  transform: rotate(-2deg);
+  width: 34%;
+  bottom: 0; left: 33%;
+  transform: rotate(-1.5deg);
   z-index: 5;
 }
 .spk-photo-frame-4:hover {
+  transform: rotate(0deg) scale(1.04);
+  z-index: 12;
+}
+
+/* 5th speaker — tucked bottom-right */
+.spk-photo-frame-5 {
+  width: 34%;
+  bottom: 0; right: 0;
+  transform: rotate(2deg);
+  z-index: 6;
+}
+.spk-photo-frame-5:hover {
   transform: rotate(0deg) scale(1.04);
   z-index: 12;
 }
@@ -2135,6 +2147,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   .spk-photo-frame-1 { transform: rotate(-1.5deg) !important; }
   .spk-photo-frame-2 { transform: rotate(1.5deg) !important; }
   .spk-photo-frame-3 { transform: rotate(-1deg) !important; width: 70% !important; }
+  .spk-photo-frame-4 { transform: rotate(1deg) !important; }
+  .spk-photo-frame-5 { transform: rotate(-1.5deg) !important; }
   .spk-photo-inner { aspect-ratio: 4/3 !important; }
   .spk-name-badge .spk-name { font-size: 15px; }
 
@@ -3837,7 +3851,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
         />
       </div>
       <div class="stat-colour-half">
-        <span class="stat-num" data-target="135">0</span>
+        <span class="stat-num" data-target="137">0</span>
         <div class="stat-label">YEARS<br>HTPN LEGACY</div>
       </div>
     </div>
@@ -3855,7 +3869,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   </h2>
   <div class="why-grid">
     <div class="why-copy reveal">
-      <p>HTPN's Healthcare Intelligence Office has built over 50 live clinical applications entirely in-house — without external vendors, without high-cost licences. Led by practicing clinicians, the HIO has transformed how a 135-year-old public hospital builds digital solutions.</p>
+      <p>HTPN's Healthcare Intelligence Office has built over 50 live clinical applications entirely in-house — without external vendors, without high-cost licences. Led by practicing clinicians, the HIO has transformed how a 137-year-old public hospital builds digital solutions.</p>
       <p>This convention shares that model — openly, freely — with every KKM hospital in Malaysia. Come to learn, compete, and take the insourcing revolution home.</p>
       <ul class="why-bullets">
         <li>Insourcing model — built by clinicians, for clinicians</li>
@@ -3936,6 +3950,18 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
       </div>
 
       <div class="spk-photo-frame spk-photo-frame-4">
+        <div class="spk-time-badge">10:30 AM · PLENARY 4</div>
+        <img src="images/jury/Mohd Azirudin.jpeg"
+             alt="Ts. Mohd Azirudin bin Sahhudin — Principal Lecturer, Politeknik Port Dickson"
+             class="spk-photo-inner"
+             style="object-position:center 20%;">
+        <div class="spk-name-badge">
+          <div class="spk-name">TS. MOHD AZIRUDIN BIN SAHHUDIN</div>
+          <div class="spk-role">Principal Lecturer · Politeknik Port Dickson</div>
+        </div>
+      </div>
+
+      <div class="spk-photo-frame spk-photo-frame-5">
         <div class="spk-time-badge">2:30 PM · CLOSING</div>
         <img src="images/dr-azhar.png"
              alt="Dr Hj Muhd Siv Azhar Merican Bin Abdullah — Director HTPN Kajang"
@@ -4030,10 +4056,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   <!-- Pink mosaic tiles — staggered like RenderATL -->
   <div class="badge-tiles">
     <div class="badge-tile">
-      <div class="badge-tile-text">3 PLENARY<br>KEYNOTE SESSIONS</div>
+      <div class="badge-tile-text">4 PLENARY<br>KEYNOTE SESSIONS</div>
     </div>
     <div class="badge-tile">
-      <div class="badge-tile-text">INNOVA-THON<br>COMPETITION<br>ALL 3 ROOMS</div>
+      <div class="badge-tile-text">INNOVA-THON<br>COMPETITION<br>ALL 5 BREAKOUT<br>SESSIONS</div>
     </div>
     <div class="badge-tile">
       <div class="badge-tile-text">50+ APP<br>INNOVATION<br>SHOWCASE</div>
