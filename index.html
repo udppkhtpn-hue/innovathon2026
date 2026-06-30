@@ -3452,10 +3452,20 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   background: rgba(93,202,165,.07); color: #5DCAA5;
   box-shadow: inset 0 0 14px rgba(93,202,165,.12);
 }
-.cmt-chipicon.cmt-photo {
+.cmt-card .cmt-chipicon.cmt-photo {
   width: 138px; height: 138px;
   padding: 0; overflow: hidden; border-radius: 50%;
   background: rgba(93,202,165,.07);
+}
+/* small avatar beside member name */
+.cmt-members li.has-avatar {
+  display: flex; align-items: center; gap: 10px; padding-left: 0;
+}
+.cmt-members li.has-avatar::before { display: none; }
+.cmt-mem-photo {
+  width: 138px; height: 138px; flex-shrink: 0;
+  border-radius: 50%; object-fit: cover; object-position: center top;
+  border: 1.5px solid rgba(93,202,165,.45);
 }
 .cmt-chipicon.cmt-photo img {
   width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%;
@@ -4800,7 +4810,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
         <div class="cmt-card half gd">
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="13" cy="8" r="5"/><path d="M3 24 C3 17 7 15 13 15 C19 15 23 17 23 24"/></svg></div>
+            <div class="cmt-chipicon cmt-photo"><img src="images/fairis.jpeg" alt="Dr Ferwahn Fairis bin Ab Karim" style="object-position:center top;"/></div>
             <div class="cmt-role">COORDINATOR</div>
           </div>
           <ul class="cmt-members">
@@ -4829,7 +4839,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
         <div class="cmt-card">
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="16" height="22" rx="2"/><path d="M9 8 H17 M9 13 H17 M9 18 H14"/></svg></div>
+            <div class="cmt-chipicon cmt-photo"><img src="images/naim.png" alt="Dr Naim bin Abdul Malek" style="object-position:center top;"/></div>
             <div class="cmt-role">SECRETARY</div>
           </div>
           <ul class="cmt-members">
@@ -4912,9 +4922,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
               <span class="cmt-led"></span>
               <div class="cmt-mod-photo">
                 <span class="cmt-mod-ph">KA</span>
-                <img src="images/moderators/dr-khairul-azhar.jpeg" alt="Dr Mohd Khairul Azhar" loading="lazy" onerror="this.style.display='none'">
+                <img src="images/moderators/dr-khairul-azhar.jpeg" alt="Dr Mohd Khairul Anwar bin Mohd Tahir" loading="lazy" onerror="this.style.display='none'">
               </div>
-              <div class="cmt-mod-name">Dr Mohd Khairul Azhar</div>
+              <div class="cmt-mod-name">Dr Mohd Khairul Anwar bin Mohd Tahir</div>
               <div class="cmt-mod-desig">Oral Maxillo-Facial Surgeon</div>
               <div class="cmt-mod-fac">HTPN Kajang</div>
             </div>
@@ -4948,7 +4958,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
         <div class="cmt-card quarter gd">
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 3 H6 L9 16 H19 L22 7 H7"/><circle cx="10" cy="20" r="1.8"/><circle cx="18" cy="20" r="1.8"/></svg></div>
+            <div class="cmt-chipicon cmt-photo"><img src="images/ita.jpeg" alt="Dr Nur Ita Jusnita binti Rusli" style="object-position:center top;"/></div>
             <div class="cmt-role">FLOOR MANAGER 3 (EXHIBITION)</div>
           </div>
           <ul class="cmt-members"><li>Dr Nur Ita Jusnita binti Rusli</li></ul>
@@ -4978,7 +4988,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
           <ul class="cmt-members">
             <li>Dr Ferwahn Fairis bin Ab Karim</li>
             <li>Dr Naim Abdul Malek</li>
-            <li>Dr Muhammad Syafiz bin Ruzain</li>
+            <li class="has-avatar"><img class="cmt-mem-photo" src="images/syafiz.png" alt="Dr Muhammad Syafiz bin Ruzain"><span>Dr Muhammad Syafiz bin Ruzain</span></li>
           </ul>
         </div>
         <div class="cmt-card fifth">
@@ -4994,6 +5004,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
             <li>Dr Aifa <small>Pathology</small></li>
             <li>Dr Nurzahratul Hikma binti Mohamad Zakaria</li>
             <li>Dr Nur Farhana binti Ab Aziz</li>
+          
+            <li>En Wan Adlan bin Wan Mustapha</li>
+            <li>Cik Azura binti Mohd Niza @ Mohd Nizal</li>
+            <li>En Muhammad Faris bin Kharul Salleh</li>
           </ul>
         </div>
         <div class="cmt-card fifth">
@@ -5006,6 +5020,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
             <li>Dr Nur Ita Jusnita binti Rusli</li>
             <li>Pn Azmawati bt. Mamat</li>
             <li>Dr Mohd Faizal bin Nor Azmi <small>Pengerusi Kelab Sukan</small></li>
+          
+            <li>Ms Rubiah bt Mohd Dayaon <small>Chairperson, Persatuan Jabatan Pembedahan Am HTPN Kajang</small></li>
           </ul>
         </div>
         <div class="cmt-card fifth">
@@ -5015,10 +5031,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
             <div class="cmt-role">SECRETARIAT REGISTRATION &amp; INVITATIONS</div>
           </div>
           <ul class="cmt-members">
-            <li>En Mohd Shafiq bin Ab Kadir</li>
-            <li>Dr Norhidayah binti Mahmood</li>
+            <li class="has-avatar"><img class="cmt-mem-photo" src="images/shafiq.png" alt="En Mohd Shafiq bin Ab Kadir"><span>En Mohd Shafiq bin Ab Kadir</span></li>
+            <li class="has-avatar"><img class="cmt-mem-photo" src="images/hidayah.png" alt="Dr Norhidayah binti Mahmood"><span>Dr Norhidayah binti Mahmood</span></li>
             <li>Dr Aina Zuhana binti Bukhari</li>
-            <li>Dr Siti Saihah binti Selamat</li>
+            <li class="has-avatar"><img class="cmt-mem-photo" src="images/salhah.png" alt="Dr Siti Saihah binti Selamat"><span>Dr Siti Saihah binti Selamat</span></li>
           </ul>
         </div>
         <div class="cmt-card fifth">
@@ -5031,6 +5047,11 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
             <li>Pn Azira Ezeyyaristina binti Azaman</li>
             <li>Pn Noor Syahida binti Senin</li>
             <li>Pn Siti Maisurah bt Mohd Ali</li>
+          
+            <li>Puan Jashela Ayuni binti Shahidan</li>
+            <li>Puan Yuslinda binti Ahmad</li>
+            <li>Pn Nurhismahani binti Mohd Nazri</li>
+            <li>En Shahrul badri bin Mohd Din</li>
           </ul>
         </div>
       </div>
