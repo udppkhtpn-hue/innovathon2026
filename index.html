@@ -3335,6 +3335,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .cmt-stack-panel:nth-child(5) { z-index: 5; }
 .cmt-stack-panel:nth-child(6) { z-index: 6; }
 .cmt-stack-panel:nth-child(7) { z-index: 7; }
+.cmt-stack-panel:nth-child(8) { z-index: 8; }
 .cmt-stack-index {
   position: absolute; top: 18px; right: 24px;
   font-family: var(--font-display);
@@ -3540,6 +3541,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   .cmt-stack-panel:nth-child(5) { top: 116px; }
   .cmt-stack-panel:nth-child(6) { top: 132px; }
   .cmt-stack-panel:nth-child(7) { top: 148px; }
+  .cmt-stack-panel:nth-child(8) { top: 164px; }
   .cmt-stack-index { font-size: 10px; top: 12px; right: 16px; }
   /* moderators: native horizontal swipe instead of scroll-jacked pan */
   .cmt-stack-panel.cmt-mods-panel {
@@ -4785,7 +4787,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 1: ADVISORS -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">01 / 07</span>
+      <span class="cmt-stack-index">01 / 08</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">ADVISORY</span>
         <div class="cmt-card wide">
@@ -4805,7 +4807,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 2: COORDINATION -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">02 / 07</span>
+      <span class="cmt-stack-index">02 / 08</span>
       <div class="cmt-tier duo">
         <span class="cmt-tier-label">COORDINATION</span>
         <div class="cmt-card half gd">
@@ -4834,7 +4836,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 3: SECRETARY -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">03 / 07</span>
+      <span class="cmt-stack-index">03 / 08</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAL</span>
         <div class="cmt-card">
@@ -4853,7 +4855,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
       <!-- TIER 4: BREAKOUT SESSION MODERATORS — horizontal sticky pan -->
       <div class="cmt-stack-panel cmt-mods-panel" id="modsPanel">
       <div class="cmt-mods-sticky">
-        <span class="cmt-stack-index">04 / 07</span>
+        <span class="cmt-stack-index">04 / 08</span>
         <div class="cmt-mods-head">
           <span class="cmt-tier-label">BREAKOUT SESSION MODERATORS</span>
         </div>
@@ -4937,7 +4939,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 5: FLOOR MANAGERS -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">05 / 07</span>
+      <span class="cmt-stack-index">05 / 08</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">FLOOR OPERATIONS</span>
         <div class="cmt-card quarter gd">
@@ -4967,7 +4969,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
         <div class="cmt-card quarter gd">
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12 L7 7 L12 11 M22 12 L17 7 L12 11 M7 13 L10 16 M11 12 L14 15 M15 11 L17 13" stroke-linecap="round"/></svg></div>
+            <div class="cmt-chipicon cmt-photo"><img src="images/anwar.png" alt="En Anwar Aizuddin bin Abdul Wahab" style="object-position:center top;"/></div>
             <div class="cmt-role">FLOOR MANAGER 4 (PROTOCOL)</div>
           </div>
           <ul class="cmt-members"><li>En Anwar Aizuddin bin Abdul Wahab</li></ul>
@@ -4977,9 +4979,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 6: SECRETARIATS ROW 1 -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">06 / 07</span>
+      <span class="cmt-stack-index">06 / 08</span>
       <div class="cmt-tier">
-        <span class="cmt-tier-label">SECRETARIAT UNITS · 01–05</span>
+        <span class="cmt-tier-label">SECRETARIAT UNITS · 01–03</span>
         <div class="cmt-card fifth">
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
@@ -5003,8 +5005,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
             <li>Pn Nor Baniana binti Baharum</li>
             <li>Dr Mohd Khairul Anwar bin Mohd Tahir <small>OMFS</small></li>
             <li>Dr Aifa <small>Pathology</small></li>
-            <li>Dr Nurzahratul Hikma binti Mohamad Zakaria</li>
-            <li>Dr Nur Farhana binti Ab Aziz</li>
+            <li class="has-avatar"><img class="cmt-mem-photo" src="images/hikma.jpeg" alt="Dr Nurzahratul Hikma binti Mohamad Zakaria"><span>Dr Nurzahratul Hikma binti Mohamad Zakaria</span></li>
+            <li class="has-avatar"><img class="cmt-mem-photo" src="images/farhana.png" alt="Dr Nur Farhana binti Ab Aziz"><span>Dr Nur Farhana binti Ab Aziz</span></li>
           
             <li>En Wan Adlan bin Wan Mustapha</li>
             <li>Cik Azura binti Mohd Niza @ Mohd Nizal</li>
@@ -5025,6 +5027,14 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
             <li>Ms Rubiah bt Mohd Dayaon <small>Chairperson, Persatuan Jabatan Pembedahan Am HTPN Kajang</small></li>
           </ul>
         </div>
+      </div>
+      </div>
+
+      <!-- TIER 6b: SECRETARIATS 04-05 -->
+      <div class="cmt-stack-panel">
+      <span class="cmt-stack-index">07 / 08</span>
+      <div class="cmt-tier">
+        <span class="cmt-tier-label">SECRETARIAT UNITS · 04–05</span>
         <div class="cmt-card fifth">
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
@@ -5060,7 +5070,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 7: SECRETARIATS ROW 2 -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">07 / 07</span>
+      <span class="cmt-stack-index">08 / 08</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAT UNITS · 06–09</span>
         <div class="cmt-card quarter">
