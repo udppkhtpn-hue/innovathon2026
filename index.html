@@ -3336,6 +3336,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .cmt-stack-panel:nth-child(6) { z-index: 6; }
 .cmt-stack-panel:nth-child(7) { z-index: 7; }
 .cmt-stack-panel:nth-child(8) { z-index: 8; }
+.cmt-stack-panel:nth-child(9) { z-index: 9; }
 .cmt-stack-index {
   position: absolute; top: 18px; right: 24px;
   font-family: var(--font-display);
@@ -3464,6 +3465,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   text-align: center; gap: 8px; padding-left: 0; margin-top: 4px;
 }
 .cmt-members li.has-avatar::before { display: none; }
+/* 2-column avatar grid — keeps photo-heavy cards short enough to fit one sticky viewport */
+.cmt-members.grid-2 { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 22px; }
+.cmt-members.grid-2 li.has-avatar { width: 150px; margin-top: 4px; }
 .cmt-mem-photo {
   width: 138px; height: 138px; flex-shrink: 0;
   border-radius: 50%; object-fit: cover; object-position: center top;
@@ -3542,6 +3546,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   .cmt-stack-panel:nth-child(6) { top: 132px; }
   .cmt-stack-panel:nth-child(7) { top: 148px; }
   .cmt-stack-panel:nth-child(8) { top: 164px; }
+  .cmt-stack-panel:nth-child(9) { top: 180px; }
   .cmt-stack-index { font-size: 10px; top: 12px; right: 16px; }
   /* moderators: native horizontal swipe instead of scroll-jacked pan */
   .cmt-stack-panel.cmt-mods-panel {
@@ -4787,7 +4792,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 1: ADVISORS -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">01 / 08</span>
+      <span class="cmt-stack-index">01 / 09</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">ADVISORY</span>
         <div class="cmt-card wide">
@@ -4807,7 +4812,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 2: COORDINATION -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">02 / 08</span>
+      <span class="cmt-stack-index">02 / 09</span>
       <div class="cmt-tier duo">
         <span class="cmt-tier-label">COORDINATION</span>
         <div class="cmt-card half gd">
@@ -4836,7 +4841,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 3: SECRETARY -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">03 / 08</span>
+      <span class="cmt-stack-index">03 / 09</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAL</span>
         <div class="cmt-card">
@@ -4855,7 +4860,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
       <!-- TIER 4: BREAKOUT SESSION MODERATORS — horizontal sticky pan -->
       <div class="cmt-stack-panel cmt-mods-panel" id="modsPanel">
       <div class="cmt-mods-sticky">
-        <span class="cmt-stack-index">04 / 08</span>
+        <span class="cmt-stack-index">04 / 09</span>
         <div class="cmt-mods-head">
           <span class="cmt-tier-label">BREAKOUT SESSION MODERATORS</span>
         </div>
@@ -4939,7 +4944,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 5: FLOOR MANAGERS -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">05 / 08</span>
+      <span class="cmt-stack-index">05 / 09</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">FLOOR OPERATIONS</span>
         <div class="cmt-card quarter gd">
@@ -4979,7 +4984,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 6: SECRETARIATS ROW 1 -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">06 / 08</span>
+      <span class="cmt-stack-index">06 / 09</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAT UNITS · 01–03</span>
         <div class="cmt-card fifth">
@@ -5030,25 +5035,33 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
       </div>
       </div>
 
-      <!-- TIER 6b: SECRETARIATS 04-05 -->
+      <!-- TIER 6b: SECRETARIAT 04 -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">07 / 08</span>
+      <span class="cmt-stack-index">07 / 09</span>
       <div class="cmt-tier">
-        <span class="cmt-tier-label">SECRETARIAT UNITS · 04–05</span>
-        <div class="cmt-card fifth">
+        <span class="cmt-tier-label">SECRETARIAT UNIT · 04</span>
+        <div class="cmt-card half">
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
             <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="11" r="2.4"/><path d="M4.5 17 C4.5 14.5 6 13.5 8 13.5 C10 13.5 11.5 14.5 11.5 17 M15 9 H20 M15 13 H20"/></svg></div>
             <div class="cmt-role">SECRETARIAT REGISTRATION &amp; INVITATIONS</div>
           </div>
-          <ul class="cmt-members">
+          <ul class="cmt-members grid-2">
             <li class="has-avatar"><img class="cmt-mem-photo" src="images/shafiq.png" alt="En Mohd Shafiq bin Ab Kadir"><span>En Mohd Shafiq bin Ab Kadir</span></li>
             <li class="has-avatar"><img class="cmt-mem-photo" src="images/hidayah.png" alt="Dr Norhidayah binti Mahmood"><span>Dr Norhidayah binti Mahmood</span></li>
             <li class="has-avatar"><img class="cmt-mem-photo" src="images/aina.jpeg" alt="Dr Aina Zuhana binti Bukhari"><span>Dr Aina Zuhana binti Bukhari</span></li>
             <li class="has-avatar"><img class="cmt-mem-photo" src="images/salhah.png" alt="Dr Siti Saihah binti Selamat"><span>Dr Siti Saihah binti Selamat</span></li>
           </ul>
         </div>
-        <div class="cmt-card fifth">
+      </div>
+      </div>
+
+      <!-- TIER 6c: SECRETARIAT 05 -->
+      <div class="cmt-stack-panel">
+      <span class="cmt-stack-index">08 / 09</span>
+      <div class="cmt-tier">
+        <span class="cmt-tier-label">SECRETARIAT UNIT · 05</span>
+        <div class="cmt-card">
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
             <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M7 7 H17 M7 10 H13"/><circle cx="16" cy="15" r="3"/><path d="M14.5 17.5 L13.5 22 L16 20.5 L18.5 22 L17.5 17.5"/></svg></div>
@@ -5058,7 +5071,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
             <li>Pn Azira Ezeyyaristina binti Azaman</li>
             <li>Pn Noor Syahida binti Senin</li>
             <li>Pn Siti Maisurah bt Mohd Ali</li>
-          
+
             <li>Puan Jashela Ayuni binti Shahidan</li>
             <li>Puan Yuslinda binti Ahmad</li>
             <li>Pn Nurhismahani binti Mohd Nazri</li>
@@ -5070,7 +5083,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 7: SECRETARIATS ROW 2 -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">08 / 08</span>
+      <span class="cmt-stack-index">09 / 09</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAT UNITS · 06–09</span>
         <div class="cmt-card quarter">
