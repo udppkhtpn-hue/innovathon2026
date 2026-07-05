@@ -3519,6 +3519,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .cmt-card.half { width: 400px; }
 .cmt-card.quarter { width: 262px; }
 .cmt-card.fifth { width: 218px; padding: 20px 16px; }
+/* registration secretariat: 5 avatars -> 3 top + 2 bottom, photos unchanged (138px) */
+.cmt-card.half.reg-5 { width: 545px; }
 .fifth .cmt-role { font-size: 16px; }
 .fifth .cmt-members li { font-size: 13px; }
 .fifth .cmt-chipicon { width: 38px; height: 38px; }
@@ -3532,7 +3534,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
 @media (max-width: 760px) {
   .committee-section { padding: 56px 20px 80px; }
-  .cmt-card, .cmt-card.wide, .cmt-card.half, .cmt-card.quarter, .cmt-card.fifth { width: 100%; max-width: 430px; }
+  .cmt-card, .cmt-card.wide, .cmt-card.half, .cmt-card.half.reg-5, .cmt-card.quarter, .cmt-card.fifth { width: 100%; max-width: 430px; }
   .cmt-tier { padding: 22px 0; }
   /* Peeking-deck pattern: each panel sized to its content, staggered
      top offsets so the panel underneath peeks out before being covered */
@@ -5026,7 +5028,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
       <span class="cmt-stack-index">07 / 09</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAT UNIT · 04</span>
-        <div class="cmt-card half">
+        <div class="cmt-card half reg-5">
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
             <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="11" r="2.4"/><path d="M4.5 17 C4.5 14.5 6 13.5 8 13.5 C10 13.5 11.5 14.5 11.5 17 M15 9 H20 M15 13 H20"/></svg></div>
@@ -5037,6 +5039,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
             <li class="has-avatar"><img class="cmt-mem-photo" src="images/hidayah.png" alt="Dr Norhidayah binti Mahmood"><span>Dr Norhidayah binti Mahmood</span></li>
             <li class="has-avatar"><img class="cmt-mem-photo" src="images/aina.jpeg" alt="Dr Aina Zuhana binti Bukhari"><span>Dr Aina Zuhana binti Bukhari</span></li>
             <li class="has-avatar"><img class="cmt-mem-photo" src="images/salhah.png" alt="Dr Siti Saihah binti Selamat"><span>Dr Siti Saihah binti Selamat</span></li>
+            <li class="has-avatar"><img class="cmt-mem-photo" src="images/Sharifah.jpeg" alt="Pn Sharifah binti Hasain"><span>Pn Sharifah binti Hasain</span></li>
           </ul>
         </div>
       </div>
