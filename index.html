@@ -3343,6 +3343,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .cmt-stack-panel:nth-child(7) { z-index: 7; }
 .cmt-stack-panel:nth-child(8) { z-index: 8; }
 .cmt-stack-panel:nth-child(9) { z-index: 9; }
+.cmt-stack-panel:nth-child(10) { z-index: 10; }
 .cmt-stack-index {
   position: absolute; top: 18px; right: 24px;
   font-family: var(--font-display);
@@ -3371,6 +3372,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .cmt-mods-track {
   display: flex; gap: 24px; width: max-content;
   padding: 10px 8vw;
+  margin: 0 auto;
   will-change: transform;
 }
 .cmt-mod-card {
@@ -3555,6 +3557,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   .cmt-stack-panel:nth-child(7) { top: 148px; }
   .cmt-stack-panel:nth-child(8) { top: 164px; }
   .cmt-stack-panel:nth-child(9) { top: 180px; }
+  .cmt-stack-panel:nth-child(10) { top: 196px; }
   .cmt-stack-index { font-size: 10px; top: 12px; right: 16px; }
   /* moderators: native horizontal swipe instead of scroll-jacked pan */
   .cmt-stack-panel.cmt-mods-panel {
@@ -4800,7 +4803,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 1: ADVISORS -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">01 / 09</span>
+      <span class="cmt-stack-index">01 / 10</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">ADVISORY</span>
         <div class="cmt-card wide">
@@ -4820,7 +4823,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 2: COORDINATION -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">02 / 09</span>
+      <span class="cmt-stack-index">02 / 10</span>
       <div class="cmt-tier duo">
         <span class="cmt-tier-label">COORDINATION</span>
         <div class="cmt-card half gd">
@@ -4849,7 +4852,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 3: SECRETARY -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">03 / 09</span>
+      <span class="cmt-stack-index">03 / 10</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">SECRETARIAL</span>
         <div class="cmt-card">
@@ -4868,7 +4871,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
       <!-- TIER 4: BREAKOUT SESSION MODERATORS — horizontal sticky pan -->
       <div class="cmt-stack-panel cmt-mods-panel" id="modsPanel">
       <div class="cmt-mods-sticky">
-        <span class="cmt-stack-index">04 / 09</span>
+        <span class="cmt-stack-index">04 / 10</span>
         <div class="cmt-mods-head">
           <span class="cmt-tier-label">BREAKOUT SESSION MODERATORS</span>
         </div>
@@ -4932,7 +4935,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
       <!-- TIER 5: FLOOR MANAGERS -->
       <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">05 / 09</span>
+      <span class="cmt-stack-index">05 / 10</span>
       <div class="cmt-tier">
         <span class="cmt-tier-label">FLOOR OPERATIONS</span>
         <div class="cmt-card quarter gd">
@@ -4946,7 +4949,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
         <div class="cmt-card quarter gd">
           <span class="cmt-led"></span>
           <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="10" y="10" width="4" height="4"/><path d="M9 6 V2 M15 6 V2 M9 22 V18 M15 22 V18 M6 9 H2 M6 15 H2 M22 9 H18 M22 15 H18"/></svg></div>
+            <div class="cmt-chipicon cmt-photo"><img src="images/committee/baniana-fm.png" alt="Pn Nor Baniana binti Baharum" style="object-position:center top;"/></div>
             <div class="cmt-role">FLOOR MANAGER 2 (DIGITAL)</div>
           </div>
           <ul class="cmt-members"><li>Pn Nor Baniana binti Baharum</li></ul>
@@ -4970,157 +4973,518 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
       </div>
       </div>
 
-      <!-- TIER 6: SECRETARIATS ROW 1 -->
-      <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">06 / 09</span>
-      <div class="cmt-tier">
-        <span class="cmt-tier-label">SECRETARIAT UNITS · 01–03</span>
-        <div class="cmt-card fifth">
-          <span class="cmt-led"></span>
-          <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3.5"/><path d="M12 2 V5 M12 19 V22 M2 12 H5 M19 12 H22 M4.9 4.9 L7 7 M17 17 L19.1 19.1 M19.1 4.9 L17 7 M7 17 L4.9 19.1"/></svg></div>
-            <div class="cmt-role">SECRETARIAT TECHNICAL &amp; TRAINING</div>
-          </div>
-          <ul class="cmt-members">
-            <li>Dr Ferwahn Fairis bin Ab Karim</li>
-            <li>Dr Naim Abdul Malek</li>
-            <li class="has-avatar"><img class="cmt-mem-photo" src="images/syafiz.png" alt="Dr Muhammad Syafiz bin Ruzain"><span>Dr Muhammad Syafiz bin Ruzain</span></li>
-          </ul>
+      <!-- PANEL 6: SECRETARIAT &middot; TECHNICAL &amp; TRAINING / EXHIBITION &amp; FINANCE -->
+      <div class="cmt-stack-panel cmt-mods-panel">
+      <div class="cmt-mods-sticky">
+        <span class="cmt-stack-index">06 / 10</span>
+        <div class="cmt-mods-head">
+          <span class="cmt-tier-label">SECRETARIAT &middot; TECHNICAL &amp; TRAINING / EXHIBITION &amp; FINANCE</span>
         </div>
-        <div class="cmt-card fifth">
-          <span class="cmt-led"></span>
-          <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 10 V14 H6 L13 19 V5 L6 10 Z M16 9 C18 10.5 18 13.5 16 15 M18 6 C22 9 22 15 18 18"/></svg></div>
-            <div class="cmt-role">SECRETARIAT DIGITAL &amp; MARKETING</div>
+        <div class="cmt-mods-viewport">
+          <div class="cmt-mods-track">
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">FF</span>
+                <img src="images/fairis.jpeg" alt="Dr Ferwahn Fairis bin Ab Karim" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Ferwahn Fairis bin Ab Karim</div>
+              <div class="cmt-mod-desig">Lead &middot; Technical &amp; Training</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NB</span>
+                <img src="images/naim.png" alt="Dr Naim bin Abdul Malek" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Naim bin Abdul Malek</div>
+              <div class="cmt-mod-desig">Technical &amp; Training</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">MS</span>
+                <img src="images/syafiz.png" alt="Dr Muhammad Syafiz bin Ruzain" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Muhammad Syafiz bin Ruzain</div>
+              <div class="cmt-mod-desig">Technical &amp; Training</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NI</span>
+                <img src="images/ita.jpeg" alt="Dr Nur Ita Jusnita binti Rusli" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Nur Ita Jusnita binti Rusli</div>
+              <div class="cmt-mod-desig">Lead &middot; Exhibition &amp; Finance</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">AB</span>
+                <img src="images/committee/azmawati.png" alt="Pn Azmawati bt Mamat" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Pn Azmawati bt Mamat</div>
+              <div class="cmt-mod-desig">Exhibition &amp; Finance</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
           </div>
-          <ul class="cmt-members">
-            <li>Dr Ashween Kaur a/p Sukhdev Singh</li>
-            <li>Pn Nor Baniana binti Baharum</li>
-            <li>Dr Mohd Khairul Anwar bin Mohd Tahir <small>OMFS</small></li>
-            <li>Dr Aifa <small>Pathology</small></li>
-            <li class="has-avatar"><img class="cmt-mem-photo" src="images/hikma.jpeg" alt="Dr Nurzahratul Hikma binti Mohamad Zakaria"><span>Dr Nurzahratul Hikma binti Mohamad Zakaria</span></li>
-            <li class="has-avatar"><img class="cmt-mem-photo" src="images/farhana.png" alt="Dr Nur Farhana binti Ab Aziz"><span>Dr Nur Farhana binti Ab Aziz</span></li>
-          
-            <li>En Wan Adlan bin Wan Mustapha</li>
-            <li>Cik Azura binti Mohd Niza @ Mohd Nizal</li>
-            <li>En Muhammad Faris bin Kharul Salleh</li>
-          </ul>
         </div>
-        <div class="cmt-card fifth">
-          <span class="cmt-led"></span>
-          <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 8 H19 L18 21 H6 Z M8 8 C8 4 10 2 12 2 C14 2 16 4 16 8"/><path d="M12 11 V18 M10 12.5 C10 11.5 14 11.5 14 13.5 C14 15.5 10 15 10 17 C10 18.5 14 18.5 14 17" stroke-width="1.3"/></svg></div>
-            <div class="cmt-role">SECRETARIAT TREASURY &amp; EXHIBITION</div>
-          </div>
-          <ul class="cmt-members">
-            <li>Dr Nur Ita Jusnita binti Rusli</li>
-            <li>Pn Azmawati bt. Mamat</li>
-            <li>Dr Mohd Faizal bin Nor Azmi <small>Pengerusi Kelab Sukan</small></li>
-          
-            <li>Ms Rubiah bt Mohd Dayaon <small>Chairperson, Persatuan Jabatan Pembedahan Am HTPN Kajang</small></li>
-          </ul>
-        </div>
+        <div class="cmt-mods-hint">KEEP SCROLLING TO PAN &rarr;</div>
       </div>
       </div>
 
-      <!-- TIER 6b: SECRETARIAT 04 -->
-      <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">07 / 09</span>
-      <div class="cmt-tier">
-        <span class="cmt-tier-label">SECRETARIAT UNIT · 04</span>
-        <div class="cmt-card half reg-5">
-          <span class="cmt-led"></span>
-          <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="11" r="2.4"/><path d="M4.5 17 C4.5 14.5 6 13.5 8 13.5 C10 13.5 11.5 14.5 11.5 17 M15 9 H20 M15 13 H20"/></svg></div>
-            <div class="cmt-role">SECRETARIAT REGISTRATION &amp; INVITATIONS</div>
-          </div>
-          <ul class="cmt-members grid-2">
-            <li class="has-avatar"><img class="cmt-mem-photo" src="images/shafiq.png" alt="En Mohd Shafiq bin Ab Kadir"><span>En Mohd Shafiq bin Ab Kadir</span></li>
-            <li class="has-avatar"><img class="cmt-mem-photo" src="images/hidayah.png" alt="Dr Norhidayah binti Mahmood"><span>Dr Norhidayah binti Mahmood</span></li>
-            <li class="has-avatar"><img class="cmt-mem-photo" src="images/aina.jpeg" alt="Dr Aina Zuhana binti Bukhari"><span>Dr Aina Zuhana binti Bukhari</span></li>
-            <li class="has-avatar"><img class="cmt-mem-photo" src="images/salhah.png" alt="Dr Siti Saihah binti Selamat"><span>Dr Siti Saihah binti Selamat</span></li>
-            <li class="has-avatar"><img class="cmt-mem-photo" src="images/Sharifah.jpeg" alt="Pn Sharifah binti Hasain"><span>Pn Sharifah binti Hasain</span></li>
-          </ul>
+      <!-- PANEL 7: SECRETARIAT &middot; DIGITAL &amp; MARKETING -->
+      <div class="cmt-stack-panel cmt-mods-panel">
+      <div class="cmt-mods-sticky">
+        <span class="cmt-stack-index">07 / 10</span>
+        <div class="cmt-mods-head">
+          <span class="cmt-tier-label">SECRETARIAT &middot; DIGITAL &amp; MARKETING</span>
         </div>
+        <div class="cmt-mods-viewport">
+          <div class="cmt-mods-track">
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NB</span>
+                <img src="images/committee/baniana.png" alt="Pn Nor Baniana binti Baharum" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Pn Nor Baniana binti Baharum</div>
+              <div class="cmt-mod-desig">Unit Lead</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">AK</span>
+                <img src="images/Ash.jpeg" alt="Dr Ashween Kaur a/p Sukhdev Singh" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Ashween Kaur a/p Sukhdev Singh</div>
+              <div class="cmt-mod-desig">Digital, Gimik &amp; Pentas</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">MK</span>
+                <img src="images/moderators/dr-khairul-azhar.jpeg" alt="Dr Mohd Khairul Anwar bin Mohd Tahir" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Mohd Khairul Anwar bin Mohd Tahir</div>
+              <div class="cmt-mod-desig">Digital &middot; OMFS</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">AB</span>
+                <img src="images/committee/aifa.png" alt="Dr Aifa binti Osman" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Aifa binti Osman</div>
+              <div class="cmt-mod-desig">Digital &middot; Pathology</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">SB</span>
+                <img src="images/committee/syahira.png" alt="Pn Syahirah binti Mohd Jalil" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Pn Syahirah binti Mohd Jalil</div>
+              <div class="cmt-mod-desig">Digital, Gimik &amp; Pentas</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NH</span>
+                <img src="images/hikma.jpeg" alt="Dr Nurzahratul Hikma binti Mohamad Zakaria" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Nurzahratul Hikma binti Mohamad Zakaria</div>
+              <div class="cmt-mod-desig">Digital, Gimik &amp; Pentas</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NF</span>
+                <img src="images/farhana.png" alt="Dr Nur Farhana binti Ab Aziz" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Nur Farhana binti Ab Aziz</div>
+              <div class="cmt-mod-desig">Digital, Gimik &amp; Pentas</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">WA</span>
+                <img src="images/committee/adlan.png" alt="En Wan Adlan bin Wan Mustapha" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">En Wan Adlan bin Wan Mustapha</div>
+              <div class="cmt-mod-desig">Digital, Gimik &amp; Pentas</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">MM</span>
+                <img src="images/committee/mustaqim.png" alt="En Mohd Mustaqim bin Ismail" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">En Mohd Mustaqim bin Ismail</div>
+              <div class="cmt-mod-desig">Digital, Gimik &amp; Pentas</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">AB</span>
+                <img src="images/committee/azura.png" alt="Cik Azura binti Mohd Nizal @ Mohd Niza" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Cik Azura binti Mohd Nizal @ Mohd Niza</div>
+              <div class="cmt-mod-desig">Digital, Gimik &amp; Pentas</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">MF</span>
+                <img src="images/committee/faris.png" alt="En Muhammad Faris bin Kharul Salleh" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">En Muhammad Faris bin Kharul Salleh</div>
+              <div class="cmt-mod-desig">Digital, Gimik &amp; Pentas</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">SA</span>
+                <img src="images/committee/amilia.png" alt="Pn Siti Amilia binti Yaman" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Pn Siti Amilia binti Yaman</div>
+              <div class="cmt-mod-desig">Sokongan Teknikal &middot; ICT</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">MD</span>
+                <img src="images/committee/danish.png" alt="En Muhammad Danish bin Azizan" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">En Muhammad Danish bin Azizan</div>
+              <div class="cmt-mod-desig">Sokongan Teknikal &middot; ICT</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">AA</span>
+                <img src="images/committee/aniq.png" alt="En Aniq Aiman bin Mohd Suhardi" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">En Aniq Aiman bin Mohd Suhardi</div>
+              <div class="cmt-mod-desig">Sokongan Teknikal &middot; ICT</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">VA</span>
+                <img src="images/committee/vaithes.png" alt="Pn Vaithes a/p Vasudevan" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Pn Vaithes a/p Vasudevan</div>
+              <div class="cmt-mod-desig">Sokongan Teknikal &middot; ICT</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">JB</span>
+                <img src="images/committee/johar.png" alt="En Johar bin Mamat" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">En Johar bin Mamat</div>
+              <div class="cmt-mod-desig">Sokongan Teknikal &middot; ICT</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">ZZ</span>
+                <img src="images/committee/zol.png" alt="En Zol @ Zolkifli bin Radiman" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">En Zol @ Zolkifli bin Radiman</div>
+              <div class="cmt-mod-desig">Sokongan Teknikal &middot; ICT</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">FB</span>
+                <img src="images/committee/fatirah.png" alt="Cik Fatirah binti Ujang" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Cik Fatirah binti Ujang</div>
+              <div class="cmt-mod-desig">Sokongan Teknikal &middot; ICT</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NB</span>
+                <img src="images/committee/noraini.png" alt="Cik Noraini binti Musa" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Cik Noraini binti Musa</div>
+              <div class="cmt-mod-desig">Sokongan Teknikal &middot; ICT</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+          </div>
+        </div>
+        <div class="cmt-mods-hint">KEEP SCROLLING TO PAN &rarr;</div>
       </div>
       </div>
 
-      <!-- TIER 6c: SECRETARIAT 05 -->
-      <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">08 / 09</span>
-      <div class="cmt-tier">
-        <span class="cmt-tier-label">SECRETARIAT UNIT · 05</span>
-        <div class="cmt-card">
-          <span class="cmt-led"></span>
-          <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M7 7 H17 M7 10 H13"/><circle cx="16" cy="15" r="3"/><path d="M14.5 17.5 L13.5 22 L16 20.5 L18.5 22 L17.5 17.5"/></svg></div>
-            <div class="cmt-role">SECRETARIAT CERTIFICATES &amp; SOUVENIRS</div>
-          </div>
-          <ul class="cmt-members">
-            <li>Pn Azira Ezeyyaristina binti Azaman</li>
-            <li>Pn Noor Syahida binti Senin</li>
-            <li>Pn Siti Maisurah bt Mohd Ali</li>
-
-            <li>Puan Jashela Ayuni binti Shahidan</li>
-            <li>Puan Yuslinda binti Ahmad</li>
-            <li>Pn Nurhismahani binti Mohd Nazri</li>
-            <li>En Shahrul badri bin Mohd Din</li>
-          </ul>
+      <!-- PANEL 8: SECRETARIAT &middot; REGISTRATION &amp; INVITATIONS -->
+      <div class="cmt-stack-panel cmt-mods-panel">
+      <div class="cmt-mods-sticky">
+        <span class="cmt-stack-index">08 / 10</span>
+        <div class="cmt-mods-head">
+          <span class="cmt-tier-label">SECRETARIAT &middot; REGISTRATION &amp; INVITATIONS</span>
         </div>
+        <div class="cmt-mods-viewport">
+          <div class="cmt-mods-track">
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">SB</span>
+                <img src="images/Sharifah.jpeg" alt="Pn Sharifah binti Hasain" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Pn Sharifah binti Hasain</div>
+              <div class="cmt-mod-desig">Unit Lead</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">MS</span>
+                <img src="images/shafiq.png" alt="En Mohd Shafiq bin Ab Kadir" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">En Mohd Shafiq bin Ab Kadir</div>
+              <div class="cmt-mod-desig">Registration &amp; Invitations</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NB</span>
+                <img src="images/hidayah.png" alt="Dr Norhidayah binti Mahmood" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Norhidayah binti Mahmood</div>
+              <div class="cmt-mod-desig">Registration &amp; Invitations</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">AZ</span>
+                <img src="images/aina.jpeg" alt="Dr Aina Zuhana binti Bukhari" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Aina Zuhana binti Bukhari</div>
+              <div class="cmt-mod-desig">Registration &amp; Invitations</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">SS</span>
+                <img src="images/salhah.png" alt="Dr Siti Saihah binti Selamat" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Siti Saihah binti Selamat</div>
+              <div class="cmt-mod-desig">Registration &amp; Invitations</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+          </div>
+        </div>
+        <div class="cmt-mods-hint">KEEP SCROLLING TO PAN &rarr;</div>
       </div>
       </div>
 
-      <!-- TIER 7: SECRETARIATS ROW 2 -->
-      <div class="cmt-stack-panel">
-      <span class="cmt-stack-index">09 / 09</span>
-      <div class="cmt-tier">
-        <span class="cmt-tier-label">SECRETARIAT UNITS · 06–09</span>
-        <div class="cmt-card quarter">
-          <span class="cmt-led"></span>
-          <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2 V10 M3 2 V7 C3 9 4.5 10 6 10 C7.5 10 9 9 9 7 V2 M6 10 V22 M17 2 C14.5 2 14 6 14 9 H17 M17 2 V22"/></svg></div>
-            <div class="cmt-role">SECRETARIAT FOOD &amp; SANITATION</div>
-          </div>
-          <ul class="cmt-members">
-            <li>Officer <small>MPC</small></li>
-            <li>Pn Norzainora binti Hamsah</li>
-          </ul>
+      <!-- PANEL 9: SECRETARIAT &middot; CERTIFICATES &amp; SOUVENIRS -->
+      <div class="cmt-stack-panel cmt-mods-panel">
+      <div class="cmt-mods-sticky">
+        <span class="cmt-stack-index">09 / 10</span>
+        <div class="cmt-mods-head">
+          <span class="cmt-tier-label">SECRETARIAT &middot; CERTIFICATES &amp; SOUVENIRS</span>
         </div>
-        <div class="cmt-card quarter">
-          <span class="cmt-led"></span>
-          <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 2 H15 L13.5 6 L15.5 8 L12 22 L8.5 8 L10.5 6 Z"/></svg></div>
-            <div class="cmt-role">SECRETARIAT PROTOCOL</div>
+        <div class="cmt-mods-viewport">
+          <div class="cmt-mods-track">
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">SM</span>
+                <img src="images/committee/maisurah.png" alt="Pn Siti Maisurah bt Mohd Ali" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Pn Siti Maisurah bt Mohd Ali</div>
+              <div class="cmt-mod-desig">Unit Lead</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NB</span>
+                <img src="images/committee/hani.png" alt="Pn Nurhismahani binti Mohd Nazri" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Pn Nurhismahani binti Mohd Nazri</div>
+              <div class="cmt-mod-desig">Certificates &amp; Souvenirs</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">SB</span>
+                <img src="images/committee/badri.png" alt="En Shahrul Badri bin Mohd Din" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">En Shahrul Badri bin Mohd Din</div>
+              <div class="cmt-mod-desig">Certificates &amp; Souvenirs</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NS</span>
+                <img src="images/committee/syahida.png" alt="Pn Noor Syahida binti Senin" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Pn Noor Syahida binti Senin</div>
+              <div class="cmt-mod-desig">Certificates &amp; Souvenirs</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">JA</span>
+                <img src="images/committee/jashela.png" alt="Puan Jashela Ayuni binti Shahidan" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Puan Jashela Ayuni binti Shahidan</div>
+              <div class="cmt-mod-desig">Certificates &amp; Souvenirs</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">YB</span>
+                <img src="images/committee/yuslinda.png" alt="Puan Yuslinda binti Ahmad" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Puan Yuslinda binti Ahmad</div>
+              <div class="cmt-mod-desig">Certificates &amp; Souvenirs</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
           </div>
-          <ul class="cmt-members">
-            <li>Pn Tahnani binti Shahabudin</li>
-            <li>En Anwar Aizuddin bin Abdul Wahab</li>
-            <li class="has-avatar"><img class="cmt-mem-photo" src="images/Izzah.png" alt="Dr Nur Izzah Zabidi" style="object-position:center 20%;"><span>Dr Nur Izzah Zabidi</span></li>
-          </ul>
         </div>
-        <div class="cmt-card quarter">
-          <span class="cmt-led"></span>
-          <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="1" y="6" width="13" height="11"/><path d="M14 9 H19 L23 13 V17 H14"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg></div>
-            <div class="cmt-role">SECRETARIAT LOGISTICS</div>
+        <div class="cmt-mods-hint">KEEP SCROLLING TO PAN &rarr;</div>
+      </div>
+      </div>
+
+      <!-- PANEL 10: SECRETARIAT &middot; PROTOCOL / LOGISTICS / SECURITY / FOOD -->
+      <div class="cmt-stack-panel cmt-mods-panel">
+      <div class="cmt-mods-sticky">
+        <span class="cmt-stack-index">10 / 10</span>
+        <div class="cmt-mods-head">
+          <span class="cmt-tier-label">SECRETARIAT &middot; PROTOCOL / LOGISTICS / SECURITY / FOOD</span>
+        </div>
+        <div class="cmt-mods-viewport">
+          <div class="cmt-mods-track">
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">AA</span>
+                <img src="images/anwar.png" alt="En Anwar Aizuddin bin Abdul Wahab" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">En Anwar Aizuddin bin Abdul Wahab</div>
+              <div class="cmt-mod-desig">Protocol &middot; Unit Lead</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">TB</span>
+                <img src="images/committee/tahnani.png" alt="Pn Tahnani binti Shahabudin" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Pn Tahnani binti Shahabudin</div>
+              <div class="cmt-mod-desig">Protocol</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NI</span>
+                <img src="images/Izzah.png" alt="Dr Nur Izzah Zabidi" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Dr Nur Izzah Zabidi</div>
+              <div class="cmt-mod-desig">Protocol</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">SB</span>
+                
+              </div>
+              <div class="cmt-mod-name">Pn Shazila binti Sarmide</div>
+              <div class="cmt-mod-desig">Protocol</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">MB</span>
+                
+              </div>
+              <div class="cmt-mod-name">Pn Marzidah binti Kamaruzaman</div>
+              <div class="cmt-mod-desig">Protocol</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">MF</span>
+                
+              </div>
+              <div class="cmt-mod-name">En Mohd Farid Haziq bin Mohd Han</div>
+              <div class="cmt-mod-desig">Logistics &middot; Unit Lead</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NH</span>
+                <img src="images/committee/hafizah.png" alt="Puan Nur Hafizah binti Sainai" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">Puan Nur Hafizah binti Sainai</div>
+              <div class="cmt-mod-desig">Logistics</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">MH</span>
+                
+              </div>
+              <div class="cmt-mod-name">En Mohd Hafizi bin Zakaria</div>
+              <div class="cmt-mod-desig">Security &middot; Unit Lead</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">NB</span>
+                
+              </div>
+              <div class="cmt-mod-name">Pn Norzainora binti Hamsah</div>
+              <div class="cmt-mod-desig">Food &amp; Sanitation</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
           </div>
-          <ul class="cmt-members">
-            <li>Officer <small>MPC</small></li>
-            <li>En Mohd Farid Haziq bin Mohd Han</li>
-            <li>Pn Fiza <small>Pembangunan</small></li>
-          </ul>
         </div>
-        <div class="cmt-card quarter">
-          <span class="cmt-led"></span>
-          <div class="cmt-pin-row">
-            <div class="cmt-chipicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 L21 5.5 V12 C21 17.5 17 21.5 12 23 C7 21.5 3 17.5 3 12 V5.5 Z"/><rect x="9" y="10" width="6" height="6" rx="1"/><path d="M10 10 V8.5 C10 7 14 7 14 8.5 V10"/></svg></div>
-            <div class="cmt-role">SECRETARIAT SECURITY</div>
-          </div>
-          <ul class="cmt-members">
-            <li>Officer <small>MPC</small></li>
-            <li>En Mohd Hafizi bin Zakaria</li>
-          </ul>
-        </div>
+        <div class="cmt-mods-hint">KEEP SCROLLING TO PAN &rarr;</div>
       </div>
       </div>
     </div>
@@ -5178,34 +5542,43 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   document.querySelectorAll('.cmt-tier').forEach(function(t){ io.observe(t); });
 })();
 
-/* ── Breakout moderators — scroll-driven horizontal pan (desktop only) ── */
+/* ── Horizontal pan panels (moderators + secretariats) ── scroll-driven, desktop only ── */
 (function(){
-  var panel = document.getElementById('modsPanel');
-  var track = document.getElementById('modsTrack');
-  if(!panel || !track) return;
+  var panels = [].slice.call(document.querySelectorAll('.cmt-mods-panel'));
+  if(!panels.length) return;
   var STICKY_TOP = 60;
   var mq = window.matchMedia('(max-width: 760px)');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function maxPan(){
+  var items = [];
+  panels.forEach(function(panel){
+    var track = panel.querySelector('.cmt-mods-track');
+    if(track) items.push({ panel: panel, track: track });
+  });
+  function maxPan(track){
     return Math.max(track.scrollWidth - track.parentElement.clientWidth, 0);
   }
-
-  /* Panel height = pinned viewport + pan distance, so scroll maps ~1:1 to the track */
   function size(){
-    if(mq.matches || reduce){ panel.style.height = ''; track.style.transform = ''; return; }
-    panel.style.height = ((window.innerHeight - STICKY_TOP) + maxPan() * 1.4) + 'px';
+    items.forEach(function(o){
+      if(mq.matches || reduce){ o.panel.style.height = ''; o.track.style.transform = ''; return; }
+      var pan = maxPan(o.track);
+      /* only add scroll length when there is something to pan */
+      o.panel.style.height = pan > 0
+        ? ((window.innerHeight - STICKY_TOP) + pan * 1.0) + 'px'
+        : '';
+    });
   }
-
   function onScroll(){
     if(mq.matches || reduce) return;
-    var rect = panel.getBoundingClientRect();
-    var range = panel.offsetHeight - (window.innerHeight - STICKY_TOP);
-    if(range <= 0) return;
-    var progress = Math.min(Math.max((STICKY_TOP - rect.top) / range, 0), 1);
-    track.style.transform = 'translateX(' + (-progress * maxPan()) + 'px)';
+    items.forEach(function(o){
+      var pan = maxPan(o.track);
+      if(pan <= 0){ o.track.style.transform = 'translateX(0)'; return; }
+      var rect = o.panel.getBoundingClientRect();
+      var range = o.panel.offsetHeight - (window.innerHeight - STICKY_TOP);
+      if(range <= 0){ o.track.style.transform = 'translateX(0)'; return; }
+      var progress = Math.min(Math.max((STICKY_TOP - rect.top) / range, 0), 1);
+      o.track.style.transform = 'translateX(' + (-progress * pan) + 'px)';
+    });
   }
-
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', function(){ size(); onScroll(); });
   window.addEventListener('load', function(){ size(); onScroll(); });
