@@ -7,3 +7,7 @@ Thumbs.db
 
 # Editor
 *.tmp
+
+# Local nested project folders (not part of the deployed site)
+cinematic-site-components/
+innovathon2026/
