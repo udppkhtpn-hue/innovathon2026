@@ -3654,6 +3654,32 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   margin-right: 4px;
 }
 
+/* Past event — de-emphasised */
+.event-card.is-past {
+  background: rgba(255,255,255,0.015);
+  border-color: rgba(255,255,255,0.09);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.28);
+  opacity: 0.62;
+}
+.event-card.is-past .event-number {
+  color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.08);
+}
+.event-card.is-past h3 { color: rgba(255,255,255,0.7); }
+.event-card.is-past .event-details li { color: rgba(255,255,255,0.5); }
+.event-card.is-past .event-details li strong { color: rgba(255,255,255,0.55); }
+.event-past-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.22);
+  padding: 3px 10px;
+  margin: 0 0 16px 8px;
+  vertical-align: top;
+}
+
 .important-info,
 .patient-restrictions {
   background: rgba(255,255,255,0.03);
@@ -4460,8 +4486,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
     <h2 class="comp-heading">Events & Registration</h2>
 
     <div class="events-grid">
-      <div class="event-card">
-        <div class="event-number">EVENT 1</div>
+      <div class="event-card is-past">
+        <div class="event-number">EVENT 1</div><span class="event-past-tag" data-en="COMPLETED" data-bm="SELESAI">COMPLETED</span>
         <h3>PRE-WORKSHOP<br>(OPTIONAL BUT RECOMMENDED)</h3>
         <ul class="event-details">
           <li><strong>Date:</strong> 25 or 26 June 2026</li>
@@ -4541,7 +4567,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
         <span class="prog-arrow">▼</span>
       </div>
       <div class="prog-block-body">
-        <p>Registration of participants. Delegates collect convention bags and lanyards at the registration counter. Breakfast is served and the exhibition zone opens for early browsing.</p>
+        <p>Delegates shall be given Unique Identifying Digital Passes with QR Codes. Have it scanned for entry to Event area and Restoran Lauk Kampung at Ground floor. Breakfast is served and the exhibition zone opens for early browsing.</p>
       </div>
     </div>
 
@@ -4553,6 +4579,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
       </div>
       <div class="prog-block-body">
         <div style="margin-bottom:8px;"><strong>Negaraku</strong> — National Anthem</div>
+        <div style="margin-bottom:8px;"><strong>Doa Recital</strong></div>
         <div style="margin-bottom:8px;"><strong>Welcome Speech</strong> — Director, HTPN Kajang</div>
         <div style="margin-bottom:8px;"><strong>Opening Address</strong> — Deputy Director General, MPC</div>
         <div style="margin-bottom:8px;"><strong>Official Launch Gimmick</strong></div>
@@ -4725,23 +4752,31 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .dg-block-label::before{content:'';width:26px;height:3px;background:var(--teal-accent);display:inline-block}
 /* quick facts — scroll-driven horizontal pan (same mechanic as committee) */
 .dg-facts-panel{position:relative;margin:0 -7%}
-.dg-facts-sticky{position:sticky;top:60px;z-index:20;min-height:calc(100vh - 60px);display:flex;flex-direction:column;justify-content:center;background:var(--cream);padding:24px 0}
+.dg-facts-sticky{position:sticky;top:60px;z-index:20;min-height:calc(100vh - 60px);display:flex;flex-direction:column;justify-content:center;padding:24px 0;
+  background:linear-gradient(rgba(243,239,227,.34),rgba(243,239,227,.14) 45%,rgba(243,239,227,.46)),url('images/matrade.jpg') center 52%/cover no-repeat,var(--cream)}
 .dg-facts-viewport{overflow:hidden;width:100%}
 .dg-facts-track{display:flex;gap:20px;width:max-content;padding:6px 7%;will-change:transform}
 .dg-facts-hint{text-align:center;margin-top:22px;font-family:var(--font-display);font-size:11px;letter-spacing:.3em;color:var(--ink-light)}
-.dg-fact{flex:0 0 auto;width:270px;min-height:300px;display:flex;flex-direction:column;background:var(--white);border:1px solid rgba(0,0,0,.08);box-shadow:7px 7px 0 rgba(26,18,10,.09);padding:32px 28px 34px;border-radius:4px;transition:transform .25s ease,box-shadow .25s ease}
-.dg-fact:hover{transform:translateY(-5px);box-shadow:10px 10px 0 rgba(26,18,10,.14)}
+/* nothing to pan (few cards / wide viewport) — collapse to a plain centred row */
+.dg-facts-panel.no-pan .dg-facts-sticky{position:static;min-height:0;padding:8px 0}
+.dg-facts-panel.no-pan .dg-facts-track{justify-content:center;width:100%}
+.dg-facts-panel.no-pan .dg-facts-hint{display:none}
+.dg-fact{flex:0 0 auto;width:270px;min-height:300px;display:flex;flex-direction:column;background:rgba(255,255,255,.42);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);border:1px solid rgba(255,255,255,.5);box-shadow:7px 7px 0 rgba(26,18,10,.12);padding:32px 28px 34px;border-radius:4px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.dg-fact:hover{transform:translateY(-5px);background:rgba(255,255,255,.58);box-shadow:10px 10px 0 rgba(26,18,10,.16)}
 .dg-fact-ico{width:96px;height:96px;border-radius:24px;display:flex;align-items:center;justify-content:center;background:rgba(29,158,117,.1);color:var(--teal-accent);margin-bottom:auto}
 .dg-fact-ico svg{width:48px;height:48px;display:block;stroke-width:1.5}
-.dg-fact-k{font-family:var(--font-body);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-light);margin:28px 0 7px}
+.dg-fact-k{font-family:var(--font-body);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mid);font-weight:600;margin:28px 0 7px}
 .dg-fact-v{font-size:17px;color:var(--ink);font-weight:500;line-height:1.45}
 .dg-fact-v a{color:var(--teal-accent);text-decoration:none;border-bottom:1px solid rgba(29,158,117,.35)}
 /* key updates */
-.dg-updates{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
-.dg-up{background:var(--teal-deep);border:1px solid rgba(255,255,255,.06);border-radius:3px;padding:20px 18px}
-.dg-up-ico{font-size:24px;margin-bottom:10px}
-.dg-up-title{font-family:var(--font-display);font-size:18px;letter-spacing:.03em;color:var(--gold-light);margin-bottom:8px}
-.dg-up-desc{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.6;font-weight:300}
+.dg-updates{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.dg-up{position:relative;overflow:hidden;isolation:isolate;background:var(--teal-deep);border:1px solid rgba(255,255,255,.06);border-radius:3px;padding:32px 26px 34px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .25s ease,border-color .25s ease}
+.dg-up:hover{transform:translateY(-4px);border-color:rgba(240,200,50,.3)}
+.dg-up-ico{position:absolute;top:-14px;right:-18px;width:150px;height:150px;z-index:-1;color:var(--gold-light);opacity:.14;pointer-events:none;transition:opacity .25s ease,transform .25s ease}
+.dg-up-ico svg{width:100%;height:100%;display:block;stroke-width:1.1}
+.dg-up:hover .dg-up-ico{opacity:.22;transform:scale(1.06) rotate(-3deg)}
+.dg-up-title{font-family:var(--font-display);font-size:21px;letter-spacing:.03em;color:var(--gold-light);margin-bottom:9px}
+.dg-up-desc{font-size:13px;color:rgba(255,255,255,.72);line-height:1.62;font-weight:300}
 .dg-up-desc b{color:#fff;font-weight:600}
 .dg-total{display:block;margin-top:10px;font-family:var(--font-display);font-size:13px;letter-spacing:.08em;color:var(--teal-deep);background:var(--teal-light);padding:4px 10px;border-radius:2px;width:fit-content}
 /* presentation format */
@@ -4777,14 +4812,21 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .dg-table td{padding:8px 8px 8px 0;border-bottom:1px solid rgba(0,0,0,.06);vertical-align:top}
 .dg-team{font-size:13px;color:var(--ink);font-weight:600;line-height:1.3}
 .dg-unit{font-size:11.5px;color:var(--ink-light);line-height:1.35}
-/* faq */
-.dg-faq-item{border-bottom:1px solid rgba(0,0,0,.1)}
-.dg-faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;background:none;border:none;cursor:pointer;text-align:left;padding:17px 2px;font-family:var(--font-display);font-size:clamp(15px,1.8vw,19px);letter-spacing:.02em;color:var(--ink)}
+/* faq — matches the "why this convention" section palette */
+.dg-faq{position:relative;overflow:hidden;background:var(--teal-dark);margin:52px -7% 0;padding:8px 7% 44px}
+.dg-faq-label{position:relative;z-index:1;color:var(--gold-light);margin:38px 0 18px}
+.dg-faq-label::before{background:var(--gold-light)}
+/* oversized question-mark watermark */
+.dg-faq-mark{position:absolute;top:50%;right:2%;transform:translateY(-50%);width:340px;height:340px;color:var(--gold-light);opacity:.10;z-index:0;pointer-events:none}
+.dg-faq-mark svg{width:100%;height:100%;display:block;stroke-width:1.15}
+.dg-faq::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;z-index:0}
+.dg-faq-item{position:relative;z-index:1;border-bottom:.5px solid rgba(255,255,255,.07)}
+.dg-faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;background:none;border:none;cursor:pointer;text-align:left;padding:17px 2px;font-family:var(--font-display);font-size:clamp(15px,1.8vw,19px);letter-spacing:.02em;color:#fff}
 .dg-faq-chev{font-family:var(--font-body);font-size:20px;color:var(--teal-accent);transition:transform .3s;flex:0 0 auto}
 .dg-faq-item.open .dg-faq-chev{transform:rotate(45deg)}
 .dg-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.dg-faq-a-inner{padding:0 2px 18px;font-size:13.5px;color:var(--ink-mid);line-height:1.7;font-weight:300;max-width:720px}
-.dg-faq-a-inner b{color:var(--ink);font-weight:600}
+.dg-faq-a-inner{padding:0 2px 18px;font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.7;font-weight:300;max-width:720px}
+.dg-faq-a-inner b{color:#fff;font-weight:600}
 /* parking */
 .dg-park-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:start}
 .dg-map{border:1px solid rgba(0,0,0,.12);border-radius:3px;overflow:hidden;box-shadow:6px 6px 0 rgba(26,18,10,.1)}
@@ -4809,7 +4851,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 }
 /* facts: native horizontal swipe instead of scroll-jacked pan (mirror committee) */
 @media(max-width:760px){
-  .dg-facts-sticky{position:static;top:auto;min-height:0;display:block;background:none;padding:0}
+  .dg-facts-sticky{position:static;top:auto;min-height:0;display:block;padding:22px 0;
+    background:linear-gradient(rgba(243,239,227,.34),rgba(243,239,227,.14) 45%,rgba(243,239,227,.46)),url('images/matrade.jpg') center 52%/cover no-repeat,var(--cream)}
   .dg-facts-viewport{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:none}
   .dg-facts-viewport::-webkit-scrollbar{display:none}
   .dg-facts-track{transform:none!important;width:max-content;padding:4px 6%;gap:14px}
@@ -4822,6 +4865,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 @media(max-width:560px){
   .dg-section{padding:56px 6% 72px}
   .dg-facts-panel{margin:0 -6%}
+  .dg-faq{margin:44px -6% 0;padding:8px 6% 38px}
+  .dg-faq-mark{width:200px;height:200px;right:-4%}
   .dg-fact{width:200px;padding:20px 18px 22px}
   .dg-fact-ico{width:60px;height:60px;border-radius:15px;margin-bottom:14px}
   .dg-fact-ico svg{width:30px;height:30px}
@@ -4841,11 +4886,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   <div class="dg-facts-sticky">
   <div class="dg-facts-viewport">
   <div class="dg-facts-track">
-    <div class="dg-fact"><div class="dg-fact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg></div><div class="dg-fact-k">Date</div><div class="dg-fact-v">21 July 2026</div></div>
-    <div class="dg-fact"><div class="dg-fact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s6.5-6 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.5 12 21.5 12 21.5z"/><circle cx="12" cy="10.5" r="2.5"/></svg></div><div class="dg-fact-k">Venue</div><div class="dg-fact-v"><a href="https://www.google.com/maps/search/?api=1&query=MATRADE+Kuala+Lumpur" target="_blank" rel="noopener">Dewan Produktiviti, MPC · MATRADE, KL ↗</a></div></div>
     <div class="dg-fact"><div class="dg-fact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5a2 2 0 1 1 1.4 1.9c-.55.2-.9.6-.9 1.25V10"/><path d="M12 10 4.5 15.2A1 1 0 0 0 5 17h14a1 1 0 0 0 .5-1.8L12 10z"/></svg></div><div class="dg-fact-k">Dress Code</div><div class="dg-fact-v">Formal / smart casual · hall runs cold</div></div>
     <div class="dg-fact"><div class="dg-fact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M9.5 17V7.5h3.2a2.9 2.9 0 0 1 0 5.8H9.5"/></svg></div><div class="dg-fact-k">Parking</div><div class="dg-fact-v">Flat RM7/day · Amphitheater</div></div>
-    <div class="dg-fact"><div class="dg-fact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6.5a1.9 1.9 0 0 0 3.8 0V3M7.9 11.4V21"/><path d="M16.8 3c-1.4.6-2.3 2.5-2.3 5.2s.9 4.1 2.3 4.6V21"/></svg></div><div class="dg-fact-k">Meals</div><div class="dg-fact-v">Buffet ×3 · Restoran Lauk Kampung (G floor)</div></div>
+    <div class="dg-fact"><div class="dg-fact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6.5a1.9 1.9 0 0 0 3.8 0V3M7.9 11.4V21"/><path d="M16.8 3c-1.4.6-2.3 2.5-2.3 5.2s.9 4.1 2.3 4.6V21"/></svg></div><div class="dg-fact-k">Meals</div><div class="dg-fact-v">Meals will be served 3 X at Restoran Lauk Kampung, Ground Floor (Scan QR code for entry)</div></div>
   </div>
   </div>
   <div class="dg-facts-hint">KEEP SCROLLING TO PAN &rarr;</div>
@@ -4856,23 +4899,23 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   <div class="dg-block-label reveal">Key Updates</div>
   <div class="dg-updates reveal">
     <div class="dg-up">
-          <div class="dg-up-ico">🏆</div>
+          <div class="dg-up-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 5.5H4.5v1.5a3.5 3.5 0 0 0 3 3.46M17 5.5h2.5V7a3.5 3.5 0 0 1-3 3.46"/><path d="M12 14v3.5M9 20.5h6M9.5 20.5c0-1.7 1.1-3 2.5-3s2.5 1.3 2.5 3"/></svg></div>
           <div class="dg-up-title">Judging Categories</div>
           <div class="dg-up-desc">Projects are judged in the three original categories: <b>Patient Journey</b>, <b>Clinician Journey</b>, and <b>Management Productivity</b>.</div>
         </div><div class="dg-up">
-          <div class="dg-up-ico">🚪</div>
+          <div class="dg-up-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3.5" width="8" height="7" rx="1.2"/><rect x="13.5" y="3.5" width="8" height="7" rx="1.2"/><rect x="2.5" y="13.5" width="8" height="7" rx="1.2"/><rect x="13.5" y="13.5" width="8" height="7" rx="1.2"/><path d="M6.5 6.6v.8M17.5 6.6v.8M6.5 16.6v.8M17.5 16.6v.8"/></svg></div>
           <div class="dg-up-title">Breakout Rooms</div>
           <div class="dg-up-desc">There will be exactly <b>3 breakout rooms</b>, one per category. Proceed directly to your assigned room after the morning plenary.</div>
         </div><div class="dg-up">
-          <div class="dg-up-ico">⚖️</div>
+          <div class="dg-up-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7" r="3"/><circle cx="16.5" cy="8.5" r="2.4"/><path d="M2.5 19.5c0-3 2.5-5.2 5.5-5.2s5.5 2.2 5.5 5.2"/><path d="M15 14.6c2.6.2 4.5 2.3 4.5 4.9"/></svg></div>
           <div class="dg-up-title">Judges Allocation</div>
           <div class="dg-up-desc">The <b>13 judges</b> are split across the 3 breakout rooms so each category is assessed by its own panel.</div>
         </div><div class="dg-up">
-          <div class="dg-up-ico">✅</div>
+          <div class="dg-up-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.5h8a1.5 1.5 0 0 1 1.5 1.5v15a1.5 1.5 0 0 1-1.5 1.5H8a1.5 1.5 0 0 1-1.5-1.5V5A1.5 1.5 0 0 1 8 3.5z"/><path d="M9.5 2.5h5v2.6h-5z"/><path d="M9.5 10.5h5M9.5 14h5M9.5 17.5h2.5"/></svg></div>
           <div class="dg-up-title">Scoring System</div>
           <div class="dg-up-desc">Judging is <b>100% on the event day</b>, 21 July 2026 — all scoring is done live, replacing the earlier pre-judging plan.</div>
         </div><div class="dg-up">
-          <div class="dg-up-ico">⏱️</div>
+          <div class="dg-up-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13.5" r="8"/><path d="M12 9v4.5l3 2"/><path d="M9.5 2.5h5M18.8 7.2l1.6-1.6M5.2 7.2 3.6 5.6"/></svg></div>
           <div class="dg-up-title">Time Allocation</div>
           <div class="dg-up-desc">Strictly <b>10 min presentation + 5 min Q&A</b> per team.<span class='dg-total'>Total: 15 minutes</span></div>
         </div>
@@ -4971,8 +5014,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   </div>
 
   <!-- FAQ -->
-  <div class="dg-block-label reveal">Frequently Asked Questions</div>
   <div class="dg-faq reveal">
+    <div class="dg-faq-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10.2"/><path d="M8.9 9.1a3.15 3.15 0 1 1 4.45 2.86c-1 .45-1.75 1.25-1.75 2.34v.6"/><circle cx="11.6" cy="17.8" r=".95" fill="currentColor" stroke="none"/></svg></div>
+    <div class="dg-block-label dg-faq-label">Frequently Asked Questions</div>
     <div class="dg-faq-item" data-acc-group="faq">
           <button class="dg-faq-q" onclick="dgToggle(this,'faq')" aria-expanded="false">
             <span>What is the dress code?</span><span class="dg-faq-chev" aria-hidden="true">＋</span>
@@ -6692,7 +6736,8 @@ function dgToggle(btn, group){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function maxPan(){ return Math.max(track.scrollWidth - viewport.clientWidth, 0); }
   function size(){
-    if(mq.matches || reduce){ panel.style.height = ''; track.style.transform = ''; return; }
+    if(mq.matches || reduce){ panel.style.height = ''; track.style.transform = ''; panel.classList.remove('no-pan'); return; }
+    panel.classList.remove('no-pan');
     var pan = maxPan();
     if(pan > 0){
       track.style.transform = 'translateX(0)';
@@ -6700,6 +6745,7 @@ function dgToggle(btn, group){
     } else {
       panel.style.height = '';
       track.style.transform = 'translateX(0)';
+      panel.classList.add('no-pan');
     }
   }
   function onScroll(){
