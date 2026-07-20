@@ -4840,6 +4840,41 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .dg-downloads{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .dg-dl{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-body);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--white);border:1.5px solid var(--ink);padding:9px 14px;border-radius:2px;text-decoration:none;box-shadow:3px 3px 0 var(--ink);transition:transform .18s,box-shadow .18s}
 .dg-dl:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.dg-dl-map{border-color:var(--teal-accent);color:var(--teal-accent);box-shadow:3px 3px 0 var(--teal-accent)}
+.dg-dl-map:hover{box-shadow:4px 4px 0 var(--teal-accent)}
+/* route stepper — car park to registration */
+.dg-route{position:relative;max-width:780px;margin-top:26px}
+.dg-route::before{content:'';position:absolute;left:17px;top:10px;bottom:30px;width:2px;background:repeating-linear-gradient(to bottom,rgba(29,158,117,.55) 0 7px,transparent 7px 14px)}
+.dg-step{position:relative;padding:0 0 30px 60px}
+.dg-step:last-child{padding-bottom:0}
+.dg-step-num{position:absolute;left:0;top:2px;width:36px;height:36px;border-radius:50%;background:var(--teal-accent);color:#fff;font-family:var(--font-display);font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:3px 3px 0 rgba(26,18,10,.2);z-index:1}
+.dg-step-card{background:var(--white);border:1px solid rgba(0,0,0,.1);border-radius:3px;padding:20px 22px;box-shadow:5px 5px 0 rgba(26,18,10,.08);transition:transform .25s ease,box-shadow .25s ease}
+.dg-step-card:hover{transform:translateY(-3px);box-shadow:7px 7px 0 rgba(26,18,10,.12)}
+.dg-step-title{font-family:var(--font-display);font-size:19px;letter-spacing:.02em;color:var(--ink);margin-bottom:5px}
+.dg-step-desc{font-size:13px;color:var(--ink-mid);line-height:1.65;font-weight:300}
+.dg-step-desc b{font-weight:600;color:var(--ink)}
+.dg-step-img{margin-top:14px;border:1px solid rgba(0,0,0,.12);border-radius:3px;overflow:hidden}
+.dg-step-img img{width:100%;display:block}
+.dg-step .dg-dl{margin-top:12px}
+/* step 3 — the only decision point gets extra weight */
+.dg-step.key .dg-step-num{background:var(--gold);color:var(--ink)}
+.dg-step.key .dg-step-card{border:2px solid var(--gold);background:#FFFBEF;box-shadow:6px 6px 0 rgba(192,144,47,.28)}
+.dg-step-flag{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:4px 10px;border-radius:2px;margin-bottom:10px}
+/* floor plan */
+.dg-floor-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:16px}
+.dg-fl{background:var(--white);border:1px solid rgba(0,0,0,.08);border-left:3px solid var(--teal-accent);border-radius:2px;padding:11px 13px}
+.dg-fl.gold{border-left-color:var(--gold)}
+.dg-fl-name{font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.dg-fl-desc{font-size:11.5px;color:var(--ink-light);line-height:1.5}
+/* wifi */
+.dg-wifi{background:var(--teal-deep);border-radius:4px;padding:30px 32px;display:flex;flex-wrap:wrap;gap:22px 34px;align-items:center}
+.dg-wifi-ico{flex:0 0 auto;width:64px;height:64px;border-radius:18px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--gold-light)}
+.dg-wifi-ico svg{width:34px;height:34px;display:block}
+.dg-wifi-nets{display:flex;flex-wrap:wrap;gap:14px 28px;flex:1 1 auto}
+.dg-wifi-k{display:block;font-family:var(--font-body);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;font-weight:600}
+.dg-wifi-v{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14.5px;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:7px 12px;border-radius:3px;letter-spacing:.02em}
+.dg-wifi-note{flex-basis:100%;font-size:12.5px;color:rgba(255,255,255,.6);font-weight:300;margin:0;line-height:1.6}
+.dg-wifi-note b{color:#fff;font-weight:600}
 /* help */
 .dg-help{margin-top:52px;background:var(--teal-deep);border-radius:4px;padding:28px 30px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px}
 .dg-help-t{font-family:var(--font-display);font-size:clamp(18px,2.4vw,24px);letter-spacing:.03em;color:var(--gold-light);flex:0 0 auto}
@@ -4874,6 +4909,12 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   .dg-bo-track{font-size:16px}
   .dg-bo-count{display:none}
   .dg-fmt-desc{font-size:12px}
+  .dg-route::before{left:14px}
+  .dg-step{padding:0 0 24px 46px}
+  .dg-step-num{width:30px;height:30px;font-size:15px}
+  .dg-step-card{padding:16px 16px 18px}
+  .dg-wifi{padding:24px 20px;gap:16px 20px}
+  .dg-wifi-v{font-size:13px}
 }
 </style>
 
@@ -4894,6 +4935,99 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   <div class="dg-facts-hint">KEEP SCROLLING TO PAN &rarr;</div>
   </div>
   </div>
+
+  <!-- Parking & getting there -->
+  <div class="dg-block-label reveal">Parking &amp; Getting There</div>
+  <div class="dg-park-grid reveal">
+    <div class="dg-map"><img src="images/parking-map.jpg" alt="Parking layout map for MATRADE — entrance (Masuk) via Laluan Masuk Atrium Menara, Parkir Amphitheater flat rate RM7, Parkir Zon A and Zon B" loading="lazy"></div>
+    <div class="dg-park-side">
+      <div class="dg-sub2">Where to park</div>
+      <div class="dg-zone hi"><div class="dg-zone-name">🅿️ Amphitheatre Parking, MATRADE — recommended</div><div class="dg-zone-rate">Flat rate <b>RM7/day</b> for the Innovathon.</div>
+        <a class="dg-dl dg-dl-map" style="margin-top:11px" href="https://maps.app.goo.gl/yeSXkJa411xBGrG29" target="_blank" rel="noopener">📍 Amphitheatre Parking — Google Maps</a>
+      </div>
+      <div class="dg-zone"><div class="dg-zone-name">Parkir Zon A</div><div class="dg-zone-rate">Per hour · RM15 max.</div></div>
+      <div class="dg-zone"><div class="dg-zone-name">Parkir Zon B</div><div class="dg-zone-rate">Additional overflow parking.</div></div>
+      <div class="dg-zone-rate" style="margin-top:6px">Enter (<b>Masuk</b>) via Laluan Masuk Atrium Menara; exit (<b>Keluar</b>) as marked on the map. Main entrance: Pintu Masuk Utama Menara MATRADE.</div>
+      <div class="dg-downloads">
+        <a class="dg-dl" href="images/parking-map.pdf" target="_blank" rel="noopener">⬇ Parking map (PDF)</a>
+        <a class="dg-dl" href="https://www.google.com/maps/search/?api=1&query=MATRADE+Kuala+Lumpur" target="_blank" rel="noopener">📍 Open in Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Route: car park → registration -->
+  <div class="dg-block-label reveal">From The Car Park To Registration</div>
+  <p class="dg-note reveal">Six steps from the Amphitheatre car park to registration and breakfast. Only step 3 needs your attention — everything else is a straight line.</p>
+  <div class="dg-route">
+    <div class="dg-step reveal">
+      <div class="dg-step-num">1</div>
+      <div class="dg-step-card">
+        <div class="dg-step-title">MATRADE Entrance</div>
+        <div class="dg-step-desc">From the Amphitheatre car park, head to the main MATRADE entrance (Pintu Masuk Utama Menara MATRADE). <b>Click the Google Maps link below to be guided to the main lobby.</b></div>
+        <a class="dg-dl dg-dl-map" href="https://maps.app.goo.gl/TSSF5EYeefSqmo997" target="_blank" rel="noopener">📍 MATRADE Entrance — Google Maps</a>
+        <div class="dg-step-img"><img src="images/route-1-matrade-entrance.jpg" alt="Main MATRADE entrance — glass doors beneath the MATRADE signage, with the drop-off driveway in front" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="dg-step reveal">
+      <div class="dg-step-num">2</div>
+      <div class="dg-step-card">
+        <div class="dg-step-title">MATRADE Lobby</div>
+        <div class="dg-step-desc">Once inside, head for the <b>main information counter</b>.</div>
+        <div class="dg-step-img"><img src="images/route-2-matrade-lobby.jpg" alt="MATRADE lobby — marble-clad main information counter with the MATRADE logo behind it and world clocks on the left wall" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="dg-step key reveal">
+      <div class="dg-step-num">3</div>
+      <div class="dg-step-card">
+        <span class="dg-step-flag">⚠ The only decision point</span>
+        <div class="dg-step-title">Escalator To MPC</div>
+        <div class="dg-step-desc">Behind the main lobby counter, near <b>Richiamo Cafe</b>, walk across the MPC atrium — then take the <b>RIGHT escalator</b> up to <b>Level 1</b>.</div>
+        <div class="dg-step-img"><img src="images/route-3-escalator-mpc.jpg" alt="MPC atrium with Richiamo Cafe — take the right-hand escalator up to Level 1" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="dg-step reveal">
+      <div class="dg-step-num">4</div>
+      <div class="dg-step-card">
+        <div class="dg-step-title">MPC Entrance, Level 1</div>
+        <div class="dg-step-desc">At the top of the escalator you arrive at the MPC entrance on Level 1.</div>
+        <div class="dg-step-img"><img src="images/route-4-mpc-entrance.jpg" alt="MPC entrance on Level 1, at the top of the escalator" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="dg-step reveal">
+      <div class="dg-step-num">5</div>
+      <div class="dg-step-card">
+        <div class="dg-step-title">Registration Counter</div>
+        <div class="dg-step-desc"><b>Immediately beside where the escalator arrives.</b> Check in, grab your <b>digital pass</b>, get your <b>unique QR code scanned</b> and you're set. You can get breakfast at Restoran Lauk Kampung on the Ground Floor — see the next step.</div>
+        <div class="dg-step-img"><img src="images/route-5-registration.jpg" alt="Innovathon registration counter at MPC, right beside the escalator arrival point" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="dg-step reveal">
+      <div class="dg-step-num">6</div>
+      <div class="dg-step-card">
+        <div class="dg-step-title">Meals At Restoran Lauk Kampung</div>
+        <div class="dg-step-desc">Go down the escalator at the <b>exit near Dewan Produktiviti</b> — the restaurant is on the <b>Ground Floor</b>. Your <b>unique QR code</b> will be scanned upon entry.</div>
+        <div class="dg-step-img"><img src="images/route-6-lauk-kampung.jpg" alt="Restoran Lauk Kampung on the Ground Floor, where Innovathon meals are served" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floor plan -->
+  <div class="dg-block-label reveal">Level 1 Floor Plan</div>
+  <p class="dg-note reveal">Everything happens on <b>Level 1 of MPC</b>. Orient yourself from <b>Pendaftaran</b> (registration, bottom right) — it sits right where the up escalator (Eskalator Naik) arrives. The down escalator (Eskalator Turun) is at the opposite end of the floor.</p>
+  <div class="reveal">
+    <div class="dg-map"><img src="images/floor-layout.jpg" alt="Level 1 floor plan of MPC — Pendaftaran (registration) beside the up escalator on the right; Dewan Produktiviti main hall on the left; Bilik Inovasi and Bilik Transformasi breakout rooms; Bilik Juri and Bilik Sekretariat; surau and toilets at both wings" loading="lazy"></div>
+    <div class="dg-floor-legend">
+      <div class="dg-fl gold"><div class="dg-fl-name">Pendaftaran (Registration)</div><div class="dg-fl-desc">Your first stop — immediately beside the up escalator, bottom right.</div></div>
+      <div class="dg-fl"><div class="dg-fl-name">Dewan Produktiviti — Breakout Room 1</div><div class="dg-fl-desc">The main hall (event space), centre-left — plenary sessions and Breakout 1 happen here.</div></div>
+      <div class="dg-fl"><div class="dg-fl-name">Bilik Inovasi — Breakout Room 2</div><div class="dg-fl-desc">Centre of the floor.</div></div>
+      <div class="dg-fl"><div class="dg-fl-name">Bilik Transformasi — Breakout Room 3</div><div class="dg-fl-desc">Right wing.</div></div>
+      <div class="dg-fl"><div class="dg-fl-name">Bilik Juri</div><div class="dg-fl-desc">Jury room — judges only.</div></div>
+      <div class="dg-fl"><div class="dg-fl-name">Bilik Sekretariat</div><div class="dg-fl-desc">Secretariat room — find the organising team here if you need anything.</div></div>
+      <div class="dg-fl"><div class="dg-fl-name">Surau</div><div class="dg-fl-desc">Lelaki (men) on the left wing · perempuan (women) on the right wing.</div></div>
+      <div class="dg-fl"><div class="dg-fl-name">Tandas / Toilets</div><div class="dg-fl-desc">At both ends of the floor, beside Tangga 8 and Tangga 9.</div></div>
+    </div>
+  </div>
+
 
   <!-- Key updates -->
   <div class="dg-block-label reveal">Key Updates</div>
@@ -5052,25 +5186,20 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
           <button class="dg-faq-q" onclick="dgToggle(this,'faq')" aria-expanded="false">
             <span>Is parking available?</span><span class="dg-faq-chev" aria-hidden="true">＋</span>
           </button>
-          <div class="dg-faq-a"><div class="dg-faq-a-inner">Yes. A <b>flat rate of RM7 per day</b> applies for the Innovathon — park at <b>Parkir Amphitheater</b>. (Parkir Zon A charges per hour, RM15 max.) See the map below.</div></div>
+          <div class="dg-faq-a"><div class="dg-faq-a-inner">Yes. A <b>flat rate of RM7 per day</b> applies for the Innovathon — park at <b>Amphitheatre Parking</b>. (Parkir Zon A charges per hour, RM15 max.) See the Parking &amp; Getting There section above.</div></div>
         </div>
   </div>
 
-  <!-- Parking & getting there -->
-  <div class="dg-block-label reveal">Parking &amp; Getting There</div>
-  <div class="dg-park-grid reveal">
-    <div class="dg-map"><img src="images/parking-map.jpg" alt="Parking layout map for MATRADE — entrance (Masuk) via Laluan Masuk Atrium Menara, Parkir Amphitheater flat rate RM7, Parkir Zon A and Zon B" loading="lazy"></div>
-    <div class="dg-park-side">
-      <div class="dg-sub2">Where to park</div>
-      <div class="dg-zone hi"><div class="dg-zone-name">🅿️ Parkir Amphitheater — recommended</div><div class="dg-zone-rate">Flat rate <b>RM7/day</b> for the Innovathon.</div></div>
-      <div class="dg-zone"><div class="dg-zone-name">Parkir Zon A</div><div class="dg-zone-rate">Per hour · RM15 max.</div></div>
-      <div class="dg-zone"><div class="dg-zone-name">Parkir Zon B</div><div class="dg-zone-rate">Additional overflow parking.</div></div>
-      <div class="dg-zone-rate" style="margin-top:6px">Enter (<b>Masuk</b>) via Laluan Masuk Atrium Menara; exit (<b>Keluar</b>) as marked on the map. Main entrance: Pintu Masuk Utama Menara MATRADE.</div>
-      <div class="dg-downloads">
-        <a class="dg-dl" href="images/parking-map.pdf" target="_blank" rel="noopener">⬇ Parking map (PDF)</a>
-        <a class="dg-dl" href="https://www.google.com/maps/search/?api=1&query=MATRADE+Kuala+Lumpur" target="_blank" rel="noopener">📍 Open in Maps</a>
-      </div>
+  <!-- WiFi -->
+  <div class="dg-block-label reveal">On-Site WiFi</div>
+  <div class="dg-wifi reveal">
+    <div class="dg-wifi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.2a14.5 14.5 0 0 1 19 0"/><path d="M5.6 12.6a10 10 0 0 1 12.8 0"/><path d="M8.7 16a5.5 5.5 0 0 1 6.6 0"/><circle cx="12" cy="19.2" r="1.1" fill="currentColor" stroke="none"/></svg></div>
+    <div class="dg-wifi-nets">
+      <div class="dg-wifi-net"><span class="dg-wifi-k">Network 1</span><span class="dg-wifi-v">Innovathon@Produktiviti</span></div>
+      <div class="dg-wifi-net"><span class="dg-wifi-k">Network 2</span><span class="dg-wifi-v">Innovathon@Transformasi</span></div>
+      <div class="dg-wifi-net"><span class="dg-wifi-k">Password — both networks</span><span class="dg-wifi-v">P@ssw0rd123</span></div>
     </div>
+    <p class="dg-wifi-note">Both networks share the same password — connect to <b>whichever is stronger</b> where you're standing.</p>
   </div>
 
   <!-- Help -->
