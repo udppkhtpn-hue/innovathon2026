@@ -4750,24 +4750,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .dg-lede{font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:640px;margin-bottom:32px;font-weight:300}
 .dg-block-label{font-family:var(--font-display);font-size:clamp(19px,2.4vw,26px);letter-spacing:.02em;color:var(--ink);margin:52px 0 18px;display:flex;align-items:center;gap:12px}
 .dg-block-label::before{content:'';width:26px;height:3px;background:var(--teal-accent);display:inline-block}
-/* quick facts — scroll-driven horizontal pan (same mechanic as committee) */
-.dg-facts-panel{position:relative;margin:0 -7%}
-.dg-facts-sticky{position:sticky;top:60px;z-index:20;min-height:calc(100vh - 60px);display:flex;flex-direction:column;justify-content:center;padding:24px 0;
-  background:linear-gradient(rgba(243,239,227,.34),rgba(243,239,227,.14) 45%,rgba(243,239,227,.46)),url('images/matrade.jpg') center 52%/cover no-repeat,var(--cream)}
-.dg-facts-viewport{overflow:hidden;width:100%}
-.dg-facts-track{display:flex;gap:20px;width:max-content;padding:6px 7%;will-change:transform}
-.dg-facts-hint{text-align:center;margin-top:22px;font-family:var(--font-display);font-size:11px;letter-spacing:.3em;color:var(--ink-light)}
-/* nothing to pan (few cards / wide viewport) — collapse to a plain centred row */
-.dg-facts-panel.no-pan .dg-facts-sticky{position:static;min-height:0;padding:8px 0}
-.dg-facts-panel.no-pan .dg-facts-track{justify-content:center;width:100%}
-.dg-facts-panel.no-pan .dg-facts-hint{display:none}
-.dg-fact{flex:0 0 auto;width:270px;min-height:300px;display:flex;flex-direction:column;background:rgba(255,255,255,.42);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);border:1px solid rgba(255,255,255,.5);box-shadow:7px 7px 0 rgba(26,18,10,.12);padding:32px 28px 34px;border-radius:4px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
-.dg-fact:hover{transform:translateY(-5px);background:rgba(255,255,255,.58);box-shadow:10px 10px 0 rgba(26,18,10,.16)}
-.dg-fact-ico{width:96px;height:96px;border-radius:24px;display:flex;align-items:center;justify-content:center;background:rgba(29,158,117,.1);color:var(--teal-accent);margin-bottom:auto}
-.dg-fact-ico svg{width:48px;height:48px;display:block;stroke-width:1.5}
-.dg-fact-k{font-family:var(--font-body);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mid);font-weight:600;margin:28px 0 7px}
-.dg-fact-v{font-size:17px;color:var(--ink);font-weight:500;line-height:1.45}
-.dg-fact-v a{color:var(--teal-accent);text-decoration:none;border-bottom:1px solid rgba(29,158,117,.35)}
+/* venue photo — full-bleed MATRADE building, unedited brightness */
+.dg-venue{margin:0 -7%}
+.dg-venue img{width:100%;max-height:62vh;object-fit:cover;object-position:center 52%;display:block}
 /* key updates */
 .dg-updates{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
 .dg-up{position:relative;overflow:hidden;isolation:isolate;background:var(--teal-deep);border:1px solid rgba(255,255,255,.06);border-radius:3px;padding:32px 26px 34px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .25s ease,border-color .25s ease}
@@ -4794,6 +4779,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .dg-bo-icon{font-size:18px}
 .dg-bo-track{font-family:var(--font-display);font-size:clamp(17px,2vw,22px);letter-spacing:.02em;color:var(--ink);flex:1 1 auto;line-height:1}
 .dg-bo-count{font-size:11px;letter-spacing:.06em;color:var(--ink-light);font-weight:500;flex:0 0 auto}
+.dg-bo-loc{font-size:11px;letter-spacing:.06em;color:var(--bo);font-weight:700;flex:0 0 auto}
+.dg-ord{font-family:var(--font-display);font-size:14px;color:var(--bo);width:26px}
 .dg-bo-chev{font-family:var(--font-body);font-size:22px;color:var(--bo);flex:0 0 auto;transition:transform .3s;line-height:1}
 .dg-bo.open .dg-bo-chev{transform:rotate(45deg)}
 .dg-bo-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
@@ -4891,30 +4878,16 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   .dg-panel-cols{grid-template-columns:1fr;gap:18px}
   .dg-park-grid{grid-template-columns:1fr}
 }
-/* facts: native horizontal swipe instead of scroll-jacked pan (mirror committee) */
-@media(max-width:760px){
-  .dg-facts-sticky{position:static;top:auto;min-height:0;display:block;padding:22px 0;
-    background:linear-gradient(rgba(243,239,227,.34),rgba(243,239,227,.14) 45%,rgba(243,239,227,.46)),url('images/matrade.jpg') center 52%/cover no-repeat,var(--cream)}
-  .dg-facts-viewport{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:none}
-  .dg-facts-viewport::-webkit-scrollbar{display:none}
-  .dg-facts-track{transform:none!important;width:max-content;padding:4px 6%;gap:14px}
-  .dg-fact{scroll-snap-align:center;min-height:0;width:230px;padding:22px 22px 24px}
-  .dg-fact-ico{width:72px;height:72px;border-radius:18px;margin-bottom:18px}
-  .dg-fact-ico svg{width:36px;height:36px}
-  .dg-fact-k{margin:0 0 6px}
-  .dg-facts-hint{display:none}
-}
 @media(max-width:560px){
   .dg-section{padding:56px 6% 72px}
-  .dg-facts-panel{margin:0 -6%}
+  .dg-venue{margin:0 -6%}
   .dg-faq{margin:44px -6% 0;padding:8px 6% 38px}
   .dg-faq-mark{width:200px;height:200px;right:-4%}
-  .dg-fact{width:200px;padding:20px 18px 22px}
-  .dg-fact-ico{width:60px;height:60px;border-radius:15px;margin-bottom:14px}
-  .dg-fact-ico svg{width:30px;height:30px}
-  .dg-fact-v{font-size:15px}
   .dg-bo-track{font-size:16px}
   .dg-bo-count{display:none}
+  .dg-bo-head{flex-wrap:wrap}
+  .dg-bo-track{flex:1 1 0;min-width:0;line-height:1.15}
+  .dg-bo-loc{flex-basis:100%;order:5;margin-top:2px}
   .dg-fmt-desc{font-size:12px}
   .dg-route::before{left:14px}
   .dg-step{padding:0 0 24px 46px}
@@ -4929,19 +4902,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   <h2 class="dg-heading reveal">YOUR DAY-OF GUIDE</h2>
   <p class="dg-lede reveal">Everything you need for Innovathon day at MATRADE, Kuala Lumpur — where to go, what to bring, how judging works, and which breakout room your team is in.</p>
 
-  <!-- Quick facts — scroll-driven horizontal pan (same as committee) -->
-  <div class="dg-facts-panel">
-  <div class="dg-facts-sticky">
-  <div class="dg-facts-viewport">
-  <div class="dg-facts-track">
-    <div class="dg-fact"><div class="dg-fact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5a2 2 0 1 1 1.4 1.9c-.55.2-.9.6-.9 1.25V10"/><path d="M12 10 4.5 15.2A1 1 0 0 0 5 17h14a1 1 0 0 0 .5-1.8L12 10z"/></svg></div><div class="dg-fact-k">Dress Code</div><div class="dg-fact-v">Formal / smart casual · hall runs cold</div></div>
-    <div class="dg-fact"><div class="dg-fact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M9.5 17V7.5h3.2a2.9 2.9 0 0 1 0 5.8H9.5"/></svg></div><div class="dg-fact-k">Parking</div><div class="dg-fact-v">Flat RM7/day · Amphitheater</div></div>
-    <div class="dg-fact"><div class="dg-fact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6.5a1.9 1.9 0 0 0 3.8 0V3M7.9 11.4V21"/><path d="M16.8 3c-1.4.6-2.3 2.5-2.3 5.2s.9 4.1 2.3 4.6V21"/></svg></div><div class="dg-fact-k">Meals</div><div class="dg-fact-v">Meals will be served 3 X at Restoran Lauk Kampung, Ground Floor (Scan QR code for entry)</div></div>
-  </div>
-  </div>
-  <div class="dg-facts-hint">KEEP SCROLLING TO PAN &rarr;</div>
-  </div>
-  </div>
+  <!-- MATRADE venue photo -->
+  <div class="dg-venue reveal"><img src="images/matrade.jpg" alt="MATRADE building, Kuala Lumpur — the Innovathon 2026 venue" loading="lazy"></div>
 
   <!-- Parking & getting there -->
   <div class="dg-block-label reveal">Parking &amp; Getting There</div>
@@ -5079,7 +5041,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   <!-- Presentation format -->
   <!-- Breakout allocation -->
   <div class="dg-block-label reveal">Find Your Breakout Room</div>
-  <p class="dg-note reveal">Teams are assigned to one of three breakout rooms by category. After the morning plenary, proceed directly to your assigned room. Tap a room to see its moderator, judges, and team list.</p>
+  <p class="dg-note reveal">Teams are assigned to one of three breakout rooms by category. After the morning plenary, proceed directly to your assigned room. Tap a room to see its moderator, judges, and presentation order.</p>
   <div class="reveal">
     
       <div class="dg-bo" data-acc-group="bo" style="--bo:#2E86C1">
@@ -5087,7 +5049,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
           <span class="dg-bo-num">Breakout 1</span>
           <span class="dg-bo-icon">🩺</span>
           <span class="dg-bo-track">Clinician Journey</span>
-          <span class="dg-bo-count">9 teams</span>
+          <span class="dg-bo-loc">📍 Dewan Produktiviti</span>
+          <span class="dg-bo-count">10 teams</span>
           <span class="dg-bo-chev" aria-hidden="true">＋</span>
         </button>
         <div class="dg-bo-body">
@@ -5097,13 +5060,13 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
                 <div class="dg-sub">Moderators</div>
                 <div class="dg-person"><span class="dg-person-name">Dr Siti Zaleha bt Hamzah</span><span class="dg-person-role">Consultant in Special Care Dentistry, HTPN</span></div><div class="dg-person"><span class="dg-person-name">Dr Darlina binti Mohd Dhari</span><span class="dg-person-role">Consultant Anaesthesiologist, HTPN</span></div>
                 <div class="dg-sub" style="margin-top:16px">Panel Judges</div>
-                <ul class="dg-judges"><li>Assoc Prof Ts Dr Raja Mohd Tariqi — Consultant AI & BDA</li><li>Dr Ishak Ibrahim — CEO, Rayatech</li><li>Mr Wan Ahmad Jafri Wan Abdul Aziz — MIMOS</li><li>Mr Amran Mansoor — Senior Technology Strategist, Public Sector, Microsoft Malaysia</li></ul>
+                <ul class="dg-judges"><li>Assoc Prof Ts Dr Raja Mohd Tariqi — Consultant AI & BDA</li><li>Dr Ishak Ibrahim — CEO, Rayatech</li><li>Mr Wan Ahmad Jafri Wan Abdul Aziz — MIMOS Solutions Sdn Bhd</li><li>Mr Amran Mansoor — Senior Technology Strategist, Public Sector, Microsoft Malaysia</li></ul>
               </div>
               <div class="dg-panel-teams">
-                <div class="dg-sub">Allocated Project Teams</div>
+                <div class="dg-sub">Presentation Order</div>
                 <table class="dg-table">
-                  <thead><tr><th>Project / Team</th><th>Institution / Unit</th></tr></thead>
-                  <tbody><tr><td class="dg-team">EBL Calculator</td><td class="dg-unit">O&G, HTPN</td></tr><tr><td class="dg-team">Growthchart</td><td class="dg-unit">KK Tanjung Lalang</td></tr><tr><td class="dg-team">AMS Round Manager Pro</td><td class="dg-unit">Pharmacy, HTPN</td></tr><tr><td class="dg-team">The Skin Diary Generator</td><td class="dg-unit">Pharmacy, HTPN</td></tr><tr><td class="dg-team">DoseWise TB</td><td class="dg-unit">Pharmacy, HTPN</td></tr><tr><td class="dg-team">ResusHero (BLS) – Code Blue</td><td class="dg-unit">House Officer, HTPN</td></tr><tr><td class="dg-team">PhysioMeasure</td><td class="dg-unit">Hospital Sri Aman</td></tr><tr><td class="dg-team">CLABSI GUARD PRO</td><td class="dg-unit">Infection Control Unit, HTPN</td></tr><tr><td class="dg-team">Woundcare 360</td><td class="dg-unit">KK Pokok Sena</td></tr></tbody>
+                  <thead><tr><th>#</th><th>Project / Team</th><th>Institution / Unit</th></tr></thead>
+                  <tbody><tr><td class="dg-ord">1</td><td class="dg-team">EBL Calculator</td><td class="dg-unit">O&G, HTPN</td></tr><tr><td class="dg-ord">2</td><td class="dg-team">Growthchart</td><td class="dg-unit">KK Tanjung Lalang</td></tr><tr><td class="dg-ord">3</td><td class="dg-team">AMS Round Manager Pro</td><td class="dg-unit">Pharmacy, HTPN</td></tr><tr><td class="dg-ord">4</td><td class="dg-team">The Skin Diary Generator</td><td class="dg-unit">Pharmacy, HTPN</td></tr><tr><td class="dg-ord">5</td><td class="dg-team">DoseWise TB</td><td class="dg-unit">Pharmacy, HTPN</td></tr><tr><td class="dg-ord">6</td><td class="dg-team">ResusHero (BLS) – Code Blue</td><td class="dg-unit">House Officer, HTPN</td></tr><tr><td class="dg-ord">7</td><td class="dg-team">PhysioMeasure</td><td class="dg-unit">Hospital Sri Aman</td></tr><tr><td class="dg-ord">8</td><td class="dg-team">CLABSI GUARD PRO</td><td class="dg-unit">Infection Control Unit, HTPN</td></tr><tr><td class="dg-ord">9</td><td class="dg-team">Goals of Care (GOC) Assistant</td><td class="dg-unit">—</td></tr><tr><td class="dg-ord">10</td><td class="dg-team">Woundcare 360</td><td class="dg-unit">KK Pokok Sena</td></tr></tbody>
                 </table>
               </div>
             </div>
@@ -5115,6 +5078,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
           <span class="dg-bo-num">Breakout 2</span>
           <span class="dg-bo-icon">🧑‍🤝‍🧑</span>
           <span class="dg-bo-track">Patient Journey</span>
+          <span class="dg-bo-loc">📍 Bilik Inovasi</span>
           <span class="dg-bo-count">9 teams</span>
           <span class="dg-bo-chev" aria-hidden="true">＋</span>
         </button>
@@ -5128,10 +5092,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
                 <ul class="dg-judges"><li>Dr Ezam Mat Ali — Paediatrician / CEO, Medplanner</li><li>Ts Mohd Azirudin bin Sahhudin — Principal Lecturer, Politeknik Port Dickson</li><li>Pn Azlin Mohd Alias — Pengurus Kanan, MPC</li><li>Mr Hariharan Nagappan — CISO, HSS Propick Technologies</li></ul>
               </div>
               <div class="dg-panel-teams">
-                <div class="dg-sub">Allocated Project Teams</div>
+                <div class="dg-sub">Presentation Order</div>
                 <table class="dg-table">
-                  <thead><tr><th>Project / Team</th><th>Institution / Unit</th></tr></thead>
-                  <tbody><tr><td class="dg-team">My Family Health App</td><td class="dg-unit">PKD Gombak</td></tr><tr><td class="dg-team">Family Cancer Risk Assistant</td><td class="dg-unit">Institut Kanser Negara</td></tr><tr><td class="dg-team">Pictorial Blood Loss Assessment Tracker</td><td class="dg-unit">Hospital Taiping</td></tr><tr><td class="dg-team">Medexa – Medication Expiry Assistant</td><td class="dg-unit">Hospital Kepala Batas</td></tr><tr><td class="dg-team">MINDA TREK</td><td class="dg-unit">Occupational Therapy Unit, HTPN</td></tr><tr><td class="dg-team">SPECTRA</td><td class="dg-unit">Occupational Therapy Unit, HTPN</td></tr><tr><td class="dg-team">CAKAP</td><td class="dg-unit">Speech Therapy Unit, HTPN</td></tr><tr><td class="dg-team">MinDora</td><td class="dg-unit">Psychiatry, HTPN</td></tr><tr><td class="dg-team">CRE TRACKER PRO</td><td class="dg-unit">Infection Control Unit, HTPN</td></tr></tbody>
+                  <thead><tr><th>#</th><th>Project / Team</th><th>Institution / Unit</th></tr></thead>
+                  <tbody><tr><td class="dg-ord">1</td><td class="dg-team">My Family Health App</td><td class="dg-unit">PKD Gombak</td></tr><tr><td class="dg-ord">2</td><td class="dg-team">Family Cancer Risk Assistant</td><td class="dg-unit">Institut Kanser Negara</td></tr><tr><td class="dg-ord">3</td><td class="dg-team">CRE TRACKER PRO</td><td class="dg-unit">Infection Control Unit, HTPN</td></tr><tr><td class="dg-ord">4</td><td class="dg-team">Pictorial Blood Loss Assessment Tracker</td><td class="dg-unit">Hospital Taiping</td></tr><tr><td class="dg-ord">5</td><td class="dg-team">Medexa – Medication Expiry Assistant</td><td class="dg-unit">Hospital Kepala Batas</td></tr><tr><td class="dg-ord">6</td><td class="dg-team">MINDA TREK</td><td class="dg-unit">Occupational Therapy Unit, HTPN</td></tr><tr><td class="dg-ord">7</td><td class="dg-team">SPECTRA</td><td class="dg-unit">Occupational Therapy Unit, HTPN</td></tr><tr><td class="dg-ord">8</td><td class="dg-team">MinDora</td><td class="dg-unit">Psychiatry, HTPN</td></tr><tr><td class="dg-ord">9</td><td class="dg-team">CAKAP</td><td class="dg-unit">Speech Therapy Unit, HTPN</td></tr></tbody>
                 </table>
               </div>
             </div>
@@ -5143,6 +5107,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
           <span class="dg-bo-num">Breakout 3</span>
           <span class="dg-bo-icon">⚙️</span>
           <span class="dg-bo-track">Management Productivity</span>
+          <span class="dg-bo-loc">📍 Bilik Transformasi</span>
           <span class="dg-bo-count">9 teams</span>
           <span class="dg-bo-chev" aria-hidden="true">＋</span>
         </button>
@@ -5156,10 +5121,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
                 <ul class="dg-judges"><li>Assoc Prof Dr Mohd Rafee bin Baharudin — Environmental Health / AI Healthcare, UPM</li><li>Dr Izhar Che Mee — CEO, Roketz Sdn Bhd</li><li>En Asmawadi Mohamed — Timbalan Pengarah, MPC</li><li>Assoc Prof Ts Dr Shukor Sanim Mohd Fauzi — AI & Software Engineering, UiTM</li><li>Dr Ahmad Hakim bin Jamaluddin — AI, Data Science, Mathematics & Statistics, UPM</li></ul>
               </div>
               <div class="dg-panel-teams">
-                <div class="dg-sub">Allocated Project Teams</div>
+                <div class="dg-sub">Presentation Order</div>
                 <table class="dg-table">
-                  <thead><tr><th>Project / Team</th><th>Institution / Unit</th></tr></thead>
-                  <tbody><tr><td class="dg-team">IRIS</td><td class="dg-unit">Hospital Shah Alam</td></tr><tr><td class="dg-team">HPP OSH-Alert</td><td class="dg-unit">Hospital Pulau Pinang</td></tr><tr><td class="dg-team">e-MEDEVAC Portal Sarawak</td><td class="dg-unit">Jabatan Kesihatan Negeri Sarawak</td></tr><tr><td class="dg-team">Data Permit & Pendaftaran Kematian</td><td class="dg-unit">Forensic, HTPN</td></tr><tr><td class="dg-team">Gynapse</td><td class="dg-unit">Hospital Shah Alam</td></tr><tr><td class="dg-team">MedMove Pro</td><td class="dg-unit">Hospital Sentosa</td></tr><tr><td class="dg-team">MOPD e-portal</td><td class="dg-unit">Medical, HTPN</td></tr><tr><td class="dg-team">SpeechGate</td><td class="dg-unit">Speech Therapy Unit, HTPN</td></tr><tr><td class="dg-team">O&G Patient Intelligence</td><td class="dg-unit">O&G, HTPN</td></tr></tbody>
+                  <thead><tr><th>#</th><th>Project / Team</th><th>Institution / Unit</th></tr></thead>
+                  <tbody><tr><td class="dg-ord">1</td><td class="dg-team">e-MEDEVAC Portal Sarawak</td><td class="dg-unit">Jabatan Kesihatan Negeri Sarawak</td></tr><tr><td class="dg-ord">2</td><td class="dg-team">IRIS</td><td class="dg-unit">Hospital Shah Alam</td></tr><tr><td class="dg-ord">3</td><td class="dg-team">HPP OSH-Alert</td><td class="dg-unit">Hospital Pulau Pinang</td></tr><tr><td class="dg-ord">4</td><td class="dg-team">SpeechGate</td><td class="dg-unit">Speech Therapy Unit, HTPN</td></tr><tr><td class="dg-ord">5</td><td class="dg-team">Data Permit & Pendaftaran Kematian</td><td class="dg-unit">Forensic, HTPN</td></tr><tr><td class="dg-ord">6</td><td class="dg-team">Gynapse</td><td class="dg-unit">Hospital Shah Alam</td></tr><tr><td class="dg-ord">7</td><td class="dg-team">MedMove Pro</td><td class="dg-unit">Hospital Sentosa</td></tr><tr><td class="dg-ord">8</td><td class="dg-team">MOPD e-portal</td><td class="dg-unit">Medical, HTPN</td></tr><tr><td class="dg-ord">9</td><td class="dg-team">O&G Patient Intelligence</td><td class="dg-unit">O&G, HTPN</td></tr></tbody>
                 </table>
               </div>
             </div>
@@ -5734,6 +5699,16 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
                 <img src="images/committee/faris.png" alt="En Muhammad Faris bin Kharul Salleh" loading="lazy" onerror="this.style.display='none'">
               </div>
               <div class="cmt-mod-name">En Muhammad Faris bin Kharul Salleh</div>
+              <div class="cmt-mod-desig">Digital, Gimik &amp; Pentas</div>
+              <div class="cmt-mod-fac">HTPN Kajang</div>
+            </div>
+            <div class="cmt-mod-card">
+              <span class="cmt-led"></span>
+              <div class="cmt-mod-photo">
+                <span class="cmt-mod-ph">MA</span>
+                <img src="images/committee/alif.jpg" alt="En Mohamad Alif Asyraf bin Khairul Salleh" loading="lazy" onerror="this.style.display='none'">
+              </div>
+              <div class="cmt-mod-name">En Mohamad Alif Asyraf bin Khairul Salleh</div>
               <div class="cmt-mod-desig">Digital, Gimik &amp; Pentas</div>
               <div class="cmt-mod-fac">HTPN Kajang</div>
             </div>
@@ -6612,7 +6587,7 @@ statNums.forEach(el => statObserver.observe(el));
     },
     {
       name: 'Wan Ahmad Jafri Wan Abdul Aziz',
-      org:  'MIMOS',
+      org:  'MIMOS Solutions Sdn Bhd',
       photo:'images/jury/wan ahmad jafri photo-black.png',
       bio:  'Wan Ahmad Jafri is the Acting Chief Executive Officer and Chief Business Development Officer at MIMOS. With a Bachelor of Engineering in Electrical & Electronics and an MBA, he brings over two decades of technical and business development experience from organisations including Sony, Telekom Malaysia, and Alcatel Lucent. His current focus involves public sector solutions and aligning technology with strategic government service goals.'
     },
@@ -6872,47 +6847,6 @@ function dgToggle(btn, group){
     if(body) body.style.maxHeight = body.scrollHeight + 'px';
   }
 }
-
-/* ── Day-Guide quick-facts: scroll-driven horizontal pan (same mechanic as committee) ── */
-(function(){
-  var panel = document.querySelector('.dg-facts-panel');
-  if(!panel) return;
-  var sticky = panel.querySelector('.dg-facts-sticky');
-  var track = panel.querySelector('.dg-facts-track');
-  var viewport = panel.querySelector('.dg-facts-viewport');
-  if(!sticky || !track || !viewport) return;
-  var TOP = 60;
-  var mq = window.matchMedia('(max-width: 760px)');
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function maxPan(){ return Math.max(track.scrollWidth - viewport.clientWidth, 0); }
-  function size(){
-    if(mq.matches || reduce){ panel.style.height = ''; track.style.transform = ''; panel.classList.remove('no-pan'); return; }
-    panel.classList.remove('no-pan');
-    var pan = maxPan();
-    if(pan > 0){
-      track.style.transform = 'translateX(0)';
-      panel.style.height = (sticky.offsetHeight + pan) + 'px';
-    } else {
-      panel.style.height = '';
-      track.style.transform = 'translateX(0)';
-      panel.classList.add('no-pan');
-    }
-  }
-  function onScroll(){
-    if(mq.matches || reduce) return;
-    var pan = maxPan();
-    if(pan <= 0){ track.style.transform = 'translateX(0)'; return; }
-    var rect = panel.getBoundingClientRect();
-    var progress = Math.min(Math.max((TOP - rect.top) / pan, 0), 1);
-    track.style.transform = 'translateX(' + (-progress * pan) + 'px)';
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', function(){ size(); onScroll(); });
-  window.addEventListener('load', function(){ size(); onScroll(); });
-  if(mq.addEventListener) mq.addEventListener('change', function(){ size(); onScroll(); });
-  size();
-  onScroll();
-})();
 </script>
 </body>
 </html>
