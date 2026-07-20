@@ -4842,6 +4842,13 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .dg-dl:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
 .dg-dl-map{border-color:var(--teal-accent);color:var(--teal-accent);box-shadow:3px 3px 0 var(--teal-accent)}
 .dg-dl-map:hover{box-shadow:4px 4px 0 var(--teal-accent)}
+/* arriving — drive vs drop-off */
+.dg-arrive{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:24px}
+.dg-arr{background:var(--white);border:1px solid rgba(0,0,0,.1);border-radius:3px;padding:22px 22px 24px;box-shadow:5px 5px 0 rgba(26,18,10,.08);display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.dg-arr-ico{font-size:26px;line-height:1}
+.dg-arr-t{font-family:var(--font-display);font-size:18px;letter-spacing:.03em;color:var(--ink)}
+.dg-arr-txt{font-size:13px;color:var(--ink-mid);line-height:1.65;font-weight:300;flex:1 1 auto}
+.dg-arr-txt b{font-weight:600;color:var(--ink)}
 /* route stepper — car park to registration */
 .dg-route{position:relative;max-width:780px;margin-top:26px}
 .dg-route::before{content:'';position:absolute;left:17px;top:10px;bottom:30px;width:2px;background:repeating-linear-gradient(to bottom,rgba(29,158,117,.55) 0 7px,transparent 7px 14px)}
@@ -4938,6 +4945,20 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
   <!-- Parking & getting there -->
   <div class="dg-block-label reveal">Parking &amp; Getting There</div>
+  <div class="dg-arrive reveal">
+    <div class="dg-arr">
+      <div class="dg-arr-ico">🚗</div>
+      <div class="dg-arr-t">Driving &amp; Parking</div>
+      <div class="dg-arr-txt">If you are driving (and parking) to the MPC, MATRADE building for the <b>first time</b>, we recommend using the Google Maps link below for specific directions to the <b>Amphitheatre Parking</b>.</div>
+      <a class="dg-dl dg-dl-map" href="https://maps.app.goo.gl/yeSXkJa411xBGrG29" target="_blank" rel="noopener">📍 Amphitheatre Parking — Google Maps</a>
+    </div>
+    <div class="dg-arr">
+      <div class="dg-arr-ico">🚕</div>
+      <div class="dg-arr-t">Being Dropped Off</div>
+      <div class="dg-arr-txt">If you are being sent to MPC, MATRADE, use the Google Maps link below to go straight to the <b>lobby</b>.</div>
+      <a class="dg-dl dg-dl-map" href="https://maps.app.goo.gl/TSSF5EYeefSqmo997" target="_blank" rel="noopener">📍 MATRADE Lobby — Google Maps</a>
+    </div>
+  </div>
   <div class="dg-park-grid reveal">
     <div class="dg-map"><img src="images/parking-map.jpg" alt="Parking layout map for MATRADE — entrance (Masuk) via Laluan Masuk Atrium Menara, Parkir Amphitheater flat rate RM7, Parkir Zon A and Zon B" loading="lazy"></div>
     <div class="dg-park-side">
