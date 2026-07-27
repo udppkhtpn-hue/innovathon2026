@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Productivity Intelligence Innova-thon 2026 | HTPN × MPC</title>
+<title>Productivity Intelligence Innova-thon 2026 — Results &amp; Highlights | HTPN × MPC</title>
+<meta name="description" content="On 21 July 2026, ~200 healthcare professionals gathered at MPC MATRADE for Malaysia's national AI healthcare convention. 40+ AI apps judged, 9 winners crowned, 1,285 staff trained — all built in-house at RM0 licensing cost. As featured in BERNAMA.">
+<meta property="og:title" content="Innova-thon 2026 — Results &amp; Highlights | HTPN × MPC">
+<meta property="og:description" content="Malaysia's national AI healthcare convention, held 21 July 2026. 9 winners, 40+ apps exhibited, 1,285 staff trained, RM0 licensing cost. As featured in BERNAMA.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -585,6 +589,35 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   width: 20px;
   height: 0.5px;
   background: rgba(255,255,255,0.2);
+}
+
+/* Concluded stamp — passport-stamp aesthetic */
+.hero-stamp {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 18px 6px;
+  margin-bottom: 22px;
+  border: 2.5px solid #F0C832;
+  border-radius: 4px;
+  color: #F0C832;
+  transform: rotate(-3deg);
+  background: rgba(240,200,50,0.05);
+  box-shadow: 0 0 0 1px rgba(240,200,50,0.25) inset;
+}
+.hero-stamp-top {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.hero-stamp-date {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.12em;
+  line-height: 1;
 }
 
 /* ============================================
@@ -3767,6 +3800,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   </div>
   <div class="nav-links">
     <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="nav-link">HOME</a>
+    <a href="#winners"       class="nav-link">WINNERS</a>
     <a href="#jury"          class="nav-link">JURY</a>
     <a href="#programme"     class="nav-link">PROGRAMME</a>
     <a href="#day-guide"     class="nav-link">DAY GUIDE</a>
@@ -3776,7 +3810,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
     <a href="#committee"     class="nav-link">COMMITTEE</a>
   </div>
   <div class="nav-right">
-    <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdpTyMrCVAvsLgwK_4WoRYX3qt2f0QTskfHSmXIeYrGSVX89g/viewform" class="btn-nav">REGISTER FREE</a>
+    <a href="#winners" class="btn-nav">SEE WINNERS</a>
     <!-- Mobile hamburger -->
     <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -3787,6 +3821,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-menu-close" onclick="toggleMenu()" aria-label="Close">✕</button>
   <a href="#" class="mobile-menu-link" onclick="toggleMenu();window.scrollTo({top:0,behavior:'smooth'});return false;">HOME</a>
+  <a href="#winners"        class="mobile-menu-link" onclick="toggleMenu()">WINNERS</a>
   <a href="#jury"           class="mobile-menu-link" onclick="toggleMenu()">JURY</a>
   <a href="#programme"      class="mobile-menu-link" onclick="toggleMenu()">PROGRAMME</a>
   <a href="#day-guide"      class="mobile-menu-link" onclick="toggleMenu()">DAY GUIDE</a>
@@ -3794,7 +3829,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   <a href="#competition" class="mobile-menu-link" onclick="toggleMenu()">COMPETITION</a>
   <a href="#partners"       class="mobile-menu-link" onclick="toggleMenu()">PARTNERS</a>
   <a href="#committee"      class="mobile-menu-link" onclick="toggleMenu()">COMMITTEE</a>
-  <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdpTyMrCVAvsLgwK_4WoRYX3qt2f0QTskfHSmXIeYrGSVX89g/viewform"       class="mobile-menu-link mobile-menu-cta" onclick="toggleMenu()">REGISTER FREE</a>
+  <a href="#winners" class="mobile-menu-link mobile-menu-cta" onclick="toggleMenu()">SEE THE WINNERS</a>
 </div>
 
 <!-- ============ HERO ============ -->
@@ -3807,22 +3842,27 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
     <!-- Hero text -->
   <div class="hero-content" style="z-index:6;">
+    <div class="hero-stamp">
+      <span class="hero-stamp-top">Successfully Concluded</span>
+      <span class="hero-stamp-date">21 JULY 2026</span>
+    </div>
     <div class="hero-eyebrow">
-      21 July 2026 · Dewan Produktiviti, MPC, MATRADE · Kuala Lumpur
+      Held 21 July 2026 · Dewan Produktiviti, MPC, MATRADE · Kuala Lumpur
     </div>
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="images/Animation.mp4" type="video/mp4">
     </video>
     <!-- Conference photo — in-flow below title -->
     <div class="hero-caption">
-      <h2 class="hero-caption-headline">Build the Future of Healthcare from Within.</h2>
-      <p class="hero-caption-sub">Hospital Tengku Permaisuri Norashikin Kajang, in collaboration with Malaysian Productivity Corporation, with the support of Persatuan Jabatan Pembedahan Am HTPN Kajang, present the first ever Productivity Intelligence Inno-vathon. We are empowering healthcare staff to eliminate inefficiencies by building agile, low-cost, in-house digital solutions that deliver immediate wins.</p>
+      <h2 class="hero-caption-headline">We Built the Future of Healthcare from Within.</h2>
+      <p class="hero-caption-sub">Malaysia's first national AI healthcare convention brought together ~200 clinicians, academics and industry leaders — hosted by Hospital Tengku Permaisuri Norashikin Kajang with Malaysian Productivity Corporation and Persatuan Jabatan Pembedahan Am HTPN Kajang. Over one day, 40+ AI applications were exhibited and judged, proving public hospitals can build their own agile, low-cost, in-house digital solutions.</p>
     </div>
     <div class="hero-btns">
-      <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdpTyMrCVAvsLgwK_4WoRYX3qt2f0QTskfHSmXIeYrGSVX89g/viewform" class="btn-primary">REGISTER FREE</a>
+      <a href="#winners" class="btn-primary">SEE THE WINNERS</a>
+      <a target="_blank" rel="noopener" href="https://www.bernama.com/bm/press/news.php?id=2583749" class="btn-ghost">READ THE PRESS COVERAGE ↗</a>
     </div>
     <div class="hero-date-strip">
-      Free entry for all KKM staff &amp; healthcare professionals
+      40+ apps exhibited · 9 winners · 13-panel jury · as featured in BERNAMA
     </div>
   </div>
 
@@ -3834,8 +3874,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 <div style="position:relative;z-index:10;padding:8px 0;background:var(--teal-deep);overflow:hidden;">
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <div class="marquee-item">21 JULY 2026 <span>•</span> DEWAN PRODUKTIVITI, MPC, MATRADE <span>•</span> KUALA LUMPUR <span>•</span> FREE ENTRY <span>•</span> HTPN × MPC <span>•</span> 50+ AI APPLICATIONS <span>•</span> 200 DELEGATES <span>•</span> 15+ HOSPITALS <span>•</span> PRODUCTIVITY INTELLIGENCE <span>•</span> REWARD CULTURE <span>•</span></div>
-      <div class="marquee-item">21 JULY 2026 <span>•</span> DEWAN PRODUKTIVITI, MPC, MATRADE <span>•</span> KUALA LUMPUR <span>•</span> FREE ENTRY <span>•</span> HTPN × MPC <span>•</span> 50+ AI APPLICATIONS <span>•</span> 200 DELEGATES <span>•</span> 15+ HOSPITALS <span>•</span> PRODUCTIVITY INTELLIGENCE <span>•</span> REWARD CULTURE <span>•</span></div>
+      <div class="marquee-item">★ 200 DELEGATES <span>•</span> 40+ APPS EXHIBITED <span>•</span> 9 WINNERS <span>•</span> 13-PANEL JURY <span>•</span> 1,285 STAFF TRAINED <span>•</span> RM0 LICENSING COST <span>•</span> AS FEATURED IN BERNAMA <span>•</span> 21 JULY 2026 <span>•</span> HTPN × MPC <span>•</span></div>
+      <div class="marquee-item">★ 200 DELEGATES <span>•</span> 40+ APPS EXHIBITED <span>•</span> 9 WINNERS <span>•</span> 13-PANEL JURY <span>•</span> 1,285 STAFF TRAINED <span>•</span> RM0 LICENSING COST <span>•</span> AS FEATURED IN BERNAMA <span>•</span> 21 JULY 2026 <span>•</span> HTPN × MPC <span>•</span></div>
     </div>
   </div>
 </div>
@@ -3920,8 +3960,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
         />
       </div>
       <div class="stat-colour-half">
-        <span class="stat-num" data-target="500" data-suffix="+">0+</span>
-        <div class="stat-label">PROFESSIONALS<br>TRAINED</div>
+        <span class="stat-num" data-target="1285">0</span>
+        <div class="stat-label">WARGA KESIHATAN<br>TRAINED SINCE 2025</div>
       </div>
     </div>
   </div>
@@ -3943,6 +3983,235 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
 </section>
 
+<!-- ============ WINNERS / THE CHAMPIONS ============ -->
+<style>
+.win-section { background: var(--teal-deep); padding: 90px 6vw 100px; position: relative; overflow: hidden; }
+.win-eyebrow { text-align: center; }
+.win-eyebrow-pill {
+  display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase; color: #F0C832;
+  border: 1px solid rgba(240,200,50,0.4); border-radius: 40px; padding: 7px 18px;
+}
+.win-heading {
+  font-family: 'Bebas Neue', sans-serif; text-align: center; color: #F0C832;
+  font-size: clamp(44px, 8vw, 92px); line-height: 0.95; letter-spacing: 0.01em; margin: 18px 0 8px;
+}
+.win-subheading {
+  text-align: center; font-family: 'DM Sans', sans-serif; color: rgba(255,255,255,0.55);
+  font-size: 15px; max-width: 560px; margin: 0 auto 56px;
+}
+.win-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; max-width: 1180px; margin: 0 auto; }
+.win-col { display: flex; flex-direction: column; }
+.win-col-head {
+  font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.06em;
+  text-align: center; padding: 12px; border-radius: 10px 10px 0 0; color: #fff; margin-bottom: 20px;
+}
+.win-col-clinician .win-col-head { background: #0E7A56; }
+.win-col-patient   .win-col-head { background: #C2185B; }
+.win-col-mgmt      .win-col-head { background: #1565C0; }
+.win-card {
+  position: relative; border-radius: 14px; margin-bottom: 18px; overflow: hidden;
+  --pc: #F0C832; z-index: 0;
+}
+.win-card::before {
+  content: ''; position: absolute; inset: -60%; z-index: -1;
+  background: conic-gradient(var(--pc), transparent 22%, transparent 50%, var(--pc) 72%, transparent 100%);
+  animation: win-spin 6s linear infinite;
+}
+.win-card-1 { --pc: #F0C832; }  /* gold  */
+.win-card-2 { --pc: #C8C8C8; }  /* silver */
+.win-card-3 { --pc: #D4824A; }  /* bronze */
+.win-card-inner {
+  position: relative; margin: 2px; border-radius: 12px; background: #0b2731;
+  padding: 20px 20px 22px; display: flex; align-items: flex-start; gap: 14px;
+}
+.win-place {
+  font-family: 'Bebas Neue', sans-serif; font-size: 30px; line-height: 1; color: var(--pc);
+  min-width: 44px; text-align: center; padding-top: 2px;
+}
+.win-place small { display: block; font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.4); }
+.win-app { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.02em; color: #fff; line-height: 1.05; }
+.win-team { font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 5px; }
+@keyframes win-spin { to { transform: rotate(360deg); } }
+
+/* ---- Finalists ---- */
+.fin-section { background: var(--cream); padding: 80px 6vw 90px; color: var(--ink); position: relative; }
+.fin-eyebrow-pill {
+  display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase; color: #C2185B;
+  border: 1px solid rgba(194,24,91,0.35); border-radius: 40px; padding: 7px 18px;
+}
+.fin-heading {
+  font-family: 'Bebas Neue', sans-serif; font-size: clamp(38px, 6.5vw, 76px); line-height: 0.95;
+  color: var(--ink); margin: 16px 0 8px; max-width: 720px;
+}
+.fin-sub { font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(26,18,10,0.6); max-width: 560px; margin-bottom: 50px; }
+.fin-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1180px; }
+.fin-col { background: #fff; border-radius: 12px; padding: 22px 20px 8px; box-shadow: 4px 4px 0 rgba(26,18,10,0.12); }
+.fin-col-head { font-family: 'Bebas Neue', sans-serif; font-size: 21px; letter-spacing: 0.03em; line-height: 1; }
+.fin-room { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(26,18,10,0.45); margin: 4px 0 16px; }
+.fin-col-clinician .fin-col-head { color: #0E7A56; }
+.fin-col-patient   .fin-col-head { color: #C2185B; }
+.fin-col-mgmt      .fin-col-head { color: #1565C0; }
+.fin-list { list-style: none; margin: 0; padding: 0; }
+.fin-list li {
+  display: flex; gap: 10px; padding: 9px 0; border-top: 1px solid rgba(26,18,10,0.08);
+  font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); align-items: baseline;
+}
+.fin-list li .fin-n { font-family: 'Bebas Neue', sans-serif; font-size: 15px; color: rgba(26,18,10,0.35); min-width: 20px; }
+.fin-win { color: #B8860B; font-weight: 500; }
+.fin-star { color: #F0C832; font-size: 13px; }
+
+/* ---- Press strip ---- */
+.press-strip { background: #0A0A0A; padding: 54px 6vw; text-align: center; }
+.press-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+.press-wordmark { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 7vw, 68px); letter-spacing: 0.08em; color: #fff; margin: 8px 0 14px; }
+.press-summary { font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255,255,255,0.6); max-width: 720px; margin: 0 auto 10px; line-height: 1.6; }
+.press-wcr { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #5DCAA5; max-width: 640px; margin: 0 auto 26px; }
+.press-btn {
+  display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.06em;
+  background: #F0C832; color: #0A0A0A; padding: 13px 30px; border-radius: 6px; text-decoration: none;
+  box-shadow: 4px 4px 0 #000; transition: transform 0.2s;
+}
+.press-btn:hover { transform: translateY(-2px); }
+
+@media (max-width: 768px) {
+  .win-grid, .fin-grid { grid-template-columns: 1fr; }
+  .win-card::before { animation: none; background: var(--pc); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .win-card::before { animation: none; }
+}
+</style>
+
+<section class="win-section" id="winners">
+  <div class="win-eyebrow reveal"><span class="win-eyebrow-pill">Official Results · 21 July 2026</span></div>
+  <h2 class="win-heading reveal">THE CHAMPIONS</h2>
+  <p class="win-subheading reveal">Nine winning applications across three tracks — every one built, owned and maintained in-house by KKM staff, at zero software licensing cost.</p>
+
+  <div class="win-grid">
+    <!-- Clinician Journey -->
+    <div class="win-col win-col-clinician reveal">
+      <div class="win-col-head">CLINICIAN JOURNEY</div>
+      <div class="win-card win-card-1"><div class="win-card-inner">
+        <div class="win-place">1<small>ST</small></div>
+        <div><div class="win-app">AMS Round Manager Pro</div><div class="win-team">Farmasi, HTPN</div></div>
+      </div></div>
+      <div class="win-card win-card-2"><div class="win-card-inner">
+        <div class="win-place">2<small>ND</small></div>
+        <div><div class="win-app">ResusHero (BLS) — Code Blue</div><div class="win-team">House Officers, HTPN</div></div>
+      </div></div>
+      <div class="win-card win-card-3"><div class="win-card-inner">
+        <div class="win-place">3<small>RD</small></div>
+        <div><div class="win-app">CLABSI Guard Pro</div><div class="win-team">Infection Control, HTPN</div></div>
+      </div></div>
+    </div>
+
+    <!-- Patient Journey -->
+    <div class="win-col win-col-patient reveal reveal-delay-1">
+      <div class="win-col-head">PATIENT JOURNEY</div>
+      <div class="win-card win-card-1"><div class="win-card-inner">
+        <div class="win-place">1<small>ST</small></div>
+        <div><div class="win-app">Medexa — Medication Expiry Assistant</div><div class="win-team">Hospital Kepala Batas</div></div>
+      </div></div>
+      <div class="win-card win-card-2"><div class="win-card-inner">
+        <div class="win-place">2<small>ND</small></div>
+        <div><div class="win-app">CRE Tracker Pro</div><div class="win-team">Infection Control, HTPN</div></div>
+      </div></div>
+      <div class="win-card win-card-3"><div class="win-card-inner">
+        <div class="win-place">3<small>RD</small></div>
+        <div><div class="win-app">SPECTRA</div><div class="win-team">Occupational Therapy, HTPN</div></div>
+      </div></div>
+    </div>
+
+    <!-- Management Productivity -->
+    <div class="win-col win-col-mgmt reveal reveal-delay-2">
+      <div class="win-col-head">MANAGEMENT PRODUCTIVITY</div>
+      <div class="win-card win-card-1"><div class="win-card-inner">
+        <div class="win-place">1<small>ST</small></div>
+        <div><div class="win-app">MedMove Pro</div><div class="win-team">Hospital Sentosa</div></div>
+      </div></div>
+      <div class="win-card win-card-2"><div class="win-card-inner">
+        <div class="win-place">2<small>ND</small></div>
+        <div><div class="win-app">Data Permit &amp; Pendaftaran Kematian</div><div class="win-team">Jabatan Forensik, HTPN</div></div>
+      </div></div>
+      <div class="win-card win-card-3"><div class="win-card-inner">
+        <div class="win-place">3<small>RD</small></div>
+        <div><div class="win-app">IRIS</div><div class="win-team">Hospital Shah Alam</div></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINALISTS ROLL ============ -->
+<section class="fin-section torn-top torn-bottom" id="finalists">
+  <div class="reveal"><span class="fin-eyebrow-pill">The Full Finalist Roll</span></div>
+  <h2 class="fin-heading reveal">28 APPS. 3 ROOMS. ONE DAY.</h2>
+  <p class="fin-sub reveal">Every application presented on the day, in presentation order. Winners marked <span class="fin-star">★</span>.</p>
+
+  <div class="fin-grid">
+    <div class="fin-col fin-col-clinician reveal">
+      <div class="fin-col-head">Clinician Journey</div>
+      <div class="fin-room">Dewan Produktiviti</div>
+      <ul class="fin-list">
+        <li><span class="fin-n">1</span> EBL Calculator</li>
+        <li><span class="fin-n">2</span> Growthchart</li>
+        <li><span class="fin-n">3</span> <span class="fin-win">AMS Round Manager Pro <span class="fin-star">★</span></span></li>
+        <li><span class="fin-n">4</span> The Skin Diary Generator</li>
+        <li><span class="fin-n">5</span> DoseWise TB</li>
+        <li><span class="fin-n">6</span> <span class="fin-win">ResusHero (BLS) — Code Blue <span class="fin-star">★</span></span></li>
+        <li><span class="fin-n">7</span> PhysioMeasure</li>
+        <li><span class="fin-n">8</span> <span class="fin-win">CLABSI Guard Pro <span class="fin-star">★</span></span></li>
+        <li><span class="fin-n">9</span> Goals of Care (GOC) Assistant</li>
+        <li><span class="fin-n">10</span> Woundcare 360</li>
+      </ul>
+    </div>
+
+    <div class="fin-col fin-col-patient reveal reveal-delay-1">
+      <div class="fin-col-head">Patient Journey</div>
+      <div class="fin-room">Bilik Inovasi</div>
+      <ul class="fin-list">
+        <li><span class="fin-n">1</span> My Family Health App</li>
+        <li><span class="fin-n">2</span> Family Cancer Risk Assistant</li>
+        <li><span class="fin-n">3</span> <span class="fin-win">CRE Tracker Pro <span class="fin-star">★</span></span></li>
+        <li><span class="fin-n">4</span> Pictorial Blood Loss Assessment Tracker</li>
+        <li><span class="fin-n">5</span> <span class="fin-win">Medexa — Medication Expiry Assistant <span class="fin-star">★</span></span></li>
+        <li><span class="fin-n">6</span> MINDA TREK</li>
+        <li><span class="fin-n">7</span> <span class="fin-win">SPECTRA <span class="fin-star">★</span></span></li>
+        <li><span class="fin-n">8</span> MinDora</li>
+        <li><span class="fin-n">9</span> CAKAP</li>
+      </ul>
+    </div>
+
+    <div class="fin-col fin-col-mgmt reveal reveal-delay-2">
+      <div class="fin-col-head">Management Productivity</div>
+      <div class="fin-room">Bilik Transformasi</div>
+      <ul class="fin-list">
+        <li><span class="fin-n">1</span> e-MEDEVAC Portal Sarawak</li>
+        <li><span class="fin-n">2</span> <span class="fin-win">IRIS <span class="fin-star">★</span></span></li>
+        <li><span class="fin-n">3</span> HPP OSH-Alert</li>
+        <li><span class="fin-n">4</span> SpeechGate</li>
+        <li><span class="fin-n">5</span> <span class="fin-win">Data Permit &amp; Pendaftaran Kematian <span class="fin-star">★</span></span></li>
+        <li><span class="fin-n">6</span> Gynapse</li>
+        <li><span class="fin-n">7</span> <span class="fin-win">MedMove Pro <span class="fin-star">★</span></span></li>
+        <li><span class="fin-n">8</span> MOPD e-Portal</li>
+        <li><span class="fin-n">9</span> O&amp;G Patient Intelligence</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRESS STRIP — BERNAMA ============ -->
+<section class="press-strip" id="press">
+  <div class="reveal">
+    <div class="press-eyebrow">As Featured In</div>
+    <div class="press-wordmark">BERNAMA</div>
+    <p class="press-summary">MPC and HTPN Kajang are driving hospital productivity reform through AI innovation — a public-sector model that has trained 1,285 healthcare staff and deployed 50+ in-house AI applications across KKM facilities at zero licensing cost.</p>
+    <p class="press-wcr">Aligned with RMKe-13 and Malaysia MADANI — as Malaysia's WCR 2026 Health &amp; Environment sub-factor climbed from 50th to 47th globally.</p>
+    <a class="press-btn" target="_blank" rel="noopener" href="https://www.bernama.com/bm/press/news.php?id=2583749">READ THE ARTICLE →</a>
+  </div>
+</section>
+
 <!-- ============ WHY HTPN — dark ============ -->
 <section class="why-section" style="background:var(--teal-dark)">
   <div class="paper-side"></div>
@@ -3953,13 +4222,14 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   </h2>
   <div class="why-grid">
     <div class="why-copy reveal">
-      <p>HTPN's Healthcare Intelligence Office has built over 50 live clinical applications entirely in-house — without external vendors, without high-cost licences. Led by practicing clinicians, the HIO has transformed how a 137-year-old public hospital builds digital solutions.</p>
-      <p>This convention shares that model — openly, freely — with every KKM hospital in Malaysia. Come to learn, compete, and take the insourcing revolution home.</p>
+      <p>HTPN's Healthcare Intelligence Office has built over 50 live clinical applications entirely in-house — without external vendors, without high-cost licences. In just 15 months since its founding in April 2025, the HIO has trained 1,285 healthcare staff and transformed how a 137-year-old public hospital builds digital solutions.</p>
+      <p>This convention shared that model — openly, freely — with hospitals across Malaysia. The result is a replicable public-sector playbook now expanding to HTPN Kajang, Hospital Pulau Pinang, Hospital Kepala Batas, Hospital Sultanah Aminah, JKN Sarawak, and the national O&amp;G and Family Medicine Specialist (FMS) services.</p>
       <ul class="why-bullets">
+        <li>RM0 software licensing — every app built, owned &amp; maintained by KKM staff</li>
+        <li>1,285 warga kesihatan trained in the AI ecosystem since April 2025</li>
         <li>Insourcing model — built by clinicians, for clinicians</li>
-        <li>Free entry for all KKM staff &amp; healthcare professionals</li>
         <li>National-level recognition through MPC case study documentation</li>
-        <li>Reward culture — celebrate innovation on a national stage</li>
+        <li>Reward culture — innovation celebrated on a national stage</li>
       </ul>
     </div>
     <div class="video-frame reveal reveal-delay-1">
@@ -4113,17 +4383,17 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   </div>
 
   <!-- Yellow pill eyebrow -->
-  <div class="badge-pill">YOUR PASS</div>
+  <div class="badge-pill">THE MEMENTO</div>
 
   <!-- Giant heading -->
   <h2 class="badge-heading">
-    ONE BADGE. THE FULL<br>
-    INNOVA-THON EXPERIENCE.
+    ONE BADGE.<br>
+    ONE UNFORGETTABLE DAY.
   </h2>
 
   <!-- Subtext -->
   <p class="badge-subtext">
-    Your registration unlocks far more than a seat in a session. It gives you access to the talks, the community, the live demos, and the national energy surrounding Innova-thon 2026.
+    The badge that started it all. On 21 July 2026 it unlocked far more than a seat — the talks, the community, the live demos, and the national energy of Innova-thon 2026. Here's everything ~200 delegates experienced.
   </p>
 
   <!-- Pink mosaic tiles — staggered like RenderATL -->
@@ -4148,8 +4418,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
     </div>
   </div>
 
-  <div style="margin-top:36px">
-    <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdpTyMrCVAvsLgwK_4WoRYX3qt2f0QTskfHSmXIeYrGSVX89g/viewform" class="btn-primary" style="display:inline-block;font-size:16px;padding:14px 36px">REGISTER FREE NOW</a>
+  <div style="margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+    <a href="#winners" class="btn-primary" style="display:inline-block;font-size:16px;padding:14px 36px">SEE THE WINNERS</a>
+    <a href="mailto:hio.htpn@moh.gov.my?subject=Innova-thon%202026" class="btn-ghost" style="display:inline-block;font-size:14px;padding:14px 30px">BE PART OF THE NEXT ONE ↗</a>
   </div>
 
 </section>
@@ -4532,7 +4803,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
     </div>
 
     <div style="text-align:center;margin-top:40px">
-      <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdpTyMrCVAvsLgwK_4WoRYX3qt2f0QTskfHSmXIeYrGSVX89g/viewform" class="btn-primary">REGISTER FREE</a>
+      <a href="#winners" class="btn-primary">SEE THE WINNERS</a>
     </div>
   </div>
 </section>
@@ -4544,12 +4815,12 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   <!-- Intro row: text left, lanyard photo right -->
   <div class="prog-intro-wrap">
     <div class="prog-intro-text">
-      <div class="pillars-eyebrow-label">PROGRAMME SCHEDULE</div>
+      <div class="pillars-eyebrow-label">HOW THE DAY WENT</div>
       <h2 class="pillars-right-heading reveal" style="color:#fff">
         FULL DAY PROGRAMME<br>21 JULY 2026
       </h2>
       <p class="pillars-right-body reveal" style="color:rgba(255,255,255,0.65)">
-        Dewan Produktiviti, MPC, MATRADE, Kuala Lumpur · 8:00am – 5:00pm
+        How the day unfolded at Dewan Produktiviti, MPC, MATRADE, Kuala Lumpur · 8:00am – 5:00pm
       </p>
     </div>
     <div class="prog-lanyard-wrap">
@@ -4734,7 +5005,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
   <!-- CTA -->
   <div style="margin-top:32px;">
-    <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdpTyMrCVAvsLgwK_4WoRYX3qt2f0QTskfHSmXIeYrGSVX89g/viewform" class="btn-explore" style="display:inline-block;text-decoration:none;">REGISTER FOR THE FULL DAY</a>
+    <a href="#finalists" class="btn-explore" style="display:inline-block;text-decoration:none;">SEE HOW THE DAY WENT</a>
   </div>
 
 </section>
@@ -5251,8 +5522,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 <div style="position:relative;z-index:10;padding:8px 0;background:var(--teal-deep);overflow:hidden;">
   <div class="marquee-wrap marquee-wrap-bottom">
     <div class="marquee-track marquee-track-reverse">
-      <div class="marquee-item">21 JULY 2026 <span>•</span> DEWAN PRODUKTIVITI, MPC, MATRADE <span>•</span> KUALA LUMPUR <span>•</span> FREE ENTRY <span>•</span> HTPN × MPC <span>•</span> 50+ AI APPLICATIONS <span>•</span> REGISTER NOW <span>•</span> INNOVATHON 2026 <span>•</span></div>
-      <div class="marquee-item">21 JULY 2026 <span>•</span> DEWAN PRODUKTIVITI, MPC, MATRADE <span>•</span> KUALA LUMPUR <span>•</span> FREE ENTRY <span>•</span> HTPN × MPC <span>•</span> 50+ AI APPLICATIONS <span>•</span> REGISTER NOW <span>•</span> INNOVATHON 2026 <span>•</span></div>
+      <div class="marquee-item">★ INNOVA-THON 2026 <span>•</span> SUCCESSFULLY CONCLUDED <span>•</span> 9 CHAMPIONS CROWNED <span>•</span> 28 FINALISTS <span>•</span> 3 ROOMS <span>•</span> ONE DAY <span>•</span> RM0 LICENSING COST <span>•</span> HTPN × MPC <span>•</span></div>
+      <div class="marquee-item">★ INNOVA-THON 2026 <span>•</span> SUCCESSFULLY CONCLUDED <span>•</span> 9 CHAMPIONS CROWNED <span>•</span> 28 FINALISTS <span>•</span> 3 ROOMS <span>•</span> ONE DAY <span>•</span> RM0 LICENSING COST <span>•</span> HTPN × MPC <span>•</span></div>
     </div>
   </div>
 </div>
@@ -5397,16 +5668,6 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
               <div class="cmt-mod-name">Dr. Mohd Izzun Nasheef bin Mohamad Hasmuri</div>
               <div class="cmt-mod-desig">Hospital Director</div>
               <div class="cmt-mod-fac">Hospital Daerah Dalat</div>
-            </div>
-            <div class="cmt-mod-card">
-              <span class="cmt-led"></span>
-              <div class="cmt-mod-photo">
-                <span class="cmt-mod-ph">WZ</span>
-                <img src="images/jury/Dr Wan Zuraini-black.png" alt="Dr Wan Zuraini binti Mahrawi" loading="lazy" onerror="this.style.display='none'">
-              </div>
-              <div class="cmt-mod-name">Dr Wan Zuraini binti Mahrawi</div>
-              <div class="cmt-mod-desig">Head, Patient Risk Management &amp; Clinical Surveillance Unit</div>
-              <div class="cmt-mod-fac">Institut Kanser Negara (IKN)</div>
             </div>
             <div class="cmt-mod-card">
               <span class="cmt-led"></span>
@@ -6156,7 +6417,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
     <div>
       <div class="footer-col-head">INFORMATION</div>
       <a href="partners.html" class="footer-item">Partners & Vendors</a>
-      <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdpTyMrCVAvsLgwK_4WoRYX3qt2f0QTskfHSmXIeYrGSVX89g/viewform" class="footer-item">Register Free</a>
+      <a target="_blank" rel="noopener" href="https://www.bernama.com/bm/press/news.php?id=2583749" class="footer-item">BERNAMA Coverage</a>
       <a href="#" class="footer-item">Submit Project</a>
       <a href="#" class="footer-item">FAQ</a>
       <a href="#" class="footer-item">Code of Conduct</a>
@@ -6294,7 +6555,7 @@ function countUp(el, target, duration, suffix) {
       start = target;
       clearInterval(timer);
     }
-    el.textContent = Math.round(start) + suffix;
+    el.textContent = Math.round(start).toLocaleString('en-US') + suffix;
   }, 16);
 }
 const statNums = document.querySelectorAll('.stat-num[data-target]');
