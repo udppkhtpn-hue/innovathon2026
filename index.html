@@ -4023,8 +4023,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 .win-card-3 { --pc: #D4824A; }  /* bronze */
 .win-card-inner {
   position: relative; margin: 2px; border-radius: 12px; background: #0b2731;
-  padding: 20px 20px 22px; display: flex; align-items: flex-start; gap: 14px;
+  overflow: hidden; display: flex; flex-direction: column;
 }
+.win-photo { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: center 40%; }
+.win-body { display: flex; align-items: flex-start; gap: 14px; padding: 18px 20px 22px; }
 .win-place {
   font-family: 'Bebas Neue', sans-serif; font-size: 30px; line-height: 1; color: var(--pc);
   min-width: 44px; text-align: center; padding-top: 2px;
@@ -4094,16 +4096,25 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
     <div class="win-col win-col-clinician reveal">
       <div class="win-col-head">CLINICIAN JOURNEY</div>
       <div class="win-card win-card-1"><div class="win-card-inner">
-        <div class="win-place">1<small>ST</small></div>
-        <div><div class="win-app">AMS Round Manager Pro</div><div class="win-team">Farmasi, HTPN</div></div>
+        <img class="win-photo" src="images/winners/clinician-1st-ams-round-manager-pro.jpg" alt="AMS Round Manager Pro — Farmasi HTPN receiving 1st place, Clinician Journey" loading="lazy">
+        <div class="win-body">
+          <div class="win-place">1<small>ST</small></div>
+          <div><div class="win-app">AMS Round Manager Pro</div><div class="win-team">Farmasi, HTPN</div></div>
+        </div>
       </div></div>
       <div class="win-card win-card-2"><div class="win-card-inner">
-        <div class="win-place">2<small>ND</small></div>
-        <div><div class="win-app">ResusHero (BLS) — Code Blue</div><div class="win-team">House Officers, HTPN</div></div>
+        <img class="win-photo" src="images/winners/clinician-2nd-resushero.jpg" alt="ResusHero (BLS) — Code Blue, House Officers HTPN receiving 2nd place, Clinician Journey" loading="lazy">
+        <div class="win-body">
+          <div class="win-place">2<small>ND</small></div>
+          <div><div class="win-app">ResusHero (BLS) — Code Blue</div><div class="win-team">House Officers, HTPN</div></div>
+        </div>
       </div></div>
       <div class="win-card win-card-3"><div class="win-card-inner">
-        <div class="win-place">3<small>RD</small></div>
-        <div><div class="win-app">CLABSI Guard Pro</div><div class="win-team">Infection Control, HTPN</div></div>
+        <img class="win-photo" src="images/winners/clinician-3rd-clabsi-guard-pro.jpg" alt="CLABSI Guard Pro — Infection Control HTPN receiving 3rd place, Clinician Journey" loading="lazy">
+        <div class="win-body">
+          <div class="win-place">3<small>RD</small></div>
+          <div><div class="win-app">CLABSI Guard Pro</div><div class="win-team">Infection Control, HTPN</div></div>
+        </div>
       </div></div>
     </div>
 
@@ -4111,16 +4122,25 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
     <div class="win-col win-col-patient reveal reveal-delay-1">
       <div class="win-col-head">PATIENT JOURNEY</div>
       <div class="win-card win-card-1"><div class="win-card-inner">
-        <div class="win-place">1<small>ST</small></div>
-        <div><div class="win-app">Medexa — Medication Expiry Assistant</div><div class="win-team">Hospital Kepala Batas</div></div>
+        <img class="win-photo" src="images/winners/patient-1st-medexa.jpg" alt="Medexa — Hospital Kepala Batas receiving 1st place, Patient Journey" loading="lazy">
+        <div class="win-body">
+          <div class="win-place">1<small>ST</small></div>
+          <div><div class="win-app">Medexa — Medication Expiry Assistant</div><div class="win-team">Hospital Kepala Batas</div></div>
+        </div>
       </div></div>
       <div class="win-card win-card-2"><div class="win-card-inner">
-        <div class="win-place">2<small>ND</small></div>
-        <div><div class="win-app">CRE Tracker Pro</div><div class="win-team">Infection Control, HTPN</div></div>
+        <img class="win-photo" src="images/winners/patient-2nd-cre-tracker-pro.jpg" alt="CRE Tracker Pro — Infection Control HTPN receiving 2nd place, Patient Journey" loading="lazy">
+        <div class="win-body">
+          <div class="win-place">2<small>ND</small></div>
+          <div><div class="win-app">CRE Tracker Pro</div><div class="win-team">Infection Control, HTPN</div></div>
+        </div>
       </div></div>
       <div class="win-card win-card-3"><div class="win-card-inner">
-        <div class="win-place">3<small>RD</small></div>
-        <div><div class="win-app">SPECTRA</div><div class="win-team">Occupational Therapy, HTPN</div></div>
+        <img class="win-photo" src="images/winners/patient-3rd-spectra.jpg" alt="SPECTRA — Occupational Therapy HTPN receiving 3rd place, Patient Journey" loading="lazy">
+        <div class="win-body">
+          <div class="win-place">3<small>RD</small></div>
+          <div><div class="win-app">SPECTRA</div><div class="win-team">Occupational Therapy, HTPN</div></div>
+        </div>
       </div></div>
     </div>
 
@@ -4128,16 +4148,25 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
     <div class="win-col win-col-mgmt reveal reveal-delay-2">
       <div class="win-col-head">MANAGEMENT PRODUCTIVITY</div>
       <div class="win-card win-card-1"><div class="win-card-inner">
-        <div class="win-place">1<small>ST</small></div>
-        <div><div class="win-app">MedMove Pro</div><div class="win-team">Hospital Sentosa</div></div>
+        <img class="win-photo" src="images/winners/mgmt-1st-medmove-pro.jpg" alt="MedMove Pro — Hospital Sentosa receiving 1st place, Management Productivity" loading="lazy">
+        <div class="win-body">
+          <div class="win-place">1<small>ST</small></div>
+          <div><div class="win-app">MedMove Pro</div><div class="win-team">Hospital Sentosa</div></div>
+        </div>
       </div></div>
       <div class="win-card win-card-2"><div class="win-card-inner">
-        <div class="win-place">2<small>ND</small></div>
-        <div><div class="win-app">Data Permit &amp; Pendaftaran Kematian</div><div class="win-team">Jabatan Forensik, HTPN</div></div>
+        <img class="win-photo" src="images/winners/mgmt-2nd-data-permit.jpg" alt="Data Permit &amp; Pendaftaran Kematian — Jabatan Forensik HTPN receiving 2nd place, Management Productivity" loading="lazy">
+        <div class="win-body">
+          <div class="win-place">2<small>ND</small></div>
+          <div><div class="win-app">Data Permit &amp; Pendaftaran Kematian</div><div class="win-team">Jabatan Forensik, HTPN</div></div>
+        </div>
       </div></div>
       <div class="win-card win-card-3"><div class="win-card-inner">
-        <div class="win-place">3<small>RD</small></div>
-        <div><div class="win-app">IRIS</div><div class="win-team">Hospital Shah Alam</div></div>
+        <img class="win-photo" src="images/winners/mgmt-3rd-iris.jpg" alt="IRIS — Hospital Shah Alam receiving 3rd place, Management Productivity" loading="lazy">
+        <div class="win-body">
+          <div class="win-place">3<small>RD</small></div>
+          <div><div class="win-app">IRIS</div><div class="win-team">Hospital Shah Alam</div></div>
+        </div>
       </div></div>
     </div>
   </div>
