@@ -4077,7 +4077,28 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 }
 .press-btn:hover { transform: translateY(-2px); }
 
+/* ---- Highlights video ---- */
+.hl-section { background: var(--teal-dark); padding: 80px 6vw 90px; text-align: center; position: relative; overflow: hidden; }
+.hl-eyebrow-pill {
+  display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase; color: #5DCAA5;
+  border: 1px solid rgba(93,202,165,0.4); border-radius: 40px; padding: 7px 18px;
+}
+.hl-heading {
+  font-family: 'Bebas Neue', sans-serif; color: #fff; font-size: clamp(40px, 7vw, 80px);
+  line-height: 0.95; margin: 18px 0 10px;
+}
+.hl-sub { font-family: 'DM Sans', sans-serif; color: rgba(255,255,255,0.6); font-size: 15px; max-width: 520px; margin: 0 auto 44px; }
+.hl-frame {
+  max-width: 920px; margin: 0 auto; border: 3px solid #F0C832; border-radius: 6px; background: #000;
+  box-shadow: 8px 8px 0 #000; transform: rotate(-1deg); transition: transform 0.4s ease; line-height: 0;
+}
+.hl-frame:hover { transform: rotate(0deg) scale(1.01); }
+.hl-video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+
 @media (max-width: 768px) {
+  .hl-frame { transform: none; box-shadow: 4px 4px 0 #000; }
+  .hl-frame:hover { transform: none; }
   .win-grid, .fin-grid { grid-template-columns: 1fr; }
   .win-card::before { animation: none; background: var(--pc); }
 }
@@ -4169,6 +4190,19 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
         </div>
       </div></div>
     </div>
+  </div>
+</section>
+
+<!-- ============ HIGHLIGHTS VIDEO ============ -->
+<section class="hl-section" id="highlights">
+  <div class="hl-eyebrow reveal"><span class="hl-eyebrow-pill">Event Highlights · 21 July 2026</span></div>
+  <h2 class="hl-heading reveal">THE DAY IN 3 MINUTES</h2>
+  <p class="hl-sub reveal">From the welcome and opening speech to the judges' table and the serving robot — relive Innova-thon 2026.</p>
+  <div class="hl-frame reveal reveal-delay-1">
+    <video class="hl-video" controls preload="none" playsinline poster="images/highlights-poster.jpg">
+      <source src="images/highlights.mp4" type="video/mp4">
+      Your browser does not support embedded video.
+    </video>
   </div>
 </section>
 
